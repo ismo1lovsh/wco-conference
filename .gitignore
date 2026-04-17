@@ -12,8 +12,7 @@ __pycache__/
 db.sqlite3
 *.sqlite3
 
-# Media fayllar (rasmlar)
-media/
+
 
 # Environment variables
 .env
