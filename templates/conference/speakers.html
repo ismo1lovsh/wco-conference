@@ -1,0 +1,118 @@
+{% extends "conference/base.html" %}
+{% load static %}
+
+{% block content %}
+<main>
+
+  <div class="page-banner">
+    <h2>Speakers</h2>
+  </div>
+
+  <div class="speakers-section">
+
+    {% for group in groups %}
+
+    <h3 class="speakers-group-title">{{ group.title }}</h3>
+
+    <div class="speakers-grid">
+      {% for speaker in group.speakers.all %}
+      <div class="speaker-card" onclick="openSpeakerModal(
+          '{{ speaker.name|escapejs }}',
+          '{{ speaker.title|escapejs }}',
+          '{{ speaker.organization|escapejs }}',
+          '{{ speaker.bio|escapejs }}',
+          '{% if speaker.photo %}{{ speaker.photo.url }}{% endif %}'
+      )">
+        <div class="speaker-img-wrap">
+          {% if speaker.photo %}
+          <img src="{{ speaker.photo.url }}" alt="{{ speaker.name }}" />
+          {% else %}
+          <div class="speaker-no-photo">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          {% endif %}
+          <div class="speaker-card-overlay">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          </div>
+        </div>
+        <p class="speaker-name">{{ speaker.name }}</p>
+        {% if speaker.title %}
+        <p class="speaker-title">{{ speaker.title }}</p>
+        {% endif %}
+        {% if speaker.organization %}
+        <p class="speaker-org">{{ speaker.organization }}</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+
+    {% if not forloop.last %}
+    <div class="speakers-divider"></div>
+    {% endif %}
+
+    {% empty %}
+    <p class="speakers-empty">Ma'lumot hali qo'shilmagan.</p>
+    {% endfor %}
+
+  </div>
+
+  <!-- Speaker Modal -->
+  <div class="sp-modal-overlay" id="sp-modal-overlay" onclick="closeSpeakerModal()">
+    <div class="sp-modal" onclick="event.stopPropagation()">
+
+      <button class="sp-modal-close" onclick="closeSpeakerModal()">
+        <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+
+      <div class="sp-modal-inner">
+
+        <div class="sp-modal-left">
+          <div class="sp-modal-img-wrap">
+            <img src="" alt="" id="sp-modal-img" />
+          </div>
+        </div>
+
+        <div class="sp-modal-right">
+          <h3 class="sp-modal-name" id="sp-modal-name"></h3>
+          <p class="sp-modal-title" id="sp-modal-title"></p>
+          <p class="sp-modal-org" id="sp-modal-org"></p>
+          <div class="sp-modal-divider"></div>
+          <p class="sp-modal-bio" id="sp-modal-bio"></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+function openSpeakerModal(name, title, org, bio, imgUrl) {
+  document.getElementById('sp-modal-name').textContent = name;
+  document.getElementById('sp-modal-title').textContent = title;
+  document.getElementById('sp-modal-org').textContent = org;
+  document.getElementById('sp-modal-bio').textContent = bio;
+
+  var img = document.getElementById('sp-modal-img');
+  if (imgUrl) {
+    img.src = imgUrl;
+    img.style.display = 'block';
+  } else {
+    img.style.display = 'none';
+  }
+
+  document.getElementById('sp-modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSpeakerModal() {
+  document.getElementById('sp-modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeSpeakerModal();
+});
+</script>
+
+{% endblock %}

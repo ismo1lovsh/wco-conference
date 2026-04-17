@@ -1,0 +1,98 @@
+{% extends "conference/base.html" %}
+{% load static %}
+
+{% block content %}
+<main>
+  <!-- Hero rasm -->
+  <div class="hero">
+    <img src="{% static 'img/asosiyrasm.jpg' %}" class="hero-img" />
+  </div>
+
+  <!-- About section -->
+  <div class="about-section">
+
+
+    <div class="about-content">
+      <div class="about-left">
+        <h1 class="about-title">Global Canine Forum</h1>
+        <p class="about-subtitle">Global Canine Forum</p>
+
+        <div class="about-meta">
+          <div class="meta-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Tashkent, Uzbekistan
+          </div>
+          <div class="meta-badge">
+            <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+            7th – 9th September 2026
+          </div>
+        </div>
+
+        <p class="about-body">
+          Join the international Canine (K-9) and Customs community in Tashkent, Uzbekistan,
+          from 7–9 September 2026 for a global forum dedicated to the development of service dog
+          training and modern border security practices.
+        </p>
+        <p class="about-body">
+          The <em>Global Canine Forum (K-9)</em> will bring together Customs administrations,
+          border and law enforcement agencies, experts and partners to exchange experience,
+          demonstrate operational capabilities and discuss the future of canine services in border
+          management. <strong>The forum is organized with the participation of the World Customs Organization (WCO)
+          and the Customs Committee of the Republic of Uzbekistan</strong> and will serve as a platform for professional
+          dialogue, practical demonstrations and international cooperation in the field of service dog training.
+        </p>
+        <p class="about-body" style="display:none">
+          The forum will explore how canine units contribute to detecting illicit goods,
+          combating transnational crime and strengthening border control while facilitating
+          legitimate trade and travel. Each day of the forum will highlight key aspects of modern canine operations.
+        </p>
+        <p class="about-body" style="display:none">
+          Sessions will focus on operational practices, training methodologies and the integration
+          of modern technologies in canine services. Through expert discussions, practical demonstrations
+          and knowledge sharing, the forum will highlight how well-trained service dogs and professional
+          handlers remain one of the most effective tools for detecting narcotics, weapons, explosives,
+          wildlife trafficking and other illegal activities.
+        </p>
+      </div>
+
+      <div class="about-right">
+        <img src="{% static 'img/kinologiya.png' %}" alt="Illustration" class="about-illustration" />
+      </div>
+    </div>
+
+    <div class="read-more-wrap">
+      <div class="read-more-fade" id="read-more-fade"></div>
+      <a href="#" class="read-more-btn" id="read-more-btn" onclick="toggleReadMore(event)">
+        Read more...
+      </a>
+    </div>
+
+    <!-- YouTube video -->
+    <div class="about-video">
+      <iframe
+        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+        title="WCO Tech Conference 2026"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+  </div>
+</main>
+
+<script>
+function toggleReadMore(e) {
+  e.preventDefault();
+  var paras = document.querySelectorAll('.about-body');
+  var btn = document.getElementById('read-more-btn');
+  var fade = document.getElementById('read-more-fade');
+  var hidden = paras[2].style.display === 'none';
+  paras[2].style.display = hidden ? 'block' : 'none';
+  paras[3].style.display = hidden ? 'block' : 'none';
+  fade.style.display = hidden ? 'none' : 'block';
+  btn.textContent = hidden ? 'Show less' : 'Read more...';
+}
+</script>
+
+{% endblock %}

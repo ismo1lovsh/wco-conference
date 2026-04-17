@@ -1,0 +1,23 @@
+msgid "About us"
+msgstr "À propos"
+
+msgid "Programme"
+msgstr "Programme"
+
+msgid "Agenda"
+msgstr "Agenda"
+
+msgid "Speakers"
+msgstr "Intervenants"
+
+msgid "Accommodation"
+msgstr "Hébergement"
+
+msgid "Hotels"
+msgstr "Hôtels"
+
+msgid "Venue"
+msgstr "Lieu"
+
+msgid "Login"
+msgstr "Connexion"

@@ -1,0 +1,96 @@
+{% extends "conference/base.html" %}
+{% load static %}
+
+{% block content %}
+<main>
+
+  <div class="page-banner">
+    <h2>Agenda</h2>
+  </div>
+
+  <div class="agenda-section">
+
+    <div class="agenda-days">
+      {% for day in days %}
+      <button class="day-btn {% if forloop.first %}active{% endif %}"
+              onclick="switchDay(event, 'day{{ forloop.counter }}')">
+        <span class="day-num">{{ day.label }}</span>
+        <span class="day-month">{{ day.month }}</span>
+      </button>
+      {% endfor %}
+    </div>
+
+    <div class="agenda-line"></div>
+
+    <div class="agenda-pdf">
+      <a href="/media/agenda.pdf" class="pdf-btn" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6z"/></svg>
+        View PDF
+      </a>
+    </div>
+
+    {% for day in days %}
+    <div class="day-content" id="day{{ forloop.counter }}"
+         {% if not forloop.first %}style="display:none"{% endif %}>
+
+      <h3 class="day-title">{{ day.title }}</h3>
+
+      <table class="agenda-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Session</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for session in day.sessions.all %}
+          <tr class="{{ session.style }}">
+
+            {% if session.time_start %}
+            <td {% if session.rowspan > 1 %}rowspan="{{ session.rowspan }}"{% endif %}>
+              <span class="time-start">{{ session.time_start }}</span>
+              {% if session.time_end %}
+              <span class="time-end"> – {{ session.time_end }}</span>
+              {% endif %}
+            </td>
+            {% endif %}
+
+            <td>
+              {{ session.session_text }}
+              {% with items=session.get_sub_items %}
+              {% if items %}
+              <ul class="session-list">
+                {% for item in items %}
+                <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+              {% endwith %}
+            </td>
+
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+    {% endfor %}
+
+  </div>
+
+</main>
+
+<script>
+function switchDay(e, dayId) {
+  document.querySelectorAll('.day-content').forEach(function(d) {
+    d.style.display = 'none';
+  });
+  document.querySelectorAll('.day-btn').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  document.getElementById(dayId).style.display = 'block';
+  e.currentTarget.classList.add('active');
+}
+</script>
+
+{% endblock %}

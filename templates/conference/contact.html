@@ -1,0 +1,119 @@
+{% extends "conference/base.html" %}
+{% load static %}
+
+{% block content %}
+<main>
+
+  <div class="page-banner">
+    <h2>Contact Us</h2>
+  </div>
+
+  <div class="contact-section">
+
+    <!-- Intro -->
+    <div class="contact-intro">
+      <p>Should you have any questions or require further information regarding the Global K9 Forum, please do not hesitate to contact us.</p>
+    </div>
+
+    <!-- Kartalar -->
+    <div class="contact-grid">
+
+      <!-- WCO Staff -->
+      <div class="contact-card">
+        <div class="contact-card-header">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          </div>
+          <h3>WCO Staff Contacts</h3>
+        </div>
+        <div class="contact-card-body">
+          {% for person in wco_contacts %}
+          <div class="contact-person">
+            <div class="contact-person-name">{{ person.name }}</div>
+            {% if person.organization %}
+            <div class="contact-person-org">{{ person.organization }}</div>
+            {% endif %}
+            <div class="contact-person-emails">
+              {% for email in person.get_emails %}
+              <a href="mailto:{{ email }}" class="contact-email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                {{ email }}
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+          {% if not forloop.last %}<div class="contact-person-divider"></div>{% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Registration -->
+      <div class="contact-card">
+        <div class="contact-card-header">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+          </div>
+          <h3>Registration</h3>
+        </div>
+        <div class="contact-card-body">
+          {% for person in registration %}
+          <div class="contact-person">
+            <div class="contact-person-name">{{ person.name }}</div>
+            {% if person.organization %}
+            <div class="contact-person-org">{{ person.organization }}</div>
+            {% endif %}
+            <div class="contact-person-emails">
+              {% for email in person.get_emails %}
+              <a href="mailto:{{ email }}" class="contact-email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                {{ email }}
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+          {% if not forloop.last %}<div class="contact-person-divider"></div>{% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Host Country -->
+      <div class="contact-card">
+        <div class="contact-card-header">
+          <div class="contact-card-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <h3>Host Country Focal Point</h3>
+        </div>
+        <div class="contact-card-body">
+          {% for person in host_contacts %}
+          <div class="contact-person">
+            <div class="contact-person-name">{{ person.name }}</div>
+            {% if person.organization %}
+            <div class="contact-person-org">{{ person.organization }}</div>
+            {% endif %}
+            <div class="contact-person-emails">
+              {% for email in person.get_emails %}
+              <a href="mailto:{{ email }}" class="contact-email">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                {{ email }}
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+          {% if not forloop.last %}<div class="contact-person-divider"></div>{% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Outro -->
+    <div class="contact-outro">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      <p>We will be pleased to assist you and provide any additional information you may require.</p>
+    </div>
+
+  </div>
+
+</main>
+{% endblock %}

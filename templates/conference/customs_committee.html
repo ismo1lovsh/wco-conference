@@ -1,0 +1,95 @@
+{% extends "conference/base.html" %}
+{% load static %}
+
+{% block content %}
+<main>
+
+  <div class="page-banner">
+    <h2>About the Customs Committee</h2>
+  </div>
+
+  <div class="cc-intro">
+    <p><strong>Customs Committee</strong> – Transparency at its core, Economic Security.</p>
+  </div>
+
+  <div class="cc-section">
+    {% for obj in objects %}
+    <div class="cc-card {% if forloop.counter|divisibleby:2 %}cc-card--reverse{% endif %}">
+
+      <div class="cc-card-img">
+        {% if obj.image %}
+        <img src="{{ obj.image.url }}" alt="{{ obj.name }}" />
+        {% else %}
+        <div class="cc-card-img-placeholder">
+          <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+        </div>
+        {% endif %}
+        <div class="cc-card-img-overlay"></div>
+      </div>
+
+      <div class="cc-card-body">
+        <div class="cc-card-tag">Customs Committee</div>
+        <h3 class="cc-card-title">{{ obj.name }}</h3>
+        <div class="cc-card-divider"></div>
+        <p class="cc-card-text">{{ obj.description|truncatewords:30 }}</p>
+        <button class="cc-read-more-btn"
+                onclick="openModal('{{ obj.name|escapejs }}', '{{ obj.description|escapejs }}', '{% if obj.image %}{{ obj.image.url }}{% endif %}')">
+          Read more
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
+
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Modal -->
+  <div class="cc-modal-overlay" id="cc-modal-overlay" onclick="closeModal()">
+    <div class="cc-modal" onclick="event.stopPropagation()">
+      <button class="cc-modal-close" onclick="closeModal()">
+        <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+      <div class="cc-modal-inner">
+        <div class="cc-modal-img-wrap">
+          <img src="" alt="" id="cc-modal-img" />
+        </div>
+        <div class="cc-modal-content">
+          <div class="cc-card-tag">Customs Committee</div>
+          <h3 class="cc-modal-title" id="cc-modal-title"></h3>
+          <div class="cc-card-divider"></div>
+          <p class="cc-modal-text" id="cc-modal-text"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+function openModal(name, description, imageUrl) {
+  document.getElementById('cc-modal-title').textContent = name;
+  document.getElementById('cc-modal-text').textContent = description;
+  var img = document.getElementById('cc-modal-img');
+  var imgWrap = img.parentElement;
+  if (imageUrl) {
+    img.src = imageUrl;
+    img.alt = name;
+    imgWrap.style.display = 'block';
+  } else {
+    imgWrap.style.display = 'none';
+  }
+  document.getElementById('cc-modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('cc-modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+</script>
+
+{% endblock %}

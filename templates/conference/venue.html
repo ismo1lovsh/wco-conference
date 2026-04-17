@@ -1,0 +1,98 @@
+{% extends "conference/base.html" %}
+{% load static %}
+
+{% block content %}
+<main>
+
+  <div class="page-banner">
+    <h2>Conference Venue</h2>
+  </div>
+
+  <div class="venue-section">
+
+    {% for venue in venues %}
+    <div class="venue-card">
+
+      <!-- Sarlavha -->
+      <div class="venue-header">
+        <h2 class="venue-name">{{ venue.name }}</h2>
+        {% if venue.days.all %}
+        <div class="venue-days-tabs">
+          {% for day in venue.days.all %}
+          <button class="venue-day-tab {% if forloop.first %}active{% endif %}"
+                  onclick="switchVenueDay(event, 'vday{{ forloop.parentloop.counter }}-{{ forloop.counter }}')">
+            {{ day.day_label }}
+            {% if day.date %}<span>{{ day.date }}</span>{% endif %}
+          </button>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Rasm -->
+      {% if venue.image %}
+      <div class="venue-img-wrap">
+        <img src="{{ venue.image.url }}" alt="{{ venue.name }}" />
+      </div>
+      {% endif %}
+
+      <!-- Matn -->
+      {% if venue.subtitle %}
+      <h3 class="venue-subtitle">{{ venue.subtitle }}</h3>
+      {% endif %}
+
+      {% if venue.description %}
+      <div class="venue-description">
+        {{ venue.description|linebreaks }}
+      </div>
+      {% endif %}
+
+      <!-- Google Maps -->
+      {% if venue.google_maps_embed or venue.google_maps_url %}
+      <div class="venue-map-section">
+        <h3 class="venue-map-title">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Location
+        </h3>
+        {% if venue.google_maps_embed %}
+        <div class="venue-map-embed">
+          {{ venue.google_maps_embed|safe }}
+        </div>
+        {% endif %}
+        {% if venue.google_maps_url %}
+        <a href="{{ venue.google_maps_url }}" target="_blank" class="venue-map-btn">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Open in Google Maps
+        </a>
+        {% endif %}
+      </div>
+      {% endif %}
+
+    </div>
+
+    {% if not forloop.last %}
+    <div class="venue-divider"></div>
+    {% endif %}
+
+    {% empty %}
+    <div class="venue-empty">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <p>Venue information will be available soon.</p>
+    </div>
+    {% endfor %}
+
+  </div>
+
+</main>
+
+<script>
+function switchVenueDay(e, dayId) {
+  var card = e.target.closest('.venue-card');
+  card.querySelectorAll('.venue-day-tab').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  e.currentTarget.classList.add('active');
+}
+</script>
+
+{% endblock %}

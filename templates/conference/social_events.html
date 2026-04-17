@@ -1,0 +1,161 @@
+{% extends "conference/base.html" %}
+{% load static %}
+
+{% block content %}
+<main>
+
+  <div class="page-banner">
+    <h2>Social Events</h2>
+  </div>
+
+  <div class="se-section">
+
+    <!-- Chap o'q -->
+    <button class="se-arrow se-arrow--left" onclick="scrollEvents(-1)">
+      <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+    </button>
+
+    <!-- Scroll container -->
+    <div class="se-track" id="se-track">
+      {% for event in events %}
+      <div class="se-card">
+
+        <div class="se-card-img">
+          {% if event.image %}
+          <img src="{{ event.image.url }}" alt="{{ event.title }}" />
+          {% else %}
+          <div class="se-card-img-placeholder">
+            <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+          </div>
+          {% endif %}
+        </div>
+
+        <div class="se-card-body">
+          <div class="se-card-meta">
+            {% if event.date %}
+            <span class="se-meta-item">
+              <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm0 16H5V8h14v11z"/></svg>
+              {{ event.date }}
+            </span>
+            {% endif %}
+            {% if event.location %}
+            <span class="se-meta-item">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              {{ event.location }}
+            </span>
+            {% endif %}
+          </div>
+
+          <h3 class="se-card-title">{{ event.title }}</h3>
+          <div class="se-card-divider"></div>
+          <p class="se-card-text">{{ event.description|truncatewords:25 }}</p>
+
+          <button class="se-read-more-btn"
+                  onclick="openSeModal('{{ event.title|escapejs }}', '{{ event.description|escapejs }}', '{% if event.image %}{{ event.image.url }}{% endif %}', '{{ event.date|escapejs }}', '{{ event.location|escapejs }}')">
+            Read more
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+        </div>
+
+      </div>
+      {% empty %}
+      <div class="se-empty">
+        <p>Ma'lumot hali qo'shilmagan.</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- O'ng o'q -->
+    <button class="se-arrow se-arrow--right" onclick="scrollEvents(1)">
+      <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+    </button>
+
+    <!-- Dots -->
+    <div class="se-dots" id="se-dots">
+      {% for event in events %}
+      <button class="se-dot {% if forloop.first %}active{% endif %}"
+              onclick="goToEvent({{ forloop.counter0 }})"></button>
+      {% endfor %}
+    </div>
+
+  </div>
+
+  <!-- Modal -->
+  <div class="se-modal-overlay" id="se-modal-overlay" onclick="closeSeModal()">
+    <div class="se-modal" onclick="event.stopPropagation()">
+      <button class="se-modal-close" onclick="closeSeModal()">
+        <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+      <div class="se-modal-inner">
+        <div class="se-modal-img-wrap">
+          <img src="" alt="" id="se-modal-img" />
+        </div>
+        <div class="se-modal-content">
+          <div class="se-modal-meta" id="se-modal-meta"></div>
+          <h3 class="se-modal-title" id="se-modal-title"></h3>
+          <div class="se-card-divider"></div>
+          <p class="se-modal-text" id="se-modal-text"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+var track = document.getElementById('se-track');
+var cards = track ? track.querySelectorAll('.se-card') : [];
+var current = 0;
+
+function scrollEvents(dir) {
+  current = Math.max(0, Math.min(cards.length - 1, current + dir));
+  updateScroll();
+}
+
+function goToEvent(index) {
+  current = index;
+  updateScroll();
+}
+
+function updateScroll() {
+  if (!track || cards.length === 0) return;
+  var cardWidth = cards[0].offsetWidth + 32;
+  track.scrollTo({ left: current * cardWidth, behavior: 'smooth' });
+  document.querySelectorAll('.se-dot').forEach(function(d, i) {
+    d.classList.toggle('active', i === current);
+  });
+}
+
+function openSeModal(title, desc, imgUrl, date, location) {
+  document.getElementById('se-modal-title').textContent = title;
+  document.getElementById('se-modal-text').textContent = desc;
+  var img = document.getElementById('se-modal-img');
+  var imgWrap = img.parentElement;
+  if (imgUrl) {
+    img.src = imgUrl;
+    img.alt = title;
+    imgWrap.style.display = 'block';
+  } else {
+    imgWrap.style.display = 'none';
+  }
+  var meta = '';
+  if (date) meta += '<span class="se-meta-item">📅 ' + date + '</span>';
+  if (location) meta += '<span class="se-meta-item">📍 ' + location + '</span>';
+  document.getElementById('se-modal-meta').innerHTML = meta;
+  document.getElementById('se-modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSeModal() {
+  document.getElementById('se-modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeSeModal();
+  if (e.key === 'ArrowLeft') scrollEvents(-1);
+  if (e.key === 'ArrowRight') scrollEvents(1);
+});
+</script>
+
+{% endblock %}
