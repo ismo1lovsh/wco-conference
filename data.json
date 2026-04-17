@@ -1,0 +1,2211 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$VZtDfDwSooGhL8Fw2omINi$8DhCqAs1kLHzHvZ6SYszr0cuVMvR4wos/Ss3Hn0o2W0=",
+    "last_login": "2026-04-16T18:29:12.958Z",
+    "is_superuser": true,
+    "username": "adminwco",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-04-16T17:45:56.838Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "t5x2gscs5nh4tcf9tupeeicxjqoqqvob",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAUBf-FtSG3INC6dO83NNwHUjWQlHZl_HdD0oVuz8yct5rjvuV5b7LOC6uLGtTpd8NITykd8COWe9VUy7YuqLuiD9r0rbK8rof7d5Bjy70GMH4wZOicPHmUCWNimwDC6AYRD25CIEbnBJ23QAbF0ggTUwiM6vMF77o4fg:1wDRSi:yTfQ-CeAA1KQlRnAiDKkrDH6llyURmU_DaR_93K6n1I",
+    "expire_date": "2026-04-30T18:29:12.963Z"
+  }
+},
+{
+  "model": "conference.conferenceday",
+  "pk": 1,
+  "fields": {
+    "date": "2026-09-06",
+    "label": "6th",
+    "label_en": "6th",
+    "label_fr": "6",
+    "month": "SEP",
+    "month_en": "SEP",
+    "month_fr": "SEP",
+    "title": "Sunday 6 September 2026",
+    "title_en": "Sunday 6 September 2026",
+    "title_fr": "Dimanche, 6 septembre 2026",
+    "order": 1
+  }
+},
+{
+  "model": "conference.conferenceday",
+  "pk": 3,
+  "fields": {
+    "date": "2026-09-07",
+    "label": "7th",
+    "label_en": "7th",
+    "label_fr": "7",
+    "month": "SEP",
+    "month_en": "SEP",
+    "month_fr": "SEP",
+    "title": "Monday 7 September 2026",
+    "title_en": "Monday 7 September 2026",
+    "title_fr": "Lundi, 7 septembre 2026",
+    "order": 2
+  }
+},
+{
+  "model": "conference.conferenceday",
+  "pk": 4,
+  "fields": {
+    "date": "2026-09-08",
+    "label": "8th",
+    "label_en": "8th",
+    "label_fr": "8",
+    "month": "SEP",
+    "month_en": "SEP",
+    "month_fr": "SEP",
+    "title": "Tuesday 8 September 2026",
+    "title_en": "Tuesday 8 September 2026",
+    "title_fr": "Mardi 8 September 2026",
+    "order": 3
+  }
+},
+{
+  "model": "conference.conferenceday",
+  "pk": 5,
+  "fields": {
+    "date": "2026-09-09",
+    "label": "9th",
+    "label_en": "9th",
+    "label_fr": "9",
+    "month": "SEP",
+    "month_en": "SEP",
+    "month_fr": "SEP",
+    "title": "Wednesday, 9 September 2026",
+    "title_en": "Wednesday, 9 September 2026",
+    "title_fr": "Mercredi, 9 septembre 2026",
+    "order": 4
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 1,
+  "fields": {
+    "day": 1,
+    "time_start": "17:00",
+    "time_end": "17:45",
+    "session_text": "Cocktail reception / Registration",
+    "session_text_en": "Cocktail reception / Registration",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "normal",
+    "rowspan": 1,
+    "order": 1
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 2,
+  "fields": {
+    "day": 1,
+    "time_start": "17:45",
+    "time_end": "",
+    "session_text": "Welcome remarks",
+    "session_text_en": "Welcome remarks",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "normal",
+    "rowspan": 1,
+    "order": 2
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 7,
+  "fields": {
+    "day": 3,
+    "time_start": "09:00",
+    "time_end": "",
+    "session_text": "Sign-in / Registration",
+    "session_text_en": "Sign-in / Registration",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "normal",
+    "rowspan": 1,
+    "order": 1
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 8,
+  "fields": {
+    "day": 3,
+    "time_start": "09:30",
+    "time_end": "10:30",
+    "session_text": "Opening of the 7th WCO Global Canine Forum",
+    "session_text_en": "Opening of the 7th WCO Global Canine Forum",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "normal",
+    "rowspan": 3,
+    "order": 2
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 9,
+  "fields": {
+    "day": 3,
+    "time_start": "",
+    "time_end": "",
+    "session_text": "Welcome Speeches and Keynote addresses by Heads of Hosting Administration and Executives of the WCO",
+    "session_text_en": "Welcome Speeches and Keynote addresses by Heads of Hosting Administration and Executives of the WCO",
+    "session_text_fr": null,
+    "sub_items": "High-level government official of the host country (TBC)\r\nAkmalkhuja Mavlonov, Chairman of Customs Committee of Uzbekistan\r\nIan Saunders, WCO Secretary General (or Representative)",
+    "sub_items_en": "High-level government official of the host country (TBC)\r\nAkmalkhuja Mavlonov, Chairman of Customs Committee of Uzbekistan\r\nIan Saunders, WCO Secretary General (or Representative)",
+    "sub_items_fr": null,
+    "style": "normal",
+    "rowspan": 1,
+    "order": 3
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 10,
+  "fields": {
+    "day": 3,
+    "time_start": "",
+    "time_end": "",
+    "session_text": "Group Photo",
+    "session_text_en": "Group Photo",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "normal",
+    "rowspan": 1,
+    "order": 4
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 11,
+  "fields": {
+    "day": 3,
+    "time_start": "10:30",
+    "time_end": "10:45",
+    "session_text": "Coffee Break",
+    "session_text_en": "Coffee Break",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "break_1",
+    "rowspan": 1,
+    "order": 5
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 12,
+  "fields": {
+    "day": 3,
+    "time_start": "Topic 1:",
+    "time_end": "",
+    "session_text": "WCO Canine Programme",
+    "session_text_en": "WCO Canine Programme",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "break_2",
+    "rowspan": 1,
+    "order": 6
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 13,
+  "fields": {
+    "day": 3,
+    "time_start": "10:45",
+    "time_end": "11:15",
+    "session_text": "Updates",
+    "session_text_en": "Updates",
+    "session_text_fr": null,
+    "sub_items": "Speaker: WCO Representative",
+    "sub_items_en": "Speaker: WCO Representative",
+    "sub_items_fr": null,
+    "style": "normal",
+    "rowspan": 1,
+    "order": 7
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 14,
+  "fields": {
+    "day": 3,
+    "time_start": "11:15",
+    "time_end": "11:45",
+    "session_text": "Sharing of Success Stories",
+    "session_text_en": "Sharing of Success Stories",
+    "session_text_fr": null,
+    "sub_items": "Speaker: Uzbekistan Canine centre",
+    "sub_items_en": "Speaker: Uzbekistan Canine centre",
+    "sub_items_fr": null,
+    "style": "normal",
+    "rowspan": 1,
+    "order": 8
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 15,
+  "fields": {
+    "day": 3,
+    "time_start": "11:45",
+    "time_end": "12:15",
+    "session_text": "WCO Regional Dog Training Centre Accreditation Standards",
+    "session_text_en": "WCO Regional Dog Training Centre Accreditation Standards",
+    "session_text_fr": null,
+    "sub_items": "Speaker: WCO Representative",
+    "sub_items_en": "Speaker: WCO Representative",
+    "sub_items_fr": null,
+    "style": "normal",
+    "rowspan": 1,
+    "order": 9
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 16,
+  "fields": {
+    "day": 3,
+    "time_start": "12:15",
+    "time_end": "13:00",
+    "session_text": "Outcome and Deliverables of the Synthetic Drugs Detection Project on Canine Component (Regional and National Trainings and Canine regional meetings and forums)",
+    "session_text_en": "Outcome and Deliverables of the Synthetic Drugs Detection Project on Canine Component (Regional and National Trainings and Canine regional meetings and forums)",
+    "session_text_fr": null,
+    "sub_items": "Speaker: WCO Representative",
+    "sub_items_en": "Speaker: WCO Representative",
+    "sub_items_fr": null,
+    "style": "normal",
+    "rowspan": 1,
+    "order": 10
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 17,
+  "fields": {
+    "day": 3,
+    "time_start": "13:00",
+    "time_end": "14:00",
+    "session_text": "Working Lunch hosted by the Uzbekistan Customs",
+    "session_text_en": "Working Lunch hosted by the Uzbekistan Customs",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "break_1",
+    "rowspan": 1,
+    "order": 11
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 18,
+  "fields": {
+    "day": 3,
+    "time_start": "Topic 2:",
+    "time_end": "",
+    "session_text": "New trends, challenges, and opportunities for canine units",
+    "session_text_en": "New trends, challenges, and opportunities for canine units",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "normal",
+    "rowspan": 1,
+    "order": 12
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 19,
+  "fields": {
+    "day": 3,
+    "time_start": "14:00",
+    "time_end": "15:30",
+    "session_text": "Speaker:",
+    "session_text_en": "Speaker:",
+    "session_text_fr": null,
+    "sub_items": "No more than 3",
+    "sub_items_en": "No more than 3",
+    "sub_items_fr": null,
+    "style": "normal",
+    "rowspan": 1,
+    "order": 13
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 20,
+  "fields": {
+    "day": 3,
+    "time_start": "15:30",
+    "time_end": "15:45",
+    "session_text": "Coffee Break",
+    "session_text_en": "Coffee Break",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "break_1",
+    "rowspan": 1,
+    "order": 14
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 21,
+  "fields": {
+    "day": 3,
+    "time_start": "15:45",
+    "time_end": "17:00",
+    "session_text": "Continuation of Topic 2",
+    "session_text_en": "Continuation of Topic 2",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "normal",
+    "rowspan": 1,
+    "order": 15
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 22,
+  "fields": {
+    "day": 3,
+    "time_start": "17:00",
+    "time_end": "",
+    "session_text": "End of Day 1",
+    "session_text_en": "End of Day 1",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "normal",
+    "rowspan": 1,
+    "order": 16
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 23,
+  "fields": {
+    "day": 3,
+    "time_start": "18:30",
+    "time_end": "21:30",
+    "session_text": "Gala dinner hosted by the Uzbekistan Customs",
+    "session_text_en": "Gala dinner hosted by the Uzbekistan Customs",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "break_3",
+    "rowspan": 1,
+    "order": 17
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 24,
+  "fields": {
+    "day": 4,
+    "time_start": "Topic 3:",
+    "time_end": "",
+    "session_text": "Getting the Most from Your Canine Teams in Operational Environments",
+    "session_text_en": "Getting the Most from Your Canine Teams in Operational Environments",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "break_2",
+    "rowspan": 1,
+    "order": 1
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 25,
+  "fields": {
+    "day": 4,
+    "time_start": "09:00",
+    "time_end": "10:30",
+    "session_text": "Speaker:",
+    "session_text_en": "Speaker:",
+    "session_text_fr": null,
+    "sub_items": "No more than 3",
+    "sub_items_en": "No more than 3",
+    "sub_items_fr": null,
+    "style": "normal",
+    "rowspan": 1,
+    "order": 2
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 26,
+  "fields": {
+    "day": 4,
+    "time_start": "10:30",
+    "time_end": "11:00",
+    "session_text": "Coffee Break",
+    "session_text_en": "Coffee Break",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "break_1",
+    "rowspan": 1,
+    "order": 3
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 27,
+  "fields": {
+    "day": 4,
+    "time_start": "Topic 4:",
+    "time_end": "",
+    "session_text": "The Science Behind Canine Detection Capabilities. The Pros and Cons of Alternative Training Materials",
+    "session_text_en": "The Science Behind Canine Detection Capabilities. The Pros and Cons of Alternative Training Materials",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "break_2",
+    "rowspan": 1,
+    "order": 4
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 28,
+  "fields": {
+    "day": 4,
+    "time_start": "11:00",
+    "time_end": "12:30",
+    "session_text": "Speaker:",
+    "session_text_en": "Speaker:",
+    "session_text_fr": null,
+    "sub_items": "No more than 3",
+    "sub_items_en": "No more than 3",
+    "sub_items_fr": null,
+    "style": "normal",
+    "rowspan": 1,
+    "order": 5
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 29,
+  "fields": {
+    "day": 4,
+    "time_start": "12:30",
+    "time_end": "14:00",
+    "session_text": "Working Lunch hosted by the Uzbekistan Customs",
+    "session_text_en": "Working Lunch hosted by the Uzbekistan Customs",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "break_1",
+    "rowspan": 1,
+    "order": 6
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 30,
+  "fields": {
+    "day": 4,
+    "time_start": "14:00",
+    "time_end": "17:30",
+    "session_text": "Visit to Uzbekistan Canine Centre",
+    "session_text_en": "Visit to Uzbekistan Canine Centre",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "break_3",
+    "rowspan": 1,
+    "order": 7
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 31,
+  "fields": {
+    "day": 5,
+    "time_start": "Topic 5:",
+    "time_end": "",
+    "session_text": "WCO Best Practice Compendiums for Canine Programmes: Best Practices and Guidelines",
+    "session_text_en": "WCO Best Practice Compendiums for Canine Programmes: Best Practices and Guidelines",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "break_2",
+    "rowspan": 1,
+    "order": 1
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 32,
+  "fields": {
+    "day": 5,
+    "time_start": "09:00",
+    "time_end": "12:00",
+    "session_text": "Compendium Break-Out Sessions",
+    "session_text_en": "Compendium Break-Out Sessions",
+    "session_text_fr": null,
+    "sub_items": "Compendium on Animal Welfare: Administration-in-charge\r\nCompendium on Breeding: Administration-in-charge\r\nCompendium on Canine Development: Administration-in-charge\r\nCompendium on Procurement: Administration-in-charge\r\nCompendium on Operational Deployment: Administration-in-charge\r\nCompendium on Training: Administration-in-charge\r\nCompendium on Governance: Administration-in-charge\r\nCompendium on Infrastructure: Administration-in-charge\r\nCompendium on Information Technology: Administration-in-charge\r\nCompendium on Innovation: Administration-in-charge",
+    "sub_items_en": "Compendium on Animal Welfare: Administration-in-charge\r\nCompendium on Breeding: Administration-in-charge\r\nCompendium on Canine Development: Administration-in-charge\r\nCompendium on Procurement: Administration-in-charge\r\nCompendium on Operational Deployment: Administration-in-charge\r\nCompendium on Training: Administration-in-charge\r\nCompendium on Governance: Administration-in-charge\r\nCompendium on Infrastructure: Administration-in-charge\r\nCompendium on Information Technology: Administration-in-charge\r\nCompendium on Innovation: Administration-in-charge",
+    "sub_items_fr": null,
+    "style": "normal",
+    "rowspan": 1,
+    "order": 2
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 33,
+  "fields": {
+    "day": 5,
+    "time_start": "12:00",
+    "time_end": "12:30",
+    "session_text": "Official closing ceremony of the 7th Global K9 Forum",
+    "session_text_en": "Official closing ceremony of the 7th Global K9 Forum",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "break_3",
+    "rowspan": 1,
+    "order": 3
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 34,
+  "fields": {
+    "day": 5,
+    "time_start": "12:30",
+    "time_end": "14:00",
+    "session_text": "Lunch hosted by the Uzbekistan Customs",
+    "session_text_en": "Lunch hosted by the Uzbekistan Customs",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "break_1",
+    "rowspan": 1,
+    "order": 4
+  }
+},
+{
+  "model": "conference.agendasession",
+  "pk": 35,
+  "fields": {
+    "day": 5,
+    "time_start": "14:00",
+    "time_end": "18:00",
+    "session_text": "Visit to cultural objects of Tashkent (sightseeing)",
+    "session_text_en": "Visit to cultural objects of Tashkent (sightseeing)",
+    "session_text_fr": null,
+    "sub_items": "",
+    "sub_items_en": "",
+    "sub_items_fr": null,
+    "style": "break_3",
+    "rowspan": 1,
+    "order": 5
+  }
+},
+{
+  "model": "conference.speakergroup",
+  "pk": 1,
+  "fields": {
+    "title": "Honourable Guests of the Opening Ceremony",
+    "title_en": "Honourable Guests of the Opening Ceremony",
+    "title_fr": "Honourable Guests of the Opening Ceremony",
+    "order": 1
+  }
+},
+{
+  "model": "conference.speakergroup",
+  "pk": 2,
+  "fields": {
+    "title": "Speakers",
+    "title_en": "Speakers",
+    "title_fr": "Speakers",
+    "order": 2
+  }
+},
+{
+  "model": "conference.speaker",
+  "pk": 1,
+  "fields": {
+    "group": 1,
+    "name": "Akmalkhuja Mavlonov",
+    "name_en": "Akmalkhuja Mavlonov",
+    "name_fr": "Akmalkhuja Mavlonov",
+    "title": "Chairman of the Customs Committee of the Republic of Uzbekistan",
+    "title_en": "Chairman of the Customs Committee of the Republic of Uzbekistan",
+    "title_fr": "Chairman of the Customs Committee of the Republic of Uzbekistan",
+    "organization": "Customs Committee of the Republic of Uzbekistan",
+    "organization_en": "Customs Committee of the Republic of Uzbekistan",
+    "organization_fr": "Customs Committee of the Republic of Uzbekistan",
+    "bio": "Akmalkhoja Yusupovich Mavlonov (born May 12, 1975, Quva District, Fergana Region, Uzbek SSR) is an Uzbek statesman, Major General of the Customs Service of the Republic of Uzbekistan, as well as a legal expert and economist. Since 2021, he has been serving as the Chairman of the Customs Committee of the Republic of Uzbekistan.",
+    "bio_en": "Akmalkhoja Yusupovich Mavlonov (born May 12, 1975, Quva District, Fergana Region, Uzbek SSR) is an Uzbek statesman, Major General of the Customs Service of the Republic of Uzbekistan, as well as a legal expert and economist. Since 2021, he has been serving as the Chairman of the Customs Committee of the Republic of Uzbekistan.",
+    "bio_fr": "Akmalkhoja Yusupovich Mavlonov (born May 12, 1975, Quva District, Fergana Region, Uzbek SSR) is an Uzbek statesman, Major General of the Customs Service of the Republic of Uzbekistan, as well as a legal expert and economist. Since 2021, he has been serving as the Chairman of the Customs Committee of the Republic of Uzbekistan.",
+    "photo": "speakers/Akmalxoʻja_Mavlonov.jpg",
+    "order": 1
+  }
+},
+{
+  "model": "conference.speaker",
+  "pk": 2,
+  "fields": {
+    "group": 1,
+    "name": "Adminstratsiya mehmoni",
+    "name_en": "Adminstratsiya mehmoni",
+    "name_fr": null,
+    "title": "",
+    "title_en": null,
+    "title_fr": null,
+    "organization": "",
+    "organization_en": null,
+    "organization_fr": null,
+    "bio": "",
+    "bio_en": null,
+    "bio_fr": null,
+    "photo": "speakers/canine.png",
+    "order": 2
+  }
+},
+{
+  "model": "conference.speaker",
+  "pk": 3,
+  "fields": {
+    "group": 1,
+    "name": "Ian Saunders",
+    "name_en": "Ian Saunders",
+    "name_fr": "Ian Saunders",
+    "title": "Secretary General",
+    "title_en": "Secretary General",
+    "title_fr": "Secretary General",
+    "organization": "World Customs Organisation",
+    "organization_en": "World Customs Organisation",
+    "organization_fr": "World Customs Organisation",
+    "bio": "Ian Saunders is an American customs and trade policy leader who became Secretary General of the World Customs Organization (WCO) in January 2024. With more than three decades in international relations, he is known for advancing global customs modernization and promoting inclusive, rules-based trade cooperation.\r\n\r\nKey facts\r\nPosition: Secretary General, World Customs Organization (since 2024)\r\n\r\nNationality: United States\r\n\r\nEducation: Georgetown University; executive programs at Harvard Kennedy School and American University\r\n\r\nPrior roles: Deputy Assistant Secretary, U.S. Department of Commerce; senior executive, U.S. Customs and Border Protection\r\n\r\nExperience: 30+ years in customs, trade, and international policy\r\n\r\nCareer and background\r\nBefore his election, Saunders served as Deputy Assistant Secretary for the Western Hemisphere at the U.S. Department of Commerce’s International Trade Administration. There, he led programs and strategies to strengthen U.S. commercial partnerships across the Americas. Earlier, at U.S. Customs and Border Protection, he held senior posts including Assistant Commissioner for International Affairs and Acting Deputy Executive Assistant Commissioner for Operations Support. He joined the U.S. Senior Executive Service in 2008. \r\n\r\nLeadership at the World Customs Organization\r\nElected in June 2023 and assuming office in January 2024, Saunders heads the WCO’s efforts to secure and facilitate global trade, protect revenue, and modernize customs operations worldwide. His priorities include balancing tradition with innovation, promoting transparency and inclusivity, and strengthening global supply-chain resilience amid climate, health, and digital challenges. \r\n\r\nVision and impact\r\nSaunders emphasizes cooperative border management, technological innovation, and diverse participation across the WCO’s 185 member administrations. Drawing on his long-standing work on frameworks such as the SAFE Framework of Standards, he advocates pragmatic governance that aligns customs modernization with security and sustainable development goals.",
+    "bio_en": "Ian Saunders is an American customs and trade policy leader who became Secretary General of the World Customs Organization (WCO) in January 2024. With more than three decades in international relations, he is known for advancing global customs modernization and promoting inclusive, rules-based trade cooperation.\r\n\r\nKey facts\r\nPosition: Secretary General, World Customs Organization (since 2024)\r\n\r\nNationality: United States\r\n\r\nEducation: Georgetown University; executive programs at Harvard Kennedy School and American University\r\n\r\nPrior roles: Deputy Assistant Secretary, U.S. Department of Commerce; senior executive, U.S. Customs and Border Protection\r\n\r\nExperience: 30+ years in customs, trade, and international policy\r\n\r\nCareer and background\r\nBefore his election, Saunders served as Deputy Assistant Secretary for the Western Hemisphere at the U.S. Department of Commerce’s International Trade Administration. There, he led programs and strategies to strengthen U.S. commercial partnerships across the Americas. Earlier, at U.S. Customs and Border Protection, he held senior posts including Assistant Commissioner for International Affairs and Acting Deputy Executive Assistant Commissioner for Operations Support. He joined the U.S. Senior Executive Service in 2008. \r\n\r\nLeadership at the World Customs Organization\r\nElected in June 2023 and assuming office in January 2024, Saunders heads the WCO’s efforts to secure and facilitate global trade, protect revenue, and modernize customs operations worldwide. His priorities include balancing tradition with innovation, promoting transparency and inclusivity, and strengthening global supply-chain resilience amid climate, health, and digital challenges. \r\n\r\nVision and impact\r\nSaunders emphasizes cooperative border management, technological innovation, and diverse participation across the WCO’s 185 member administrations. Drawing on his long-standing work on frameworks such as the SAFE Framework of Standards, he advocates pragmatic governance that aligns customs modernization with security and sustainable development goals.",
+    "bio_fr": "Ian Saunders is an American customs and trade policy leader who became Secretary General of the World Customs Organization (WCO) in January 2024. With more than three decades in international relations, he is known for advancing global customs modernization and promoting inclusive, rules-based trade cooperation.\r\n\r\nKey facts\r\nPosition: Secretary General, World Customs Organization (since 2024)\r\n\r\nNationality: United States\r\n\r\nEducation: Georgetown University; executive programs at Harvard Kennedy School and American University\r\n\r\nPrior roles: Deputy Assistant Secretary, U.S. Department of Commerce; senior executive, U.S. Customs and Border Protection\r\n\r\nExperience: 30+ years in customs, trade, and international policy\r\n\r\nCareer and background\r\nBefore his election, Saunders served as Deputy Assistant Secretary for the Western Hemisphere at the U.S. Department of Commerce’s International Trade Administration. There, he led programs and strategies to strengthen U.S. commercial partnerships across the Americas. Earlier, at U.S. Customs and Border Protection, he held senior posts including Assistant Commissioner for International Affairs and Acting Deputy Executive Assistant Commissioner for Operations Support. He joined the U.S. Senior Executive Service in 2008. \r\n\r\nLeadership at the World Customs Organization\r\nElected in June 2023 and assuming office in January 2024, Saunders heads the WCO’s efforts to secure and facilitate global trade, protect revenue, and modernize customs operations worldwide. His priorities include balancing tradition with innovation, promoting transparency and inclusivity, and strengthening global supply-chain resilience amid climate, health, and digital challenges. \r\n\r\nVision and impact\r\nSaunders emphasizes cooperative border management, technological innovation, and diverse participation across the WCO’s 185 member administrations. Drawing on his long-standing work on frameworks such as the SAFE Framework of Standards, he advocates pragmatic governance that aligns customs modernization with security and sustainable development goals.",
+    "photo": "speakers/ian-saunders.png",
+    "order": 3
+  }
+},
+{
+  "model": "conference.speaker",
+  "pk": 4,
+  "fields": {
+    "group": 2,
+    "name": "Full Name",
+    "name_en": "Full Name",
+    "name_fr": null,
+    "title": "",
+    "title_en": null,
+    "title_fr": null,
+    "organization": "",
+    "organization_en": null,
+    "organization_fr": null,
+    "bio": "",
+    "bio_en": null,
+    "bio_fr": null,
+    "photo": "speakers/canine_C9BaVVJ.png",
+    "order": 1
+  }
+},
+{
+  "model": "conference.speaker",
+  "pk": 5,
+  "fields": {
+    "group": 2,
+    "name": "Full Name",
+    "name_en": "Full Name",
+    "name_fr": null,
+    "title": "",
+    "title_en": null,
+    "title_fr": null,
+    "organization": "",
+    "organization_en": null,
+    "organization_fr": null,
+    "bio": "",
+    "bio_en": null,
+    "bio_fr": null,
+    "photo": "speakers/canine_zM8t291.png",
+    "order": 2
+  }
+},
+{
+  "model": "conference.speaker",
+  "pk": 6,
+  "fields": {
+    "group": 2,
+    "name": "Full Name",
+    "name_en": "Full Name",
+    "name_fr": null,
+    "title": "",
+    "title_en": null,
+    "title_fr": null,
+    "organization": "",
+    "organization_en": null,
+    "organization_fr": null,
+    "bio": "",
+    "bio_en": null,
+    "bio_fr": null,
+    "photo": "speakers/canine_xvm2gUt.png",
+    "order": 3
+  }
+},
+{
+  "model": "conference.speaker",
+  "pk": 7,
+  "fields": {
+    "group": 2,
+    "name": "Full Name",
+    "name_en": "Full Name",
+    "name_fr": null,
+    "title": "",
+    "title_en": null,
+    "title_fr": null,
+    "organization": "",
+    "organization_en": null,
+    "organization_fr": null,
+    "bio": "",
+    "bio_en": null,
+    "bio_fr": null,
+    "photo": "speakers/canine_3r3HKBH.png",
+    "order": 4
+  }
+},
+{
+  "model": "conference.customsobject",
+  "pk": 1,
+  "fields": {
+    "name": "Central Office",
+    "name_en": "Central Office",
+    "name_fr": "“Markaziy apparat” ning rasmiy fransuzcha tarjimasi:  **Appareil central**",
+    "description": "An authorized law enforcement body in the field of customs administration under the Ministry of Finance of the Republic of Uzbekistan. Its main functions include ensuring compliance with customs legislation, maintaining statistics on foreign trade and cross-border movement of goods, and combating smuggling.",
+    "description_en": "An authorized law enforcement body in the field of customs administration under the Ministry of Finance of the Republic of Uzbekistan. Its main functions include ensuring compliance with customs legislation, maintaining statistics on foreign trade and cross-border movement of goods, and combating smuggling.",
+    "description_fr": "**Un organe chargé de l’application de la loi, compétent dans le domaine de l’administration douanière, placé sous l’autorité du Ministère des Finances de la République d’Ouzbékistan. Ses principales missions consistent à assurer le respect de la législation douanière, à tenir les statistiques du commerce extérieur et de la circulation transfrontalière des marchandises, ainsi qu’à lutter contre la contrebande.**",
+    "image": "customs_objects/6IqfUjFC77ZrBfaimJV52ZXiVf7W5-eL.jpeg",
+    "order": 0
+  }
+},
+{
+  "model": "conference.customsobject",
+  "pk": 2,
+  "fields": {
+    "name": "The National Canine Center of the State Customs Committee",
+    "name_en": "The National Canine Center of the State Customs Committee",
+    "name_fr": "The National Canine Center of the State Customs Committee",
+    "description": "The canine service of the State Customs Committee was established in October 1993. The National Canine Center, founded on October 24, 1996, by a resolution of the Cabinet of Ministers, serves as the main institution for training canine specialists and service dogs.**\r\n\r\nThe Center provides methodological support to customs and other law enforcement agencies, conducts initial and advanced training for canine handlers, and is responsible for breeding, selecting, and training service dogs.\r\n\r\nLocated in the Sergeli district of Tashkent, the Center features modern facilities, including training grounds, a kennel, a veterinary unit, and educational departments equipped for both theoretical and practical instruction.\r\n\r\nService dogs are trained in key areas such as narcotics detection, explosives and weapons detection, counter-terrorism, tracking, protection, and search-and-rescue operations. Work is also underway to train dogs in detecting foreign currency.\r\n\r\nThe Center maintains an automated information system for monitoring canine operations and uses electronic microchipping to manage detailed data on each service dog.\r\n\r\nIts specialists regularly exchange experience with international partners, and the Center also provides training for foreign canine service representatives. To date, more than 30 training manuals have been developed.\r\n\r\nIn 2008, the Center was granted the status of a Regional Canine Center by the World Customs Organization, confirming its compliance with international standards. Its activities have been highly evaluated by international experts.\r\n\r\nService dogs trained at the Center have played a significant role in detecting illegal trafficking of narcotics, psychotropic substances, weapons, and ammunition.",
+    "description_en": "The canine service of the State Customs Committee was established in October 1993. The National Canine Center, founded on October 24, 1996, by a resolution of the Cabinet of Ministers, serves as the main institution for training canine specialists and service dogs.**\r\n\r\nThe Center provides methodological support to customs and other law enforcement agencies, conducts initial and advanced training for canine handlers, and is responsible for breeding, selecting, and training service dogs.\r\n\r\nLocated in the Sergeli district of Tashkent, the Center features modern facilities, including training grounds, a kennel, a veterinary unit, and educational departments equipped for both theoretical and practical instruction.\r\n\r\nService dogs are trained in key areas such as narcotics detection, explosives and weapons detection, counter-terrorism, tracking, protection, and search-and-rescue operations. Work is also underway to train dogs in detecting foreign currency.\r\n\r\nThe Center maintains an automated information system for monitoring canine operations and uses electronic microchipping to manage detailed data on each service dog.\r\n\r\nIts specialists regularly exchange experience with international partners, and the Center also provides training for foreign canine service representatives. To date, more than 30 training manuals have been developed.\r\n\r\nIn 2008, the Center was granted the status of a Regional Canine Center by the World Customs Organization, confirming its compliance with international standards. Its activities have been highly evaluated by international experts.\r\n\r\nService dogs trained at the Center have played a significant role in detecting illegal trafficking of narcotics, psychotropic substances, weapons, and ammunition.",
+    "description_fr": "The National Canine Center of the State Customs Committee",
+    "image": "customs_objects/9B9A1116-1500x1000.jpg",
+    "order": 0
+  }
+},
+{
+  "model": "conference.customsobject",
+  "pk": 3,
+  "fields": {
+    "name": "Customs Institute",
+    "name_en": "Customs Institute",
+    "name_fr": "Customs Institute",
+    "description": "The Customs Institute of the State Customs Committee of the Republic of Uzbekistan (established in 2003) is a higher military educational institution that trains highly qualified officers for customs authorities.\r\n\r\nEducation at the Institute is conducted on a full-time basis under state grants, with cadets provided with free uniforms, meals, and stipends.\r\n\r\nKey information about the Institute:\r\n\r\nStatus: Higher military educational institution;\r\nLocation: Tashkent, Qatortol Street;\r\nField of study: Primarily Bachelor’s degree programs in “Customs Affairs”;\r\nAdmission process: Includes preliminary selection (documents review, medical examination, physical fitness assessment) and specialized entrance examinations;\r\nBenefits: Cadets receive free uniforms, meals, and financial support during their studies;\r\nActivities: The academic process emphasizes international customs standards, analytical thinking, and the acquisition of modern knowledge.",
+    "description_en": "The Customs Institute of the State Customs Committee of the Republic of Uzbekistan (established in 2003) is a higher military educational institution that trains highly qualified officers for customs authorities.\r\n\r\nEducation at the Institute is conducted on a full-time basis under state grants, with cadets provided with free uniforms, meals, and stipends.\r\n\r\nKey information about the Institute:\r\n\r\nStatus: Higher military educational institution;\r\nLocation: Tashkent, Qatortol Street;\r\nField of study: Primarily Bachelor’s degree programs in “Customs Affairs”;\r\nAdmission process: Includes preliminary selection (documents review, medical examination, physical fitness assessment) and specialized entrance examinations;\r\nBenefits: Cadets receive free uniforms, meals, and financial support during their studies;\r\nActivities: The academic process emphasizes international customs standards, analytical thinking, and the acquisition of modern knowledge.",
+    "description_fr": "The Customs Institute of the State Customs Committee of the Republic of Uzbekistan (established in 2003) is a higher military educational institution that trains highly qualified officers for customs authorities.\r\n\r\nEducation at the Institute is conducted on a full-time basis under state grants, with cadets provided with free uniforms, meals, and stipends.\r\n\r\nKey information about the Institute:\r\n\r\nStatus: Higher military educational institution;\r\nLocation: Tashkent, Qatortol Street;\r\nField of study: Primarily Bachelor’s degree programs in “Customs Affairs”;\r\nAdmission process: Includes preliminary selection (documents review, medical examination, physical fitness assessment) and specialized entrance examinations;\r\nBenefits: Cadets receive free uniforms, meals, and financial support during their studies;\r\nActivities: The academic process emphasizes international customs standards, analytical thinking, and the acquisition of modern knowledge.",
+    "image": "customs_objects/orig.jpg",
+    "order": 0
+  }
+},
+{
+  "model": "conference.customsobject",
+  "pk": 4,
+  "fields": {
+    "name": "Customs border post",
+    "name_en": "Customs border post",
+    "name_fr": "Cuistoms border post",
+    "description": "A customs post is a unit of the customs authority empowered to carry out full-scale customs clearance and customs control at a specific location or within a designated area. It does not have the status of a legal entity.\r\n\r\nA customs post is usually located away from the main customs administration and operates within the jurisdiction of a subordinate customs authority. Its activities typically cover one or two districts of a region, as well as transport infrastructure facilities such as small river ports, airports, and railway stations. Customs posts are established at nearly every border crossing along the state frontier. They may also be set up within large industrial enterprises.\r\n\r\nA customs post is primarily responsible for the inspection and clearance of goods.\r\n\r\nThe structure of a customs post includes the head of the post and divisions organized on a territorial basis. The divisions’ staff typically consists of a division head, a senior customs service inspector, senior inspectors, and inspectors.",
+    "description_en": "A customs post is a unit of the customs authority empowered to carry out full-scale customs clearance and customs control at a specific location or within a designated area. It does not have the status of a legal entity.\r\n\r\nA customs post is usually located away from the main customs administration and operates within the jurisdiction of a subordinate customs authority. Its activities typically cover one or two districts of a region, as well as transport infrastructure facilities such as small river ports, airports, and railway stations. Customs posts are established at nearly every border crossing along the state frontier. They may also be set up within large industrial enterprises.\r\n\r\nA customs post is primarily responsible for the inspection and clearance of goods.\r\n\r\nThe structure of a customs post includes the head of the post and divisions organized on a territorial basis. The divisions’ staff typically consists of a division head, a senior customs service inspector, senior inspectors, and inspectors.",
+    "description_fr": "A customs post is a unit of the customs authority empowered to carry out full-scale customs clearance and customs control at a specific location or within a designated area. It does not have the status of a legal entity.\r\n\r\nA customs post is usually located away from the main customs administration and operates within the jurisdiction of a subordinate customs authority. Its activities typically cover one or two districts of a region, as well as transport infrastructure facilities such as small river ports, airports, and railway stations. Customs posts are established at nearly every border crossing along the state frontier. They may also be set up within large industrial enterprises.\r\n\r\nA customs post is primarily responsible for the inspection and clearance of goods.\r\n\r\nThe structure of a customs post includes the head of the post and divisions organized on a territorial basis. The divisions’ staff typically consists of a division head, a senior customs service inspector, senior inspectors, and inspectors.",
+    "image": "customs_objects/04TzEM16336234794803_b.jpg",
+    "order": 0
+  }
+},
+{
+  "model": "conference.socialevent",
+  "pk": 1,
+  "fields": {
+    "title": "Center for Islamic Civilization",
+    "title_en": "Center for Islamic Civilization",
+    "title_fr": "Centre de la civilisation islamique",
+    "description": "The Center for Islamic Civilization in Uzbekistan under the Cabinet of Ministers of the Republic of Uzbekistan (Arabic: مركز الحضارة الإسلامية في أوزبكستان لدى مجلس الوزراء لجمهورية أوزبكستان; English: Center of Islamic Civilization in Uzbekistan under the Cabinet of Ministers of the Republic of Uzbekistan) is a research institution in Uzbekistan engaged in scientific studies related to Islamic history.\r\n\r\nOn March 17, 2026, under the leadership of Shavkat Mirziyoyev, on the eve of Eid al-Fitr, the official opening ceremony of the Center was held. On April 13, 2026, it was included in the Guinness World Records in the category of “the largest Islamic civilization museum.”\r\n\r\nHistory\r\n\r\nThe Center for Islamic Civilization in Uzbekistan was established in accordance with the Presidential Decree of the Republic of Uzbekistan dated July 23, 2017, issued by Shavkat Mirziyoyev. Over more than eight years, this large complex was constructed and fully completed. On March 17, 2026, on the eve of Eid al-Fitr, the Center was officially inaugurated.",
+    "description_en": "The Center for Islamic Civilization in Uzbekistan under the Cabinet of Ministers of the Republic of Uzbekistan (Arabic: مركز الحضارة الإسلامية في أوزبكستان لدى مجلس الوزراء لجمهورية أوزبكستان; English: Center of Islamic Civilization in Uzbekistan under the Cabinet of Ministers of the Republic of Uzbekistan) is a research institution in Uzbekistan engaged in scientific studies related to Islamic history.\r\n\r\nOn March 17, 2026, under the leadership of Shavkat Mirziyoyev, on the eve of Eid al-Fitr, the official opening ceremony of the Center was held. On April 13, 2026, it was included in the Guinness World Records in the category of “the largest Islamic civilization museum.”\r\n\r\nHistory\r\n\r\nThe Center for Islamic Civilization in Uzbekistan was established in accordance with the Presidential Decree of the Republic of Uzbekistan dated July 23, 2017, issued by Shavkat Mirziyoyev. Over more than eight years, this large complex was constructed and fully completed. On March 17, 2026, on the eve of Eid al-Fitr, the Center was officially inaugurated.",
+    "description_fr": "The Center for Islamic Civilization in Uzbekistan under the Cabinet of Ministers of the Republic of Uzbekistan (Arabic: مركز الحضارة الإسلامية في أوزبكستان لدى مجلس الوزراء لجمهورية أوزبكستان; English: Center of Islamic Civilization in Uzbekistan under the Cabinet of Ministers of the Republic of Uzbekistan) is a research institution in Uzbekistan engaged in scientific studies related to Islamic history.\r\n\r\nOn March 17, 2026, under the leadership of Shavkat Mirziyoyev, on the eve of Eid al-Fitr, the official opening ceremony of the Center was held. On April 13, 2026, it was included in the Guinness World Records in the category of “the largest Islamic civilization museum.”\r\n\r\nHistory\r\n\r\nThe Center for Islamic Civilization in Uzbekistan was established in accordance with the Presidential Decree of the Republic of Uzbekistan dated July 23, 2017, issued by Shavkat Mirziyoyev. Over more than eight years, this large complex was constructed and fully completed. On March 17, 2026, on the eve of Eid al-Fitr, the Center was officially inaugurated.",
+    "image": "social_events/3J8cut17381698370167_l.jpg",
+    "date": "09.11.2026",
+    "date_en": "09.11.2026",
+    "date_fr": "09.11.2026",
+    "location": "Tashkent city, Karasaray Street 47, Tashkent",
+    "location_en": "Tashkent city, Karasaray Street 47, Tashkent",
+    "location_fr": "Tashkent city, Karasaray Street 47, Tashkent",
+    "order": 1
+  }
+},
+{
+  "model": "conference.socialevent",
+  "pk": 2,
+  "fields": {
+    "title": "State Museum of the Temurids",
+    "title_en": "State Museum of the Temurids",
+    "title_fr": "State Museum of the Temurids",
+    "description": "The State Museum of the History of the Timurids is a museum located in the center of Tashkent dedicated to the history of Central Asia during the era of Amir Temur and the dynasty he founded. The museum is included in the “List of State Unique Scientific Objects” of the Republic of Uzbekistan. It houses more than 5,000 exhibits related to the period of Timur and the Timurid dynasty.\r\n\r\nThe museum was built on October 18, 1996, in connection with the 660th anniversary of Amir Temur. It is 31 meters high, with a diameter of 70 meters, and contains 500 lighting units.\r\n\r\nThe museum consists of three floors.\r\n\r\nHistory\r\n\r\nThe State Museum of the History of the Timurids was established on the initiative of the First President of the Republic of Uzbekistan, Islam Karimov, in 1996 to commemorate the 660th anniversary of Amir Temur’s birth. In 2006, on the occasion of the museum’s 10th anniversary, the exhibition “10 Years of the State Museum of the History of the Timurids” was opened.\r\n\r\nBetween 2007 and 2011, a fundamental research project titled “The Study of Written Monuments of the Timurid Period in Uzbekistan and Abroad” was implemented. Within the framework of this project, materials and information related to manuscripts from the era of Amir Temur and the Timurids were collected.",
+    "description_en": "The State Museum of the History of the Timurids is a museum located in the center of Tashkent dedicated to the history of Central Asia during the era of Amir Temur and the dynasty he founded. The museum is included in the “List of State Unique Scientific Objects” of the Republic of Uzbekistan. It houses more than 5,000 exhibits related to the period of Timur and the Timurid dynasty.\r\n\r\nThe museum was built on October 18, 1996, in connection with the 660th anniversary of Amir Temur. It is 31 meters high, with a diameter of 70 meters, and contains 500 lighting units.\r\n\r\nThe museum consists of three floors.\r\n\r\nHistory\r\n\r\nThe State Museum of the History of the Timurids was established on the initiative of the First President of the Republic of Uzbekistan, Islam Karimov, in 1996 to commemorate the 660th anniversary of Amir Temur’s birth. In 2006, on the occasion of the museum’s 10th anniversary, the exhibition “10 Years of the State Museum of the History of the Timurids” was opened.\r\n\r\nBetween 2007 and 2011, a fundamental research project titled “The Study of Written Monuments of the Timurid Period in Uzbekistan and Abroad” was implemented. Within the framework of this project, materials and information related to manuscripts from the era of Amir Temur and the Timurids were collected.",
+    "description_fr": "The State Museum of the History of the Timurids is a museum located in the center of Tashkent dedicated to the history of Central Asia during the era of Amir Temur and the dynasty he founded. The museum is included in the “List of State Unique Scientific Objects” of the Republic of Uzbekistan. It houses more than 5,000 exhibits related to the period of Timur and the Timurid dynasty.\r\n\r\nThe museum was built on October 18, 1996, in connection with the 660th anniversary of Amir Temur. It is 31 meters high, with a diameter of 70 meters, and contains 500 lighting units.\r\n\r\nThe museum consists of three floors.\r\n\r\nHistory\r\n\r\nThe State Museum of the History of the Timurids was established on the initiative of the First President of the Republic of Uzbekistan, Islam Karimov, in 1996 to commemorate the 660th anniversary of Amir Temur’s birth. In 2006, on the occasion of the museum’s 10th anniversary, the exhibition “10 Years of the State Museum of the History of the Timurids” was opened.\r\n\r\nBetween 2007 and 2011, a fundamental research project titled “The Study of Written Monuments of the Timurid Period in Uzbekistan and Abroad” was implemented. Within the framework of this project, materials and information related to manuscripts from the era of Amir Temur and the Timurids were collected.",
+    "image": "social_events/2-0-0-0-0-1583391101.jpg",
+    "date": "09.11.2026",
+    "date_en": "09.11.2026",
+    "date_fr": "09.11.2026",
+    "location": "Tashkent city, Karasaray Street 47, Tashkent",
+    "location_en": "Tashkent city, Karasaray Street 47, Tashkent",
+    "location_fr": "Tashkent city, Karasaray Street 47, Tashkent",
+    "order": 2
+  }
+},
+{
+  "model": "conference.socialevent",
+  "pk": 3,
+  "fields": {
+    "title": "Tashkent Television Tower",
+    "title_en": "Tashkent Television Tower",
+    "title_fr": "Tashkent Television Tower",
+    "description": "Tashkent Television Tower is the tallest structure in Central Asia and one of the main landmarks of Tashkent. Built in 1985, the tower stands 375 meters high and serves as a broadcasting center for television and radio signals. It also features an observation deck offering panoramic views of the city, making it a popular attraction for visitors and official guests.",
+    "description_en": "Tashkent Television Tower is the tallest structure in Central Asia and one of the main landmarks of Tashkent. Built in 1985, the tower stands 375 meters high and serves as a broadcasting center for television and radio signals. It also features an observation deck offering panoramic views of the city, making it a popular attraction for visitors and official guests.",
+    "description_fr": "Tashkent Television Tower is the tallest structure in Central Asia and one of the main landmarks of Tashkent. Built in 1985, the tower stands 375 meters high and serves as a broadcasting center for television and radio signals. It also features an observation deck offering panoramic views of the city, making it a popular attraction for visitors and official guests.",
+    "image": "social_events/photo_2026-04-17_10-32-53.jpg",
+    "date": "09.11.2026",
+    "date_en": "09.11.2026",
+    "date_fr": "09.11.2026",
+    "location": "Tashkent city, Karasaray Street 47, Tashkent",
+    "location_en": "Tashkent city, Karasaray Street 47, Tashkent",
+    "location_fr": "Tashkent city, Karasaray Street 47, Tashkent",
+    "order": 3
+  }
+},
+{
+  "model": "conference.socialevent",
+  "pk": 4,
+  "fields": {
+    "title": "New Uzbekistan Park",
+    "title_en": "New Uzbekistan Park",
+    "title_fr": "New Uzbekistan Park",
+    "description": "New Uzbekistan Park is one of Tashkent’s largest and most modern parks, symbolizing the country’s renewal and future development. The park features vast green areas, fountains, wide walking paths, and a central monument representing national unity and progress. It is a popular destination for residents and visitors, offering a peaceful setting for recreation, cultural events, and official visits.",
+    "description_en": "New Uzbekistan Park is one of Tashkent’s largest and most modern parks, symbolizing the country’s renewal and future development. The park features vast green areas, fountains, wide walking paths, and a central monument representing national unity and progress. It is a popular destination for residents and visitors, offering a peaceful setting for recreation, cultural events, and official visits.",
+    "description_fr": "New Uzbekistan Park is one of Tashkent’s largest and most modern parks, symbolizing the country’s renewal and future development. The park features vast green areas, fountains, wide walking paths, and a central monument representing national unity and progress. It is a popular destination for residents and visitors, offering a peaceful setting for recreation, cultural events, and official visits.",
+    "image": "social_events/photo_2026-04-17_10-32-53_2.jpg",
+    "date": "09.11.2026",
+    "date_en": "09.11.2026",
+    "date_fr": "09.11.2026",
+    "location": "Tashkent city, Karasaray Street 47, Tashkent",
+    "location_en": "Tashkent city, Karasaray Street 47, Tashkent",
+    "location_fr": "Tashkent city, Karasaray Street 47, Tashkent",
+    "order": 4
+  }
+},
+{
+  "model": "conference.galleryhero",
+  "pk": 1,
+  "fields": {
+    "image": "gallery/hero/Gemini_Generated_Image_jiyeqljiyeqljiye.png",
+    "title": "WCO Global Canine Forum",
+    "title_en": "WCO Global Canine Forum",
+    "title_fr": "WCO Global Canine Forum"
+  }
+},
+{
+  "model": "conference.contactperson",
+  "pk": 1,
+  "fields": {
+    "category": "wco",
+    "name": "Ms. Alman Fan",
+    "organization": "WCO",
+    "emails": "Alman.Fan@wcoomd.org",
+    "order": 1
+  }
+},
+{
+  "model": "conference.contactperson",
+  "pk": 2,
+  "fields": {
+    "category": "wco",
+    "name": "Mr. Keith Barker",
+    "organization": "WCO",
+    "emails": "Keith.Barker@wcoomd.org\r\nk9programme@wcoomd.org",
+    "order": 2
+  }
+},
+{
+  "model": "conference.contactperson",
+  "pk": 3,
+  "fields": {
+    "category": "registration",
+    "name": "Ms. Natasa Grcevska",
+    "organization": "WCO",
+    "emails": "Natasa.Grcevska@wcoomd.org",
+    "order": 1
+  }
+},
+{
+  "model": "conference.contactperson",
+  "pk": 4,
+  "fields": {
+    "category": "host",
+    "name": "Mr. Zafar Olimkulov",
+    "organization": "Customs Committee of the Republic of Uzbekistan",
+    "emails": "z.olimkulov@customs.uz",
+    "order": 1
+  }
+},
+{
+  "model": "conference.hotel",
+  "pk": 1,
+  "fields": {
+    "name": "Hilton",
+    "name_en": "Hilton",
+    "name_fr": "Hilton",
+    "description": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats.",
+    "description_en": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats.",
+    "description_fr": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats.",
+    "address": "Tashkent",
+    "address_en": "Tashkent",
+    "address_fr": "Tashkent",
+    "phone": "+998887582502",
+    "email": "pesuchunme@gmail.com",
+    "website": "https://www.ihg.com/",
+    "image": "hotels/hilton-tashkent-city.jpg",
+    "stars": 5,
+    "distance": "Tashkent",
+    "distance_en": "Tashkent",
+    "distance_fr": "Tashkent",
+    "order": 1
+  }
+},
+{
+  "model": "conference.hotel",
+  "pk": 2,
+  "fields": {
+    "name": "Holiday Inn Tashkent City",
+    "name_en": "Holiday Inn Tashkent City",
+    "name_fr": "Holiday Inn Tashkent City",
+    "description": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats.",
+    "description_en": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats.",
+    "description_fr": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats.",
+    "address": "Tashkent",
+    "address_en": "Tashkent",
+    "address_fr": "Tashkent",
+    "phone": "+998887582502",
+    "email": "pesuchunme@gmail.com",
+    "website": "https://www.ihg.com/",
+    "image": "hotels/holiday-inn-tashkent-8954873578-4x3.avif",
+    "stars": 5,
+    "distance": "Tashkent",
+    "distance_en": "Tashkent",
+    "distance_fr": "Tashkent",
+    "order": 1
+  }
+},
+{
+  "model": "conference.hotelroom",
+  "pk": 1,
+  "fields": {
+    "hotel": 1,
+    "room_type": "Badroom",
+    "room_type_en": "Badroom",
+    "room_type_fr": null,
+    "price": "140.00",
+    "currency": "USD",
+    "per": "per night",
+    "per_en": "per night",
+    "per_fr": "per night",
+    "breakfast_included": true,
+    "order": 1
+  }
+},
+{
+  "model": "conference.hotelroom",
+  "pk": 2,
+  "fields": {
+    "hotel": 2,
+    "room_type": "Badroom",
+    "room_type_en": "Badroom",
+    "room_type_fr": null,
+    "price": "140.00",
+    "currency": "USD",
+    "per": "per night",
+    "per_en": "per night",
+    "per_fr": "per night",
+    "breakfast_included": false,
+    "order": 0
+  }
+},
+{
+  "model": "conference.venue",
+  "pk": 1,
+  "fields": {
+    "name": "JW Marriott Hotel Tashkent City",
+    "name_en": "JW Marriott Hotel Tashkent City",
+    "name_fr": "JW Marriott Hotel Tashkent City",
+    "subtitle": "Conference Venue – Grand Ballroom",
+    "subtitle_en": "Conference Venue – Grand Ballroom",
+    "subtitle_fr": "Conference Venue – Grand Ballroom",
+    "description": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats. (Marriott)\r\nThe ballroom can accommodate up to 600 participants in theatre style, 450 for banquets, and 700 guests for receptions, making it ideal for large-scale international conferences and corporate gatherings. (Marriott)\r\nEquipped with modern audio-visual technology, on-site technical support, and adjacent pre-function areas for registration and networking, the Grand Ballroom ensures a seamless and professional event experience in one of the city’s leading luxury hotels.",
+    "description_en": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats. (Marriott)\r\nThe ballroom can accommodate up to 600 participants in theatre style, 450 for banquets, and 700 guests for receptions, making it ideal for large-scale international conferences and corporate gatherings. (Marriott)\r\nEquipped with modern audio-visual technology, on-site technical support, and adjacent pre-function areas for registration and networking, the Grand Ballroom ensures a seamless and professional event experience in one of the city’s leading luxury hotels.",
+    "description_fr": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats. (Marriott)\r\nThe ballroom can accommodate up to 600 participants in theatre style, 450 for banquets, and 700 guests for receptions, making it ideal for large-scale international conferences and corporate gatherings. (Marriott)\r\nEquipped with modern audio-visual technology, on-site technical support, and adjacent pre-function areas for registration and networking, the Grand Ballroom ensures a seamless and professional event experience in one of the city’s leading luxury hotels.",
+    "image": "venues/photo_2026-04-17_10-22-31.jpg",
+    "google_maps_url": "https://maps.google.com/?q=JW+Marriott+Hotel+Tashkent+City",
+    "google_maps_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.5!2d69.2401!3d41.2995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5bobc4fc7b9e!2sJW%20Marriott%20Hotel%20Tashkent!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s\" width=\"100%\" height=\"340\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>",
+    "order": 1
+  }
+},
+{
+  "model": "conference.venue",
+  "pk": 2,
+  "fields": {
+    "name": "JW Marriott Hotel Tashkent City",
+    "name_en": "JW Marriott Hotel Tashkent City",
+    "name_fr": "JW Marriott Hotel Tashkent City",
+    "subtitle": "Conference Venue – Grand Ballroom",
+    "subtitle_en": "Conference Venue – Grand Ballroom",
+    "subtitle_fr": "Conference Venue – Grand Ballroom",
+    "description": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats. (Marriott)\r\nThe ballroom can accommodate up to 600 participants in theatre style, 450 for banquets, and 700 guests for receptions, making it ideal for large-scale international conferences and corporate gatherings. (Marriott)\r\nEquipped with modern audio-visual technology, on-site technical support, and adjacent pre-function areas for registration and networking, the Grand Ballroom ensures a seamless and professional event experience in one of the city’s leading luxury hotels.",
+    "description_en": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats. (Marriott)\r\nThe ballroom can accommodate up to 600 participants in theatre style, 450 for banquets, and 700 guests for receptions, making it ideal for large-scale international conferences and corporate gatherings. (Marriott)\r\nEquipped with modern audio-visual technology, on-site technical support, and adjacent pre-function areas for registration and networking, the Grand Ballroom ensures a seamless and professional event experience in one of the city’s leading luxury hotels.",
+    "description_fr": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats. (Marriott)\r\nThe ballroom can accommodate up to 600 participants in theatre style, 450 for banquets, and 700 guests for receptions, making it ideal for large-scale international conferences and corporate gatherings. (Marriott)\r\nEquipped with modern audio-visual technology, on-site technical support, and adjacent pre-function areas for registration and networking, the Grand Ballroom ensures a seamless and professional event experience in one of the city’s leading luxury hotels.",
+    "image": "venues/hilton-tashkent-city.jpg",
+    "google_maps_url": "https://maps.google.com/?q=JW+Marriott+Hotel+Tashkent+City",
+    "google_maps_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.5!2d69.2401!3d41.2995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5bobc4fc7b9e!2sJW%20Marriott%20Hotel%20Tashkent!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s\" width=\"100%\" height=\"340\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>",
+    "order": 2
+  }
+},
+{
+  "model": "conference.venueday",
+  "pk": 1,
+  "fields": {
+    "venue": 1,
+    "day_label": "Opening day",
+    "day_label_en": "Opening day",
+    "day_label_fr": null,
+    "date": "6 SEP 2026",
+    "date_en": "6 SEP 2026",
+    "date_fr": null,
+    "order": 1
+  }
+},
+{
+  "model": "conference.venueday",
+  "pk": 2,
+  "fields": {
+    "venue": 2,
+    "day_label": "First day",
+    "day_label_en": "First day",
+    "day_label_fr": null,
+    "date": "7 SEP 2026",
+    "date_en": "7 SEP 2026",
+    "date_fr": null,
+    "order": 0
+  }
+},
+{
+  "model": "conference.hotelimage",
+  "pk": 1,
+  "fields": {
+    "hotel": 1,
+    "image": "hotels/gallery/2-0-0-0-0-1583391101.jpg",
+    "order": 0
+  }
+},
+{
+  "model": "conference.hotelimage",
+  "pk": 2,
+  "fields": {
+    "hotel": 1,
+    "image": "hotels/gallery/3J8cut17381698370167_l.jpg",
+    "order": 0
+  }
+},
+{
+  "model": "conference.hotelimage",
+  "pk": 3,
+  "fields": {
+    "hotel": 1,
+    "image": "hotels/gallery/9B9A1116-1500x1000.jpg",
+    "order": 0
+  }
+},
+{
+  "model": "conference.hotelimage",
+  "pk": 4,
+  "fields": {
+    "hotel": 2,
+    "image": "hotels/gallery/holiday-inn-tashkent-9904604553-4x3.avif",
+    "order": 0
+  }
+},
+{
+  "model": "conference.hotelimage",
+  "pk": 5,
+  "fields": {
+    "hotel": 2,
+    "image": "hotels/gallery/holiday-inn-tashkent-9462504696-4x3.avif",
+    "order": 0
+  }
+},
+{
+  "model": "conference.hotelimage",
+  "pk": 6,
+  "fields": {
+    "hotel": 2,
+    "image": "hotels/gallery/holiday-inn-tashkent-10067912842-4x3.avif",
+    "order": 0
+  }
+},
+{
+  "model": "conference.hotelimage",
+  "pk": 7,
+  "fields": {
+    "hotel": 2,
+    "image": "hotels/gallery/holiday-inn-tashkent-10137935827-4x3.avif",
+    "order": 0
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-04-16T19:02:12.121Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "customsobject"
+    ],
+    "object_id": "1",
+    "object_repr": "Central Office",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-04-16T19:15:53.965Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "customsobject"
+    ],
+    "object_id": "2",
+    "object_repr": "The National Canine Center of the State Customs Committee",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2026-04-16T19:16:32.056Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "customsobject"
+    ],
+    "object_id": "2",
+    "object_repr": "The National Canine Center of the State Customs Committee",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description [en]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2026-04-16T19:17:16.729Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "customsobject"
+    ],
+    "object_id": "2",
+    "object_repr": "The National Canine Center of the State Customs Committee",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description [en]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2026-04-16T19:17:30.358Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "customsobject"
+    ],
+    "object_id": "2",
+    "object_repr": "The National Canine Center of the State Customs Committee",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description [en]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2026-04-16T19:27:11.032Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "customsobject"
+    ],
+    "object_id": "3",
+    "object_repr": "Customs Institute",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2026-04-16T19:34:15.285Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "customsobject"
+    ],
+    "object_id": "4",
+    "object_repr": "Customs border post",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2026-04-16T19:41:26.047Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "1",
+    "object_repr": "Monday 6 September 2026",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 6 September 2026 | 17:00 - Cocktail reception / Registration\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 6 September 2026 | 17:45 - Welcome remarks\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2026-04-16T19:44:58.104Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "2",
+    "object_repr": "Monday 7 September 2026",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | 09:00 - Sign-in / Registration\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | 09:30 - Opening of the 7th WCO Global Canine Forum\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | 09:30 - Welcome Speeches and Keynote addresses by Heads of\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2026-04-16T19:46:06.006Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "2",
+    "object_repr": "Monday 7 September 2026",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 |  - Welcome Speeches and Keynote addresses by Heads of\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2026-04-16T19:46:51.986Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "2",
+    "object_repr": "Monday 7 September 2026",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2026-04-16T19:50:41.604Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "3",
+    "object_repr": "Monday 7 September 2026",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | 09:00 - Sign-in / Registration\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | 09:30 - Opening of the 7th WCO Global Canine Forum\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 |  - Welcome Speeches and Keynote addresses by Heads of\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 |  - Group Photo\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2026-04-16T19:51:19.621Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "3",
+    "object_repr": "Monday 7 September 2026",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 |  - Welcome Speeches and Keynote addresses by Heads of\", \"fields\": [\"Order\"]}}, {\"changed\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 |  - Group Photo\", \"fields\": [\"Order\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2026-04-16T19:52:45.729Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "3",
+    "object_repr": "Monday 7 September 2026",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 |  - Group Photo\", \"fields\": [\"Order\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2026-04-16T19:53:22.205Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "3",
+    "object_repr": "Monday 7 September 2026",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | 10:30 - Coffee Break\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2026-04-16T19:57:35.497Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "3",
+    "object_repr": "Monday 7 September 2026",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | Topic 1: - WCO Canine Programme\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2026-04-16T19:57:53.182Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "3",
+    "object_repr": "Monday 7 September 2026",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | Topic 1: - WCO Canine Programme\", \"fields\": [\"Order\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2026-04-16T19:58:41.407Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "3",
+    "object_repr": "Monday 7 September 2026",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | 10:45 - Updates\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2026-04-16T20:00:55.787Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "3",
+    "object_repr": "Monday 7 September 2026",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | 11:15 - Sharing of Success Stories\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | 11:45 - WCO Regional Dog Training Centre Accreditation Sta\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | 12:15 - Outcome and Deliverables of the Synthetic Drugs De\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | 13:00 - Working Lunch hosted by the Uzbekistan Customs\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2026-04-16T20:03:53.319Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "3",
+    "object_repr": "Monday 7 September 2026",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | Topic 2: - New trends, challenges, and opportunities for cani\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | 14:00 - Speaker:\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | 15:30 - Coffee Break\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | 15:45 - Continuation of Topic 2\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | 17:00 - End of Day 1\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Monday 7 September 2026 | 18:30 - Gala dinner hosted by the Uzbekistan Customs\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2026-04-16T20:04:29.399Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "3",
+    "object_repr": "Monday 7 September 2026",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Order\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2026-04-16T20:06:56.991Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "1",
+    "object_repr": "Sunday 6 September 2026",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Title [en]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2026-04-16T20:07:10.836Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "3",
+    "object_repr": "Monday 7 September 2026",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Title [fr]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2026-04-16T20:08:16.438Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "4",
+    "object_repr": "Tuesday 8 September 2026",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2026-04-16T20:11:59.983Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "4",
+    "object_repr": "Tuesday 8 September 2026",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"agenda session\", \"object\": \"Tuesday 8 September 2026 | Topic 3: - Getting the Most from Your Canine Teams in Operati\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Tuesday 8 September 2026 | 09:00 - Speaker:\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Tuesday 8 September 2026 | 10:30 - Coffee Break\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Tuesday 8 September 2026 | Topic 4: - The Science Behind Canine Detection Capabilities. \"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Tuesday 8 September 2026 | 11:00 - Speaker:\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Tuesday 8 September 2026 | 12:30 - Working Lunch hosted by the Uzbekistan Customs\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Tuesday 8 September 2026 | 14:00 - Visit to Uzbekistan Canine Centre\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2026-04-16T20:13:29.063Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "5",
+    "object_repr": "Wednesday, 9 September 2026",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2026-04-16T20:15:16.516Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "5",
+    "object_repr": "Wednesday, 9 September 2026",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"agenda session\", \"object\": \"Wednesday, 9 September 2026 | Topic 5: - WCO Best Practice Compendiums for Canine Programme\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Wednesday, 9 September 2026 | 09:00 - Compendium Break-Out Sessions\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2026-04-16T20:16:32.286Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "5",
+    "object_repr": "Wednesday, 9 September 2026",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"agenda session\", \"object\": \"Wednesday, 9 September 2026 | 12:00 - Official closing ceremony of the 7th Global K9 For\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Wednesday, 9 September 2026 | 12:30 - Lunch hosted by the Uzbekistan Customs\"}}, {\"added\": {\"name\": \"agenda session\", \"object\": \"Wednesday, 9 September 2026 | 14:00 - Visit to cultural objects of Tashkent (sightseeing\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2026-04-16T20:22:49.674Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "speakergroup"
+    ],
+    "object_id": "1",
+    "object_repr": "Honourable Guests of the Opening Ceremony",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"speaker\", \"object\": \"Akmalkhuja Mavlonov\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2026-04-16T20:27:09.098Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "speakergroup"
+    ],
+    "object_id": "1",
+    "object_repr": "Honourable Guests of the Opening Ceremony",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"speaker\", \"object\": \"Adminstratsiya mehmoni\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2026-04-16T20:28:04.706Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "speakergroup"
+    ],
+    "object_id": "1",
+    "object_repr": "Honourable Guests of the Opening Ceremony",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"speaker\", \"object\": \"Ian Saunders\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2026-04-16T20:29:18.668Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "speakergroup"
+    ],
+    "object_id": "2",
+    "object_repr": "Speakers",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"speaker\", \"object\": \"Full Name\"}}, {\"added\": {\"name\": \"speaker\", \"object\": \"Full Name\"}}, {\"added\": {\"name\": \"speaker\", \"object\": \"Full Name\"}}, {\"added\": {\"name\": \"speaker\", \"object\": \"Full Name\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2026-04-16T20:39:55.466Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "socialevent"
+    ],
+    "object_id": "1",
+    "object_repr": "Center for Islamic Civilization",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2026-04-16T20:41:33.988Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "socialevent"
+    ],
+    "object_id": "2",
+    "object_repr": "State Museum of the Temurids",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2026-04-17T03:16:53.459Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "galleryday"
+    ],
+    "object_id": "1",
+    "object_repr": "Speakers",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"gallery photo\", \"object\": \"Speakers - 0\"}}, {\"added\": {\"name\": \"gallery photo\", \"object\": \"Speakers - 0\"}}, {\"added\": {\"name\": \"gallery photo\", \"object\": \"Speakers - 0\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2026-04-17T04:24:29.153Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "galleryday"
+    ],
+    "object_id": "1",
+    "object_repr": "Speakers",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2026-04-17T04:25:06.772Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "galleryhero"
+    ],
+    "object_id": "1",
+    "object_repr": "WCO Global Canine Forum",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2026-04-17T04:41:32.712Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "galleryhero"
+    ],
+    "object_id": "1",
+    "object_repr": "WCO Global Canine Forum",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2026-04-17T04:58:59.786Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "contactperson"
+    ],
+    "object_id": "1",
+    "object_repr": "Ms. Alman Fan",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2026-04-17T04:59:35.420Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "contactperson"
+    ],
+    "object_id": "2",
+    "object_repr": "Mr. Keith Barker",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2026-04-17T05:00:11.670Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "contactperson"
+    ],
+    "object_id": "3",
+    "object_repr": "Ms. Natasa Grcevska",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2026-04-17T05:00:38.942Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "contactperson"
+    ],
+    "object_id": "4",
+    "object_repr": "Mr. Zafar Olimkulov",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2026-04-17T05:00:49.065Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "contactperson"
+    ],
+    "object_id": "4",
+    "object_repr": "Mr. Zafar Olimkulov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Emails\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2026-04-17T05:15:25.098Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "hotel"
+    ],
+    "object_id": "1",
+    "object_repr": "Hilton",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"hotel room\", \"object\": \"Hilton - Badroom\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2026-04-17T05:24:45.754Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "hotel"
+    ],
+    "object_id": "1",
+    "object_repr": "Hilton",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"hotel image\", \"object\": \"Hilton - 0\"}}, {\"added\": {\"name\": \"hotel image\", \"object\": \"Hilton - 0\"}}, {\"added\": {\"name\": \"hotel image\", \"object\": \"Hilton - 0\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2026-04-17T05:26:29.464Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "hotel"
+    ],
+    "object_id": "2",
+    "object_repr": "Holiday Inn Tashkent City",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"hotel room\", \"object\": \"Holiday Inn Tashkent City - Badroom\"}}, {\"added\": {\"name\": \"hotel image\", \"object\": \"Holiday Inn Tashkent City - 0\"}}, {\"added\": {\"name\": \"hotel image\", \"object\": \"Holiday Inn Tashkent City - 0\"}}, {\"added\": {\"name\": \"hotel image\", \"object\": \"Holiday Inn Tashkent City - 0\"}}, {\"added\": {\"name\": \"hotel image\", \"object\": \"Holiday Inn Tashkent City - 0\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2026-04-17T05:30:12.452Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "venue"
+    ],
+    "object_id": "1",
+    "object_repr": "JW Marriott Hotel Tashkent City",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"venue day\", \"object\": \"JW Marriott Hotel Tashkent City - Opening day\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2026-04-17T05:31:19.330Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "venue"
+    ],
+    "object_id": "2",
+    "object_repr": "JW Marriott Hotel Tashkent City",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"venue day\", \"object\": \"JW Marriott Hotel Tashkent City - First day\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2026-04-17T05:32:32.694Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "socialevent"
+    ],
+    "object_id": "2",
+    "object_repr": "State Museum of the Temurids",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2026-04-17T05:33:37.407Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "socialevent"
+    ],
+    "object_id": "3",
+    "object_repr": "Tashkent Television Tower",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2026-04-17T05:34:04.411Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "socialevent"
+    ],
+    "object_id": "4",
+    "object_repr": "New Uzbekistan Park",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2026-04-17T05:43:55.104Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "speakergroup"
+    ],
+    "object_id": "1",
+    "object_repr": "Honourable Guests of the Opening Ceremony",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"speaker\", \"object\": \"Akmalkhuja Mavlonov\", \"fields\": [\"Name [fr]\", \"Title [en]\", \"Title [fr]\", \"Organization [fr]\", \"Bio [en]\", \"Bio [fr]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2026-04-17T05:44:30.914Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "speakergroup"
+    ],
+    "object_id": "1",
+    "object_repr": "Honourable Guests of the Opening Ceremony",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"speaker\", \"object\": \"Akmalkhuja Mavlonov\", \"fields\": [\"Bio [en]\", \"Bio [fr]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2026-04-17T05:46:43.327Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "speakergroup"
+    ],
+    "object_id": "1",
+    "object_repr": "Honourable Guests of the Opening Ceremony",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"speaker\", \"object\": \"Akmalkhuja Mavlonov\", \"fields\": [\"Organization [en]\"]}}, {\"changed\": {\"name\": \"speaker\", \"object\": \"Ian Saunders\", \"fields\": [\"Name [fr]\", \"Title [en]\", \"Title [fr]\", \"Organization [en]\", \"Organization [fr]\", \"Bio [en]\", \"Bio [fr]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 55,
+  "fields": {
+    "action_time": "2026-04-17T05:47:28.219Z",
+    "user": [
+      "adminwco"
+    ],
+    "content_type": [
+      "conference",
+      "speakergroup"
+    ],
+    "object_id": "1",
+    "object_repr": "Honourable Guests of the Opening Ceremony",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"speaker\", \"object\": \"Ian Saunders\", \"fields\": [\"Bio [en]\", \"Bio [fr]\"]}}]"
+  }
+}
+]
