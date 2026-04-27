@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-local-dev-key')
 LANGUAGE_COOKIE_NAME = 'django_language'
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
-
+CSRF_TRUSTED_ORIGINS = ['https://wcocanineforum2026wcoevents.org', 'https://www.wcocanineforum2026wcoevents.org']
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost 127.0.0.1').split(' ')
 BASE_DIR = Path(__file__).resolve().parent.parent
 
