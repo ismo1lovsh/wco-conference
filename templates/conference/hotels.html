@@ -1,18 +1,18 @@
 {% extends "conference/base.html" %}
 {% load static %}
-
+{% load i18n %}
 {% block content %}
 <main>
 
   <div class="page-banner">
-    <h2>Hotels</h2>
+    <h2>{% trans "Hotels" %}</h2>
   </div>
 
   <div class="hotels-section">
 
     <div class="hotels-intro">
       <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-      <p>The following hotels have been selected for WCO Global Canine Forum 2026 participants. Special rates have been negotiated for forum attendees.</p>
+      <p>{% trans "The following hotels have been selected for WCO Global Canine Forum 2026 participants. Special rates have been negotiated for forum attendees." %}</p>
     </div>
 
     <div class="hotels-list">

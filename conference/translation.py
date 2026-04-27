@@ -35,7 +35,7 @@ class AboutPageTranslation(TranslationOptions):
 
 @register(AboutSection)
 class AboutSectionTranslation(TranslationOptions):
-    fields = ('heading', 'body')
+    fields = ('heading', 'body', 'body_after')
 
 
 @register(AboutBullet)
@@ -89,3 +89,16 @@ class VenueTranslation(TranslationOptions):
 @register(VenueDay)
 class VenueDayTranslation(TranslationOptions):
     fields = ('day_label', 'date')
+
+
+from .models import HomePage
+
+@register(HomePage)
+class HomePageTranslation(TranslationOptions):
+    fields = ('title', 'subtitle', 'location', 'date', 'body_1', 'body_2', 'body_3', 'body_4')
+
+from .models import ContactPerson
+
+@register(ContactPerson)
+class ContactPersonTranslation(TranslationOptions):
+    fields = ('name', 'organization')

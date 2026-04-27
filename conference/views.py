@@ -5,16 +5,40 @@ from .models import ConferenceDay, SpeakerGroup, AboutPage, GalleryDay, GalleryH
 from .models import CustomsObject
 from .models import SocialEvent
 
+from django.utils import translation
+from django.conf import settings
+
+
 def set_language(request):
     lang = request.GET.get('lang', 'en')
-    if lang in [l[0] for l in settings.LANGUAGES]:
-        translation.activate(lang)
-        request.session[translation.LANGUAGE_SESSION_KEY] = lang
-    return redirect(request.META.get('HTTP_REFERER', '/'))
+    if lang not in [l[0] for l in settings.LANGUAGES]:
+        lang = 'en'
 
+    from django.utils.translation import activate
+    activate(lang)
+    request.session['_language'] = lang
+    request.session.modified = True
+
+    response = redirect(request.META.get('HTTP_REFERER', '/'))
+    response.set_cookie(
+        'django_language',
+        lang,
+        max_age=365 * 24 * 60 * 60,
+        path='/',
+    )
+    return response
+from django.utils.translation import get_language
+
+from .models import HomePage
 
 def index(request):
-    return render(request, 'conference/index.html')
+    from django.utils.translation import get_language
+    current_lang = request.session.get('_language', 'en')
+    home = HomePage.objects.first()
+    return render(request, 'conference/index.html', {
+        'current_lang': current_lang,
+        'home': home,
+    })
 
 
 def about(request):
@@ -37,7 +61,7 @@ def customs_committee(request):
 
 
 def customs_committee(request):
-    objects = CustomsObject.objects.all()
+    objects = CustomsObject.objects.prefetch_related('images').all()
     return render(request, 'conference/customs_committee.html', {'objects': objects})
 
 

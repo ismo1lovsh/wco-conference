@@ -140,6 +140,7 @@ body {
       gap: 2px;
       padding: 0 48px;
       height: 46px;
+      position: relative;
     }
 
     nav > a {
@@ -154,6 +155,7 @@ body {
       gap: 5px;
       transition: background 0.15s, color 0.15s;
     }
+
 
     nav > a:hover {
       background: #eef4fd;
@@ -572,7 +574,7 @@ body {
     }
 
     .footer-logo-center img {
-      height: 130px;
+      height: 1600px;
       width: auto;
     }
 
@@ -603,7 +605,7 @@ body {
     }
 
     .footer-logo img {
-      height: 76px;
+      height: 150px;
       width: auto;
     }
 

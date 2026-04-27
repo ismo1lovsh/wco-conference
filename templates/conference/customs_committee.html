@@ -1,11 +1,11 @@
 {% extends "conference/base.html" %}
 {% load static %}
-
+{% load i18n %}
 {% block content %}
 <main>
 
   <div class="page-banner">
-    <h2>About the Customs Committee</h2>
+    <h2>{% trans "About the Customs Committee" %}</h2>
   </div>
 
   <div class="cc-intro">
@@ -16,15 +16,23 @@
     {% for obj in objects %}
     <div class="cc-card {% if forloop.counter|divisibleby:2 %}cc-card--reverse{% endif %}">
 
-      <div class="cc-card-img">
+      <div class="cc-card-img"
+           {% if obj.images.all %}
+           onclick="openCcGallery({{ forloop.counter0 }})"
+           style="cursor:pointer"
+           {% endif %}>
         {% if obj.image %}
         <img src="{{ obj.image.url }}" alt="{{ obj.name }}" />
-        {% else %}
-        <div class="cc-card-img-placeholder">
-          <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-        </div>
+        {% elif obj.images.all %}
+        <img src="{{ obj.images.all.0.image.url }}" alt="{{ obj.name }}" />
         {% endif %}
         <div class="cc-card-img-overlay"></div>
+        {% if obj.images.all %}
+        <div class="hotel-img-count">
+          <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+          {{ obj.images.count }} photos
+        </div>
+        {% endif %}
       </div>
 
       <div class="cc-card-body">
@@ -62,7 +70,27 @@
       </div>
     </div>
   </div>
-
+  <div class="hg-overlay" id="cc-gallery-overlay" onclick="closeCcGallery()">
+    <div class="hg-modal" onclick="event.stopPropagation()">
+      <button class="hg-close" onclick="closeCcGallery()">
+        <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+      <div class="hg-hotel-name" id="cc-gallery-name"></div>
+      <div class="hg-main">
+        <button class="hg-arrow hg-arrow--left" onclick="ccNavigate(-1)">
+          <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <div class="hg-img-wrap">
+          <img src="" alt="" id="cc-gallery-img" />
+        </div>
+        <button class="hg-arrow hg-arrow--right" onclick="ccNavigate(1)">
+          <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </button>
+      </div>
+      <div class="hg-counter" id="cc-gallery-counter"></div>
+      <div class="hg-thumbs" id="cc-gallery-thumbs"></div>
+    </div>
+  </div>
 </main>
 
 <script>
@@ -89,6 +117,65 @@ function closeModal() {
 
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeModal();
+});
+  var ccGalleries = [
+  {% for obj in objects %}
+  {
+    name: "{{ obj.name|escapejs }}",
+    images: [
+      {% for img in obj.images.all %}
+      "{{ img.image.url }}"{% if not forloop.last %},{% endif %}
+      {% endfor %}
+    ]
+  }{% if not forloop.last %},{% endif %}
+  {% endfor %}
+];
+
+var ccCurrent = 0;
+var ccImages = [];
+
+function openCcGallery(index) {
+  var obj = ccGalleries[index];
+  ccImages = obj.images;
+  if (!ccImages.length) return;
+  ccCurrent = 0;
+  document.getElementById('cc-gallery-name').textContent = obj.name;
+  updateCcModal();
+  document.getElementById('cc-gallery-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function updateCcModal() {
+  document.getElementById('cc-gallery-img').src = ccImages[ccCurrent];
+  document.getElementById('cc-gallery-counter').textContent = (ccCurrent + 1) + ' / ' + ccImages.length;
+  var thumbs = document.getElementById('cc-gallery-thumbs');
+  thumbs.innerHTML = '';
+  ccImages.forEach(function(url, i) {
+    var thumb = document.createElement('div');
+    thumb.className = 'hg-thumb' + (i === ccCurrent ? ' active' : '');
+    thumb.onclick = function() { ccCurrent = i; updateCcModal(); };
+    var img = document.createElement('img');
+    img.src = url;
+    thumb.appendChild(img);
+    thumbs.appendChild(thumb);
+  });
+}
+
+function ccNavigate(dir) {
+  ccCurrent = (ccCurrent + dir + ccImages.length) % ccImages.length;
+  updateCcModal();
+}
+
+function closeCcGallery() {
+  document.getElementById('cc-gallery-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('cc-gallery-overlay').classList.contains('open')) return;
+  if (e.key === 'Escape') closeCcGallery();
+  if (e.key === 'ArrowLeft') ccNavigate(-1);
+  if (e.key === 'ArrowRight') ccNavigate(1);
 });
 </script>
 

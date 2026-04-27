@@ -1,6 +1,6 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
-from .models import SocialEvent, HotelImage
+from .models import SocialEvent, HotelImage, CustomsObjectImage, HomePage
 from .models import (
     ConferenceDay, AgendaSession,
     SpeakerGroup, Speaker,
@@ -52,12 +52,6 @@ class AboutPageAdmin(admin.ModelAdmin):
 class AboutSectionAdmin(admin.ModelAdmin):
     inlines = [AboutBulletInline]
 
-@admin.register(CustomsObject)
-class CustomsObjectAdmin(TranslationAdmin):
-    list_display = ('name', 'order')
-
-
-
 
 @admin.register(SocialEvent)
 class SocialEventAdmin(TranslationAdmin):
@@ -82,10 +76,6 @@ class GalleryDayAdmin(TranslationAdmin):
 
 from .models import ContactPerson
 
-@admin.register(ContactPerson)
-class ContactPersonAdmin(admin.ModelAdmin):
-    list_display = ('name', 'category', 'order')
-    list_filter = ('category',)
 
 from .models import Hotel, HotelRoom
 class HotelRoomInline(admin.TabularInline):
@@ -114,3 +104,26 @@ class VenueDayInline(admin.TabularInline):
 class VenueAdmin(TranslationAdmin):
     list_display = ('name', 'order')
     inlines = [VenueDayInline]
+
+
+
+class CustomsObjectImageInline(admin.TabularInline):
+    model = CustomsObjectImage
+    extra = 3
+    fields = ('order', 'image')
+
+# CustomsObjectAdmin ni yangilang:
+@admin.register(CustomsObject)
+class CustomsObjectAdmin(TranslationAdmin):
+    list_display = ('name', 'order')
+    inlines = [CustomsObjectImageInline]
+
+@admin.register(HomePage)
+class HomePageAdmin(TranslationAdmin):
+    list_display = ('title',)
+
+
+@admin.register(ContactPerson)
+class ContactPersonAdmin(TranslationAdmin):
+    list_display = ('name', 'category', 'order')
+    list_filter = ('category',)

@@ -87,6 +87,7 @@ class AboutSection(models.Model):
     page = models.ForeignKey(AboutPage, on_delete=models.CASCADE, related_name='sections')
     heading = models.CharField(max_length=200, blank=True)
     body = models.TextField(blank=True)
+    body_after = models.TextField(blank=True)
     order = models.PositiveSmallIntegerField(default=0)
 
     class Meta:
@@ -121,6 +122,16 @@ class CustomsObject(models.Model):
     def __str__(self):
         return self.name
 
+class CustomsObjectImage(models.Model):
+    obj = models.ForeignKey(CustomsObject, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to='customs_objects/gallery/')
+    order = models.PositiveSmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ['order']
+
+    def __str__(self):
+        return f"{self.obj.name} - {self.order}"
 
 class SocialEvent(models.Model):
     title = models.CharField(max_length=300)
@@ -268,3 +279,22 @@ class HotelImage(models.Model):
 
     def __str__(self):
         return f"{self.hotel.name} - {self.order}"
+
+
+class HomePage(models.Model):
+    title = models.CharField(max_length=300)
+    subtitle = models.CharField(max_length=300, blank=True)
+    location = models.CharField(max_length=200, blank=True)
+    date = models.CharField(max_length=200, blank=True)
+    body_1 = models.TextField(blank=True)
+    body_2 = models.TextField(blank=True)
+    body_3 = models.TextField(blank=True)
+    body_4 = models.TextField(blank=True)
+    illustration = models.ImageField(upload_to='home/', blank=True, null=True)
+    youtube_id = models.CharField(max_length=100, blank=True)
+
+    class Meta:
+        verbose_name = "Home Page"
+
+    def __str__(self):
+        return self.title

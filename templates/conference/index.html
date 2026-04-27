@@ -1,84 +1,90 @@
 {% extends "conference/base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 <main>
+
   <!-- Hero rasm -->
   <div class="hero">
-    <img src="{% static 'img/asosiyrasm.jpg' %}" class="hero-img" />
+    {% if current_lang == 'fr' %}
+    <img src="{% static 'img/hero-fr.jpg' %}?v=2" class="hero-img" />
+    {% else %}
+    <img src="{% static 'img/hero-en.jpg' %}?v=2" class="hero-img" />
+    {% endif %}
   </div>
 
-  <!-- About section -->
+  {% if home %}
   <div class="about-section">
-
-
     <div class="about-content">
       <div class="about-left">
-        <h1 class="about-title">Global Canine Forum</h1>
-        <p class="about-subtitle">Global Canine Forum</p>
+
+        <h1 class="about-title">{{ home.title }}</h1>
+        {% if home.subtitle %}
+        <p class="about-subtitle">{{ home.subtitle }}</p>
+        {% endif %}
 
         <div class="about-meta">
+          {% if home.location %}
           <div class="meta-badge">
             <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            Tashkent, Uzbekistan
+            {{ home.location }}
           </div>
+          {% endif %}
+          {% if home.date %}
           <div class="meta-badge">
             <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
-            7th – 9th September 2026
+            {{ home.date }}
           </div>
+          {% endif %}
         </div>
 
-        <p class="about-body">
-          Join the international Canine (K-9) and Customs community in Tashkent, Uzbekistan,
-          from 7–9 September 2026 for a global forum dedicated to the development of service dog
-          training and modern border security practices.
-        </p>
-        <p class="about-body">
-          The <em>Global Canine Forum (K-9)</em> will bring together Customs administrations,
-          border and law enforcement agencies, experts and partners to exchange experience,
-          demonstrate operational capabilities and discuss the future of canine services in border
-          management. <strong>The forum is organized with the participation of the World Customs Organization (WCO)
-          and the Customs Committee of the Republic of Uzbekistan</strong> and will serve as a platform for professional
-          dialogue, practical demonstrations and international cooperation in the field of service dog training.
-        </p>
-        <p class="about-body" style="display:none">
-          The forum will explore how canine units contribute to detecting illicit goods,
-          combating transnational crime and strengthening border control while facilitating
-          legitimate trade and travel. Each day of the forum will highlight key aspects of modern canine operations.
-        </p>
-        <p class="about-body" style="display:none">
-          Sessions will focus on operational practices, training methodologies and the integration
-          of modern technologies in canine services. Through expert discussions, practical demonstrations
-          and knowledge sharing, the forum will highlight how well-trained service dogs and professional
-          handlers remain one of the most effective tools for detecting narcotics, weapons, explosives,
-          wildlife trafficking and other illegal activities.
-        </p>
+        {% if home.body_1 %}
+        <p class="about-body">{{ home.body_1 }}</p>
+        {% endif %}
+        {% if home.body_2 %}
+        <p class="about-body">{{ home.body_2 }}</p>
+        {% endif %}
+        {% if home.body_3 %}
+        <p class="about-body" style="display:none">{{ home.body_3 }}</p>
+        {% endif %}
+        {% if home.body_4 %}
+        <p class="about-body" style="display:none">{{ home.body_4 }}</p>
+        {% endif %}
+
       </div>
 
       <div class="about-right">
+        {% if home.illustration %}
+        <img src="{{ home.illustration.url }}" alt="{{ home.title }}" class="about-illustration" />
+        {% else %}
         <img src="{% static 'img/kinologiya.png' %}" alt="Illustration" class="about-illustration" />
+        {% endif %}
       </div>
     </div>
 
     <div class="read-more-wrap">
       <div class="read-more-fade" id="read-more-fade"></div>
       <a href="#" class="read-more-btn" id="read-more-btn" onclick="toggleReadMore(event)">
-        Read more...
+        {% trans "Read more..." %}
       </a>
     </div>
 
-    <!-- YouTube video -->
+    {% if home.youtube_id %}
     <div class="about-video">
       <iframe
-        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-        title="WCO Tech Conference 2026"
+        src="https://www.youtube.com/embed/{{ home.youtube_id }}"
+        title="WCO Global Canine Forum 2026"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
       </iframe>
     </div>
+    {% endif %}
 
   </div>
+  {% endif %}
+
 </main>
 
 <script>
@@ -87,11 +93,11 @@ function toggleReadMore(e) {
   var paras = document.querySelectorAll('.about-body');
   var btn = document.getElementById('read-more-btn');
   var fade = document.getElementById('read-more-fade');
-  var hidden = paras[2].style.display === 'none';
-  paras[2].style.display = hidden ? 'block' : 'none';
-  paras[3].style.display = hidden ? 'block' : 'none';
+  var hidden = paras[2] && paras[2].style.display === 'none';
+  if (paras[2]) paras[2].style.display = hidden ? 'block' : 'none';
+  if (paras[3]) paras[3].style.display = hidden ? 'block' : 'none';
   fade.style.display = hidden ? 'none' : 'block';
-  btn.textContent = hidden ? 'Show less' : 'Read more...';
+  btn.textContent = hidden ? '{% trans "Show less" %}' : '{% trans "Read more..." %}';
 }
 </script>
 

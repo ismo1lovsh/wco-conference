@@ -4,14 +4,15 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-local-dev-key')
-
+LANGUAGE_COOKIE_NAME = 'django_language'
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost 127.0.0.1').split(' ')
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 INSTALLED_APPS = [
-    'modeltranslation',  # eng birinchi bo'lishi SHART
+    'jazzmin',
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -20,7 +21,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'conference',
 ]
-
+JAZZMIN_SETTINGS = {
+    "site_title": "WCO Canine Forum",
+    "site_header": "WCO Canine Forum",
+    "site_brand": "WCO",
+    "welcome_sign": "WCO Global Canine Forum Admin",
+    "show_sidebar": True,
+    "navigation_expanded": True,
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',

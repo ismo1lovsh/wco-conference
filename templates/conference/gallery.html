@@ -1,11 +1,11 @@
 {% extends "conference/base.html" %}
 {% load static %}
-
+{% load i18n %}
 {% block content %}
 <main>
 
   <div class="page-banner">
-    <h2>Photo Gallery</h2>
+    <h2>{% trans "Photo Gallery" %}</h2>
   </div>
 
   <!-- Hero rasm -->
@@ -54,7 +54,7 @@
   <div class="gallery-no-content" id="gallery-no-content"
        {% if days %}style="display:none"{% endif %}>
     <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-    <p>Photos will be uploaded after the forum.</p>
+    <p>{% trans "Photos will be uploaded after the forum." %}</p>
   </div>
 
   <!-- Modal -->
