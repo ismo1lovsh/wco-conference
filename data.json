@@ -17,11 +17,53 @@
   }
 },
 {
-  "model": "sessions.session",
-  "pk": "t5x2gscs5nh4tcf9tupeeicxjqoqqvob",
+  "model": "auth.user",
   "fields": {
-    "session_data": ".eJxVjMsOwiAUBf-FtSG3INC6dO83NNwHUjWQlHZl_HdD0oVuz8yct5rjvuV5b7LOC6uLGtTpd8NITykd8COWe9VUy7YuqLuiD9r0rbK8rof7d5Bjy70GMH4wZOicPHmUCWNimwDC6AYRD25CIEbnBJ23QAbF0ggTUwiM6vMF77o4fg:1wDRSi:yTfQ-CeAA1KQlRnAiDKkrDH6llyURmU_DaR_93K6n1I",
-    "expire_date": "2026-04-30T18:29:12.963Z"
+    "password": "pbkdf2_sha256$1200000$4Mtk8Apu24QTLI3M7YSxBW$jUCCSVXlchIkeyo7Rm3vbWQISgznnZP38urN2njqgAo=",
+    "last_login": "2026-04-22T05:06:54.270Z",
+    "is_superuser": true,
+    "username": "shohruh",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-04-22T05:06:41.562Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$ASRvUITZvad6Ed1NzROsac$iHB+n062IswoEa4+2rla3zCkwG3zEMgKxx/qhRONAdw=",
+    "last_login": "2026-04-27T11:05:01.398Z",
+    "is_superuser": true,
+    "username": "adminshohruh",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-04-27T10:58:18.364Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "l8udjftg75qx3yux940bdladc3q3qrwj",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGln2ev2jpOcM1vqHA8iR4qRC3B0ipYD2zcx7sUDb2sI2yhKmzM4M2Ol3i5Qepe8g36nfZp7mvi5T5LvCDzr4dc7leTncv4NGo31r531CWaTMVqKqFrBS1EVoLZxQRliDUInQUwWBRnk0kF2uUtnqQEb2_gC3cjay:1wFPna:s14bZYrxUOk491o2AJ_0RG9X8hpKDd4PgcNvpa7TAVs",
+    "expire_date": "2026-05-06T05:06:54.275Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ucmy474ncs7xy9vevu55lzyacj2tozxh",
+  "fields": {
+    "session_data": ".eJxVjTsOwyAQRO9CHaENHy9OmT5nQAusP4kFkjFVlLvHlty4nfdm5iv8QnlsNLJ4CM7iJjy1bfKt8urntIf6mgWKH84HSO-9WWQseVvnIA9FnrTKV0m8PE_3MjBRnY4v0yOowaqgydl-QINMrC1qxAAQMYECGu6ms9EBUNIWDGrTOeLQOSN-f5bLPEU:1wHLDz:-fyQ1mL3cnx6Ds9T3HslpBpC3mBgtrhuScl62zXfSZQ",
+    "expire_date": "2026-05-11T12:38:07.704Z"
   }
 },
 {
@@ -101,10 +143,10 @@
     "time_end": "17:45",
     "session_text": "Cocktail reception / Registration",
     "session_text_en": "Cocktail reception / Registration",
-    "session_text_fr": null,
+    "session_text_fr": "Réception cocktail / Enregistrement",
     "sub_items": "",
     "sub_items_en": "",
-    "sub_items_fr": null,
+    "sub_items_fr": "",
     "style": "normal",
     "rowspan": 1,
     "order": 1
@@ -656,7 +698,7 @@
   "fields": {
     "title": "Honourable Guests of the Opening Ceremony",
     "title_en": "Honourable Guests of the Opening Ceremony",
-    "title_fr": "Honourable Guests of the Opening Ceremony",
+    "title_fr": "Honorables invités de la cérémonie d’ouverture",
     "order": 1
   }
 },
@@ -680,13 +722,13 @@
     "name_fr": "Akmalkhuja Mavlonov",
     "title": "Chairman of the Customs Committee of the Republic of Uzbekistan",
     "title_en": "Chairman of the Customs Committee of the Republic of Uzbekistan",
-    "title_fr": "Chairman of the Customs Committee of the Republic of Uzbekistan",
+    "title_fr": "Président du Comité des douanes de la République d’Ouzbékistan",
     "organization": "Customs Committee of the Republic of Uzbekistan",
     "organization_en": "Customs Committee of the Republic of Uzbekistan",
-    "organization_fr": "Customs Committee of the Republic of Uzbekistan",
-    "bio": "Akmalkhoja Yusupovich Mavlonov (born May 12, 1975, Quva District, Fergana Region, Uzbek SSR) is an Uzbek statesman, Major General of the Customs Service of the Republic of Uzbekistan, as well as a legal expert and economist. Since 2021, he has been serving as the Chairman of the Customs Committee of the Republic of Uzbekistan.",
-    "bio_en": "Akmalkhoja Yusupovich Mavlonov (born May 12, 1975, Quva District, Fergana Region, Uzbek SSR) is an Uzbek statesman, Major General of the Customs Service of the Republic of Uzbekistan, as well as a legal expert and economist. Since 2021, he has been serving as the Chairman of the Customs Committee of the Republic of Uzbekistan.",
-    "bio_fr": "Akmalkhoja Yusupovich Mavlonov (born May 12, 1975, Quva District, Fergana Region, Uzbek SSR) is an Uzbek statesman, Major General of the Customs Service of the Republic of Uzbekistan, as well as a legal expert and economist. Since 2021, he has been serving as the Chairman of the Customs Committee of the Republic of Uzbekistan.",
+    "organization_fr": "Comité des douanes de la République d’Ouzbékistan",
+    "bio": "Akmalkhoja Yusupovich Mavlonov is an Uzbek statesman, Major General of the Customs Service of the Republic of Uzbekistan, as well as a legal expert and economist. Since 2021, he has been serving as the Chairman of the Customs Committee of the Republic of Uzbekistan.",
+    "bio_en": "Akmalkhoja Yusupovich Mavlonov is an Uzbek statesman, Major General of the Customs Service of the Republic of Uzbekistan, as well as a legal expert and economist. Since 2021, he has been serving as the Chairman of the Customs Committee of the Republic of Uzbekistan.",
+    "bio_fr": "Akmalkhoja Yusupovich Mavlonov est un homme d’État ouzbek, major général du service des douanes de la République d’Ouzbékistan, ainsi qu’un juriste et économiste. Depuis 2021, il occupe le poste de président du Comité des douanes de la République d’Ouzbékistan.",
     "photo": "speakers/Akmalxoʻja_Mavlonov.jpg",
     "order": 1
   }
@@ -696,8 +738,8 @@
   "pk": 2,
   "fields": {
     "group": 1,
-    "name": "Adminstratsiya mehmoni",
-    "name_en": "Adminstratsiya mehmoni",
+    "name": "Vazirlar Mahkamasi Mehmoni",
+    "name_en": "Vazirlar Mahkamasi Mehmoni",
     "name_fr": null,
     "title": "",
     "title_en": null,
@@ -706,8 +748,8 @@
     "organization_en": null,
     "organization_fr": null,
     "bio": "",
-    "bio_en": null,
-    "bio_fr": null,
+    "bio_en": "",
+    "bio_fr": "",
     "photo": "speakers/canine.png",
     "order": 2
   }
@@ -726,8 +768,8 @@
     "organization": "World Customs Organisation",
     "organization_en": "World Customs Organisation",
     "organization_fr": "World Customs Organisation",
-    "bio": "Ian Saunders is an American customs and trade policy leader who became Secretary General of the World Customs Organization (WCO) in January 2024. With more than three decades in international relations, he is known for advancing global customs modernization and promoting inclusive, rules-based trade cooperation.\r\n\r\nKey facts\r\nPosition: Secretary General, World Customs Organization (since 2024)\r\n\r\nNationality: United States\r\n\r\nEducation: Georgetown University; executive programs at Harvard Kennedy School and American University\r\n\r\nPrior roles: Deputy Assistant Secretary, U.S. Department of Commerce; senior executive, U.S. Customs and Border Protection\r\n\r\nExperience: 30+ years in customs, trade, and international policy\r\n\r\nCareer and background\r\nBefore his election, Saunders served as Deputy Assistant Secretary for the Western Hemisphere at the U.S. Department of Commerce’s International Trade Administration. There, he led programs and strategies to strengthen U.S. commercial partnerships across the Americas. Earlier, at U.S. Customs and Border Protection, he held senior posts including Assistant Commissioner for International Affairs and Acting Deputy Executive Assistant Commissioner for Operations Support. He joined the U.S. Senior Executive Service in 2008. \r\n\r\nLeadership at the World Customs Organization\r\nElected in June 2023 and assuming office in January 2024, Saunders heads the WCO’s efforts to secure and facilitate global trade, protect revenue, and modernize customs operations worldwide. His priorities include balancing tradition with innovation, promoting transparency and inclusivity, and strengthening global supply-chain resilience amid climate, health, and digital challenges. \r\n\r\nVision and impact\r\nSaunders emphasizes cooperative border management, technological innovation, and diverse participation across the WCO’s 185 member administrations. Drawing on his long-standing work on frameworks such as the SAFE Framework of Standards, he advocates pragmatic governance that aligns customs modernization with security and sustainable development goals.",
-    "bio_en": "Ian Saunders is an American customs and trade policy leader who became Secretary General of the World Customs Organization (WCO) in January 2024. With more than three decades in international relations, he is known for advancing global customs modernization and promoting inclusive, rules-based trade cooperation.\r\n\r\nKey facts\r\nPosition: Secretary General, World Customs Organization (since 2024)\r\n\r\nNationality: United States\r\n\r\nEducation: Georgetown University; executive programs at Harvard Kennedy School and American University\r\n\r\nPrior roles: Deputy Assistant Secretary, U.S. Department of Commerce; senior executive, U.S. Customs and Border Protection\r\n\r\nExperience: 30+ years in customs, trade, and international policy\r\n\r\nCareer and background\r\nBefore his election, Saunders served as Deputy Assistant Secretary for the Western Hemisphere at the U.S. Department of Commerce’s International Trade Administration. There, he led programs and strategies to strengthen U.S. commercial partnerships across the Americas. Earlier, at U.S. Customs and Border Protection, he held senior posts including Assistant Commissioner for International Affairs and Acting Deputy Executive Assistant Commissioner for Operations Support. He joined the U.S. Senior Executive Service in 2008. \r\n\r\nLeadership at the World Customs Organization\r\nElected in June 2023 and assuming office in January 2024, Saunders heads the WCO’s efforts to secure and facilitate global trade, protect revenue, and modernize customs operations worldwide. His priorities include balancing tradition with innovation, promoting transparency and inclusivity, and strengthening global supply-chain resilience amid climate, health, and digital challenges. \r\n\r\nVision and impact\r\nSaunders emphasizes cooperative border management, technological innovation, and diverse participation across the WCO’s 185 member administrations. Drawing on his long-standing work on frameworks such as the SAFE Framework of Standards, he advocates pragmatic governance that aligns customs modernization with security and sustainable development goals.",
+    "bio": "Ian Saunders is Secretary General of the World Customs Organization (WCO) in January 2024. With more than three decades in international relations, he is known for advancing global customs modernization and promoting inclusive, rules-based trade cooperation.\r\n\r\nKey facts\r\nPosition: Secretary General, World Customs Organization (since 2024)\r\n\r\nNationality: United States\r\n\r\nEducation: Georgetown University; executive programs at Harvard Kennedy School and American University\r\n\r\nPrior roles: Deputy Assistant Secretary, U.S. Department of Commerce; senior executive, U.S. Customs and Border Protection\r\n\r\nExperience: 30+ years in customs, trade, and international policy\r\n\r\nCareer and background\r\nBefore his election, Saunders served as Deputy Assistant Secretary for the Western Hemisphere at the U.S. Department of Commerce’s International Trade Administration. There, he led programs and strategies to strengthen U.S. commercial partnerships across the Americas. Earlier, at U.S. Customs and Border Protection, he held senior posts including Assistant Commissioner for International Affairs and Acting Deputy Executive Assistant Commissioner for Operations Support. He joined the U.S. Senior Executive Service in 2008. \r\n\r\nLeadership at the World Customs Organization\r\nElected in June 2023 and assuming office in January 2024, Saunders heads the WCO’s efforts to secure and facilitate global trade, protect revenue, and modernize customs operations worldwide. His priorities include balancing tradition with innovation, promoting transparency and inclusivity, and strengthening global supply-chain resilience amid climate, health, and digital challenges. \r\n\r\nVision and impact\r\nSaunders emphasizes cooperative border management, technological innovation, and diverse participation across the WCO’s 185 member administrations. Drawing on his long-standing work on frameworks such as the SAFE Framework of Standards, he advocates pragmatic governance that aligns customs modernization with security and sustainable development goals.",
+    "bio_en": "Ian Saunders is Secretary General of the World Customs Organization (WCO) in January 2024. With more than three decades in international relations, he is known for advancing global customs modernization and promoting inclusive, rules-based trade cooperation.\r\n\r\nKey facts\r\nPosition: Secretary General, World Customs Organization (since 2024)\r\n\r\nNationality: United States\r\n\r\nEducation: Georgetown University; executive programs at Harvard Kennedy School and American University\r\n\r\nPrior roles: Deputy Assistant Secretary, U.S. Department of Commerce; senior executive, U.S. Customs and Border Protection\r\n\r\nExperience: 30+ years in customs, trade, and international policy\r\n\r\nCareer and background\r\nBefore his election, Saunders served as Deputy Assistant Secretary for the Western Hemisphere at the U.S. Department of Commerce’s International Trade Administration. There, he led programs and strategies to strengthen U.S. commercial partnerships across the Americas. Earlier, at U.S. Customs and Border Protection, he held senior posts including Assistant Commissioner for International Affairs and Acting Deputy Executive Assistant Commissioner for Operations Support. He joined the U.S. Senior Executive Service in 2008. \r\n\r\nLeadership at the World Customs Organization\r\nElected in June 2023 and assuming office in January 2024, Saunders heads the WCO’s efforts to secure and facilitate global trade, protect revenue, and modernize customs operations worldwide. His priorities include balancing tradition with innovation, promoting transparency and inclusivity, and strengthening global supply-chain resilience amid climate, health, and digital challenges. \r\n\r\nVision and impact\r\nSaunders emphasizes cooperative border management, technological innovation, and diverse participation across the WCO’s 185 member administrations. Drawing on his long-standing work on frameworks such as the SAFE Framework of Standards, he advocates pragmatic governance that aligns customs modernization with security and sustainable development goals.",
     "bio_fr": "Ian Saunders is an American customs and trade policy leader who became Secretary General of the World Customs Organization (WCO) in January 2024. With more than three decades in international relations, he is known for advancing global customs modernization and promoting inclusive, rules-based trade cooperation.\r\n\r\nKey facts\r\nPosition: Secretary General, World Customs Organization (since 2024)\r\n\r\nNationality: United States\r\n\r\nEducation: Georgetown University; executive programs at Harvard Kennedy School and American University\r\n\r\nPrior roles: Deputy Assistant Secretary, U.S. Department of Commerce; senior executive, U.S. Customs and Border Protection\r\n\r\nExperience: 30+ years in customs, trade, and international policy\r\n\r\nCareer and background\r\nBefore his election, Saunders served as Deputy Assistant Secretary for the Western Hemisphere at the U.S. Department of Commerce’s International Trade Administration. There, he led programs and strategies to strengthen U.S. commercial partnerships across the Americas. Earlier, at U.S. Customs and Border Protection, he held senior posts including Assistant Commissioner for International Affairs and Acting Deputy Executive Assistant Commissioner for Operations Support. He joined the U.S. Senior Executive Service in 2008. \r\n\r\nLeadership at the World Customs Organization\r\nElected in June 2023 and assuming office in January 2024, Saunders heads the WCO’s efforts to secure and facilitate global trade, protect revenue, and modernize customs operations worldwide. His priorities include balancing tradition with innovation, promoting transparency and inclusivity, and strengthening global supply-chain resilience amid climate, health, and digital challenges. \r\n\r\nVision and impact\r\nSaunders emphasizes cooperative border management, technological innovation, and diverse participation across the WCO’s 185 member administrations. Drawing on his long-standing work on frameworks such as the SAFE Framework of Standards, he advocates pragmatic governance that aligns customs modernization with security and sustainable development goals.",
     "photo": "speakers/ian-saunders.png",
     "order": 3
@@ -818,15 +860,208 @@
   }
 },
 {
+  "model": "conference.aboutpage",
+  "pk": 1,
+  "fields": {
+    "title": "WCO Global Canine Forum",
+    "title_en": "WCO Global Canine Forum",
+    "title_fr": "Forum mondial canin de l’Organisation mondiale des douanes (OMD)",
+    "theme": "Agility in a Complex World: Advancing Canine Services through Innovation, Security, and Collaboration.",
+    "theme_en": "Agility in a Complex World: Advancing Canine Services through Innovation, Security, and Collaboration.",
+    "theme_fr": "Agilité dans un monde complexe : faire progresser les services cynophiles grâce à l’innovation, à la sécurité et à la coopération.",
+    "date_location": "7–9 September 2026 – Tashkent, Uzbekistan",
+    "date_location_en": "7–9 September 2026 – Tashkent, Uzbekistan",
+    "date_location_fr": "Du 7 au 9 septembre 2026 – Tachkent, Ouzbékistan"
+  }
+},
+{
+  "model": "conference.aboutsection",
+  "pk": 1,
+  "fields": {
+    "page": 1,
+    "heading": "Overview",
+    "heading_en": "Overview",
+    "heading_fr": "Aperçu",
+    "body": "Join the international Canine (K-9) and Customs community in Tashkent, Uzbekistan, from 7–9 September 2026 for a global forum dedicated to the development of service dog training and modern border security practices.\r\n\r\nThe Global Canine Forum (K-9) will bring together Customs administrations, border and law enforcement agencies, experts and partners to exchange experience, demonstrate operational capabilities and discuss the future of canine services in border management. The forum is organized with the participation of the World Customs Organization (WCO) and the Customs Committee of the Republic of Uzbekistan and will serve as a platform for professional dialogue, practical demonstrations and international cooperation in the field of service dog training.",
+    "body_en": "Join the international Canine (K-9) and Customs community in Tashkent, Uzbekistan, from 7–9 September 2026 for a global forum dedicated to the development of service dog training and modern border security practices.\r\n\r\nThe Global Canine Forum (K-9) will bring together Customs administrations, border and law enforcement agencies, experts and partners to exchange experience, demonstrate operational capabilities and discuss the future of canine services in border management. The forum is organized with the participation of the World Customs Organization (WCO) and the Customs Committee of the Republic of Uzbekistan and will serve as a platform for professional dialogue, practical demonstrations and international cooperation in the field of service dog training.",
+    "body_fr": "Rejoignez la communauté internationale des unités cynophiles (K-9) et des douanes à Tachkent, en Ouzbékistan, du 7 au 9 septembre 2026, à l’occasion d’un forum mondial consacré au développement de la formation des chiens de service et aux pratiques modernes de sécurité aux frontières.\r\n\r\nLe Forum mondial des unités cynophiles (K-9) réunira des administrations douanières, des services des frontières et des forces de l’ordre, ainsi que des experts et partenaires, afin d’échanger des expériences, de présenter des capacités opérationnelles et de discuter de l’avenir des services cynophiles dans la gestion des frontières. Organisé avec la participation de l’Organisation mondiale des douanes (OMD) et du Comité des douanes de la République d’Ouzbékistan, le forum constituera une plateforme de dialogue professionnel, de démonstrations pratiques et de coopération internationale dans le domaine de la formation des chiens de service.",
+    "body_after": "",
+    "body_after_en": null,
+    "body_after_fr": null,
+    "order": 1
+  }
+},
+{
+  "model": "conference.aboutsection",
+  "pk": 2,
+  "fields": {
+    "page": 1,
+    "heading": "What to expect",
+    "heading_en": "What to expect",
+    "heading_fr": "À quoi s’attendre",
+    "body": "Participants can look forward to a comprehensive program that includes:",
+    "body_en": "Participants can look forward to a comprehensive program that includes:",
+    "body_fr": "Les participants pourront bénéficier d’un programme complet comprenant :",
+    "body_after": "",
+    "body_after_en": null,
+    "body_after_fr": null,
+    "order": 2
+  }
+},
+{
+  "model": "conference.aboutsection",
+  "pk": 3,
+  "fields": {
+    "page": 1,
+    "heading": "Demonstrations and Exhibitions",
+    "heading_en": "Demonstrations and Exhibitions",
+    "heading_fr": "Démonstrations et expositions",
+    "body": "The forum will also include practical demonstrations and exhibition areas where participants will be able to observe the operational capabilities of service dogs, explore training equipment and learn about modern approaches used in canine centers around the world. These demonstrations will provide valuable insights into how service dog teams support border protection, law enforcement operations and rescue missions.",
+    "body_en": "The forum will also include practical demonstrations and exhibition areas where participants will be able to observe the operational capabilities of service dogs, explore training equipment and learn about modern approaches used in canine centers around the world. These demonstrations will provide valuable insights into how service dog teams support border protection, law enforcement operations and rescue missions.",
+    "body_fr": "Le forum comprendra également des démonstrations pratiques ainsi que des espaces d’exposition où les participants pourront observer les capacités opérationnelles des chiens de service, découvrir les équipements de dressage et s’informer sur les approches modernes utilisées dans les centres cynophiles à travers le monde. Ces démonstrations fourniront des informations précieuses sur la manière dont les équipes cynophiles soutiennent la protection des frontières, les opérations de maintien de l’ordre et les missions de secours.",
+    "body_after": "",
+    "body_after_en": null,
+    "body_after_fr": null,
+    "order": 3
+  }
+},
+{
+  "model": "conference.aboutsection",
+  "pk": 4,
+  "fields": {
+    "page": 1,
+    "heading": "Who will attend?",
+    "heading_en": "Who will attend?",
+    "heading_fr": "Qui participera?",
+    "body": "The forum will bring together a wide range of participants including:",
+    "body_en": "The forum will bring together a wide range of participants including:",
+    "body_fr": "Le forum réunira un large éventail de participants, notamment :",
+    "body_after": "The event will provide an important platform for strengthening international cooperation, sharing best practices and shaping the future of canine services in border security.",
+    "body_after_en": "The event will provide an important platform for strengthening international cooperation, sharing best practices and shaping the future of canine services in border security.",
+    "body_after_fr": "Cet événement constituera une plateforme importante pour renforcer la coopération internationale, partager les meilleures pratiques et façonner l’avenir des services cynophiles dans le domaine de la sécurité aux frontières.",
+    "order": 4
+  }
+},
+{
+  "model": "conference.aboutbullet",
+  "pk": 1,
+  "fields": {
+    "section": 2,
+    "text": "Professional discussions among international experts and practitioners in the field of canine services",
+    "text_en": "Professional discussions among international experts and practitioners in the field of canine services",
+    "text_fr": "Des discussions professionnelles entre experts internationaux et praticiens dans le domaine des services cynophiles",
+    "order": 0
+  }
+},
+{
+  "model": "conference.aboutbullet",
+  "pk": 2,
+  "fields": {
+    "section": 2,
+    "text": "Presentations on modern dog training techniques and operational practices",
+    "text_en": "Presentations on modern dog training techniques and operational practices",
+    "text_fr": "Des présentations sur les techniques modernes de dressage des chiens et les pratiques opérationnelles",
+    "order": 0
+  }
+},
+{
+  "model": "conference.aboutbullet",
+  "pk": 3,
+  "fields": {
+    "section": 2,
+    "text": "Live demonstrations of service dogs detecting narcotics, explosives and other prohibited items",
+    "text_en": "Live demonstrations of service dogs detecting narcotics, explosives and other prohibited items",
+    "text_fr": "Des démonstrations en direct de chiens de service détectant des stupéfiants, des explosifs et d’autres articles prohibés",
+    "order": 0
+  }
+},
+{
+  "model": "conference.aboutbullet",
+  "pk": 4,
+  "fields": {
+    "section": 2,
+    "text": "Opportunities for experience sharing between different countries and organizations",
+    "text_en": "Opportunities for experience sharing between different countries and organizations",
+    "text_fr": "Des opportunités d’échange d’expériences entre différents pays et organisations",
+    "order": 0
+  }
+},
+{
+  "model": "conference.aboutbullet",
+  "pk": 5,
+  "fields": {
+    "section": 2,
+    "text": "Networking sessions connecting participants with experts and partners in the field of canine services",
+    "text_en": "Networking sessions connecting participants with experts and partners in the field of canine services",
+    "text_fr": "Des sessions de réseautage réunissant les participants avec des experts et partenaires du secteur cynophile",
+    "order": 0
+  }
+},
+{
+  "model": "conference.aboutbullet",
+  "pk": 6,
+  "fields": {
+    "section": 4,
+    "text": "Customs administrations",
+    "text_en": "Customs administrations",
+    "text_fr": "",
+    "order": 0
+  }
+},
+{
+  "model": "conference.aboutbullet",
+  "pk": 7,
+  "fields": {
+    "section": 4,
+    "text": "Border and law enforcement agencies",
+    "text_en": "Border and law enforcement agencies",
+    "text_fr": "",
+    "order": 0
+  }
+},
+{
+  "model": "conference.aboutbullet",
+  "pk": 8,
+  "fields": {
+    "section": 4,
+    "text": "Canine training specialists and dog handlers",
+    "text_en": "Canine training specialists and dog handlers",
+    "text_fr": "",
+    "order": 0
+  }
+},
+{
+  "model": "conference.aboutbullet",
+  "pk": 9,
+  "fields": {
+    "section": 4,
+    "text": "International organizations",
+    "text_en": "International organizations",
+    "text_fr": "",
+    "order": 0
+  }
+},
+{
+  "model": "conference.aboutbullet",
+  "pk": 10,
+  "fields": {
+    "section": 4,
+    "text": "Academic and research institutions",
+    "text_en": "Academic and research institutions",
+    "text_fr": "",
+    "order": 0
+  }
+},
+{
   "model": "conference.customsobject",
   "pk": 1,
   "fields": {
     "name": "Central Office",
     "name_en": "Central Office",
-    "name_fr": "“Markaziy apparat” ning rasmiy fransuzcha tarjimasi:  **Appareil central**",
+    "name_fr": "Appareil central",
     "description": "An authorized law enforcement body in the field of customs administration under the Ministry of Finance of the Republic of Uzbekistan. Its main functions include ensuring compliance with customs legislation, maintaining statistics on foreign trade and cross-border movement of goods, and combating smuggling.",
     "description_en": "An authorized law enforcement body in the field of customs administration under the Ministry of Finance of the Republic of Uzbekistan. Its main functions include ensuring compliance with customs legislation, maintaining statistics on foreign trade and cross-border movement of goods, and combating smuggling.",
-    "description_fr": "**Un organe chargé de l’application de la loi, compétent dans le domaine de l’administration douanière, placé sous l’autorité du Ministère des Finances de la République d’Ouzbékistan. Ses principales missions consistent à assurer le respect de la législation douanière, à tenir les statistiques du commerce extérieur et de la circulation transfrontalière des marchandises, ainsi qu’à lutter contre la contrebande.**",
+    "description_fr": "Un organe de maintien de l’ordre habilité dans le domaine de l’administration douanière, relevant du ministère des Finances de la République d’Ouzbékistan. Ses principales fonctions consistent à assurer le respect de la législation douanière, à tenir des statistiques sur le commerce extérieur et le mouvement transfrontalier des marchandises, ainsi qu’à lutter contre la contrebande.",
     "image": "customs_objects/6IqfUjFC77ZrBfaimJV52ZXiVf7W5-eL.jpeg",
     "order": 0
   }
@@ -874,6 +1109,24 @@
   }
 },
 {
+  "model": "conference.customsobjectimage",
+  "pk": 1,
+  "fields": {
+    "obj": 1,
+    "image": "customs_objects/gallery/kitobcha.png",
+    "order": 0
+  }
+},
+{
+  "model": "conference.customsobjectimage",
+  "pk": 2,
+  "fields": {
+    "obj": 1,
+    "image": "customs_objects/gallery/backblue.gif",
+    "order": 0
+  }
+},
+{
   "model": "conference.socialevent",
   "pk": 1,
   "fields": {
@@ -882,14 +1135,14 @@
     "title_fr": "Centre de la civilisation islamique",
     "description": "The Center for Islamic Civilization in Uzbekistan under the Cabinet of Ministers of the Republic of Uzbekistan (Arabic: مركز الحضارة الإسلامية في أوزبكستان لدى مجلس الوزراء لجمهورية أوزبكستان; English: Center of Islamic Civilization in Uzbekistan under the Cabinet of Ministers of the Republic of Uzbekistan) is a research institution in Uzbekistan engaged in scientific studies related to Islamic history.\r\n\r\nOn March 17, 2026, under the leadership of Shavkat Mirziyoyev, on the eve of Eid al-Fitr, the official opening ceremony of the Center was held. On April 13, 2026, it was included in the Guinness World Records in the category of “the largest Islamic civilization museum.”\r\n\r\nHistory\r\n\r\nThe Center for Islamic Civilization in Uzbekistan was established in accordance with the Presidential Decree of the Republic of Uzbekistan dated July 23, 2017, issued by Shavkat Mirziyoyev. Over more than eight years, this large complex was constructed and fully completed. On March 17, 2026, on the eve of Eid al-Fitr, the Center was officially inaugurated.",
     "description_en": "The Center for Islamic Civilization in Uzbekistan under the Cabinet of Ministers of the Republic of Uzbekistan (Arabic: مركز الحضارة الإسلامية في أوزبكستان لدى مجلس الوزراء لجمهورية أوزبكستان; English: Center of Islamic Civilization in Uzbekistan under the Cabinet of Ministers of the Republic of Uzbekistan) is a research institution in Uzbekistan engaged in scientific studies related to Islamic history.\r\n\r\nOn March 17, 2026, under the leadership of Shavkat Mirziyoyev, on the eve of Eid al-Fitr, the official opening ceremony of the Center was held. On April 13, 2026, it was included in the Guinness World Records in the category of “the largest Islamic civilization museum.”\r\n\r\nHistory\r\n\r\nThe Center for Islamic Civilization in Uzbekistan was established in accordance with the Presidential Decree of the Republic of Uzbekistan dated July 23, 2017, issued by Shavkat Mirziyoyev. Over more than eight years, this large complex was constructed and fully completed. On March 17, 2026, on the eve of Eid al-Fitr, the Center was officially inaugurated.",
-    "description_fr": "The Center for Islamic Civilization in Uzbekistan under the Cabinet of Ministers of the Republic of Uzbekistan (Arabic: مركز الحضارة الإسلامية في أوزبكستان لدى مجلس الوزراء لجمهورية أوزبكستان; English: Center of Islamic Civilization in Uzbekistan under the Cabinet of Ministers of the Republic of Uzbekistan) is a research institution in Uzbekistan engaged in scientific studies related to Islamic history.\r\n\r\nOn March 17, 2026, under the leadership of Shavkat Mirziyoyev, on the eve of Eid al-Fitr, the official opening ceremony of the Center was held. On April 13, 2026, it was included in the Guinness World Records in the category of “the largest Islamic civilization museum.”\r\n\r\nHistory\r\n\r\nThe Center for Islamic Civilization in Uzbekistan was established in accordance with the Presidential Decree of the Republic of Uzbekistan dated July 23, 2017, issued by Shavkat Mirziyoyev. Over more than eight years, this large complex was constructed and fully completed. On March 17, 2026, on the eve of Eid al-Fitr, the Center was officially inaugurated.",
+    "description_fr": "Le Centre de civilisation islamique en Ouzbékistan, relevant du Cabinet des ministres de la République d’Ouzbékistan (en arabe : مركز الحضارة الإسلامية في أوزبكستان لدى مجلس الوزراء لجمهورية أوزبكستان ; en anglais : Center of Islamic Civilization in Uzbekistan under the Cabinet of Ministers of the Republic of Uzbekistan), est une institution de recherche en Ouzbékistan engagée dans des études scientifiques relatives à l’histoire islamique.\r\n\r\nLe 17 mars 2026, sous la direction de Shavkat Mirziyoyev et à la veille de l’Aïd al-Fitr, la cérémonie officielle d’inauguration du Centre a eu lieu. Le 13 avril 2026, il a été inscrit dans le Livre Guinness des records dans la catégorie du « plus grand musée de la civilisation islamique ».\r\n\r\nHistorique\r\nLe Centre de civilisation islamique en Ouzbékistan a été créé conformément au décret présidentiel de la République d’Ouzbékistan daté du 23 juillet 2017, signé par Shavkat Mirziyoyev. Au cours de plus de huit années, ce vaste complexe a été construit et entièrement achevé. Le 17 mars 2026, à la veille de l’Aïd al-Fitr, le Centre a été officiellement inauguré.",
     "image": "social_events/3J8cut17381698370167_l.jpg",
     "date": "09.11.2026",
     "date_en": "09.11.2026",
     "date_fr": "09.11.2026",
     "location": "Tashkent city, Karasaray Street 47, Tashkent",
     "location_en": "Tashkent city, Karasaray Street 47, Tashkent",
-    "location_fr": "Tashkent city, Karasaray Street 47, Tashkent",
+    "location_fr": "Ville de Tachkent, rue Karasaray 47, Tachkent",
     "order": 1
   }
 },
@@ -969,7 +1222,11 @@
   "fields": {
     "category": "wco",
     "name": "Ms. Alman Fan",
-    "organization": "WCO",
+    "name_en": "Ms. Alman Fan",
+    "name_fr": "Madame Alman Fan",
+    "organization": "World Customs Organisation",
+    "organization_en": "World Customs Organisation",
+    "organization_fr": "Organisation mondiale des douanes",
     "emails": "Alman.Fan@wcoomd.org",
     "order": 1
   }
@@ -980,7 +1237,11 @@
   "fields": {
     "category": "wco",
     "name": "Mr. Keith Barker",
-    "organization": "WCO",
+    "name_en": "Mr. Keith Barker",
+    "name_fr": "Monsieur Keith Barker",
+    "organization": "World Customs Organisation",
+    "organization_en": "World Customs Organisation",
+    "organization_fr": "Organisation mondiale des douanes",
     "emails": "Keith.Barker@wcoomd.org\r\nk9programme@wcoomd.org",
     "order": 2
   }
@@ -991,7 +1252,11 @@
   "fields": {
     "category": "registration",
     "name": "Ms. Natasa Grcevska",
-    "organization": "WCO",
+    "name_en": "Ms. Natasa Grcevska",
+    "name_fr": "Madame Natasa Grcevska",
+    "organization": "World Customs Organisation",
+    "organization_en": "World Customs Organisation",
+    "organization_fr": "Organisation mondiale des douanes",
     "emails": "Natasa.Grcevska@wcoomd.org",
     "order": 1
   }
@@ -1002,32 +1267,12 @@
   "fields": {
     "category": "host",
     "name": "Mr. Zafar Olimkulov",
+    "name_en": "Mr. Zafar Olimkulov",
+    "name_fr": "Monsieur Zafar Olimkulov",
     "organization": "Customs Committee of the Republic of Uzbekistan",
+    "organization_en": "Customs Committee of the Republic of Uzbekistan",
+    "organization_fr": "Comité des douanes de la République d’Ouzbékistan",
     "emails": "z.olimkulov@customs.uz",
-    "order": 1
-  }
-},
-{
-  "model": "conference.hotel",
-  "pk": 1,
-  "fields": {
-    "name": "Hilton",
-    "name_en": "Hilton",
-    "name_fr": "Hilton",
-    "description": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats.",
-    "description_en": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats.",
-    "description_fr": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats.",
-    "address": "Tashkent",
-    "address_en": "Tashkent",
-    "address_fr": "Tashkent",
-    "phone": "+998887582502",
-    "email": "pesuchunme@gmail.com",
-    "website": "https://www.ihg.com/",
-    "image": "hotels/hilton-tashkent-city.jpg",
-    "stars": 5,
-    "distance": "Tashkent",
-    "distance_en": "Tashkent",
-    "distance_fr": "Tashkent",
     "order": 1
   }
 },
@@ -1044,8 +1289,8 @@
     "address": "Tashkent",
     "address_en": "Tashkent",
     "address_fr": "Tashkent",
-    "phone": "+998887582502",
-    "email": "pesuchunme@gmail.com",
+    "phone": "810 7 495 180 0398",
+    "email": "",
     "website": "https://www.ihg.com/",
     "image": "hotels/holiday-inn-tashkent-8954873578-4x3.avif",
     "stars": 5,
@@ -1057,33 +1302,16 @@
 },
 {
   "model": "conference.hotelroom",
-  "pk": 1,
-  "fields": {
-    "hotel": 1,
-    "room_type": "Badroom",
-    "room_type_en": "Badroom",
-    "room_type_fr": null,
-    "price": "140.00",
-    "currency": "USD",
-    "per": "per night",
-    "per_en": "per night",
-    "per_fr": "per night",
-    "breakfast_included": true,
-    "order": 1
-  }
-},
-{
-  "model": "conference.hotelroom",
   "pk": 2,
   "fields": {
     "hotel": 2,
-    "room_type": "Badroom",
-    "room_type_en": "Badroom",
+    "room_type": "Tashkent",
+    "room_type_en": "Tashkent",
     "room_type_fr": null,
-    "price": "140.00",
-    "currency": "USD",
-    "per": "per night",
-    "per_en": "per night",
+    "price": "1200000.00",
+    "currency": "Sum",
+    "per": "One day",
+    "per_en": "One day",
     "per_fr": "per night",
     "breakfast_included": false,
     "order": 0
@@ -1109,25 +1337,6 @@
   }
 },
 {
-  "model": "conference.venue",
-  "pk": 2,
-  "fields": {
-    "name": "JW Marriott Hotel Tashkent City",
-    "name_en": "JW Marriott Hotel Tashkent City",
-    "name_fr": "JW Marriott Hotel Tashkent City",
-    "subtitle": "Conference Venue – Grand Ballroom",
-    "subtitle_en": "Conference Venue – Grand Ballroom",
-    "subtitle_fr": "Conference Venue – Grand Ballroom",
-    "description": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats. (Marriott)\r\nThe ballroom can accommodate up to 600 participants in theatre style, 450 for banquets, and 700 guests for receptions, making it ideal for large-scale international conferences and corporate gatherings. (Marriott)\r\nEquipped with modern audio-visual technology, on-site technical support, and adjacent pre-function areas for registration and networking, the Grand Ballroom ensures a seamless and professional event experience in one of the city’s leading luxury hotels.",
-    "description_en": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats. (Marriott)\r\nThe ballroom can accommodate up to 600 participants in theatre style, 450 for banquets, and 700 guests for receptions, making it ideal for large-scale international conferences and corporate gatherings. (Marriott)\r\nEquipped with modern audio-visual technology, on-site technical support, and adjacent pre-function areas for registration and networking, the Grand Ballroom ensures a seamless and professional event experience in one of the city’s leading luxury hotels.",
-    "description_fr": "The Grand Ballroom at JW Marriott Hotel Tashkent offers a sophisticated and spacious setting for high-level conferences, meetings, and official events in the heart of Tashkent City. With approximately 820 m² of pillar-free space and a ceiling height of around 8.5 meters, the venue provides an elegant and flexible environment suitable for a wide range of event formats. (Marriott)\r\nThe ballroom can accommodate up to 600 participants in theatre style, 450 for banquets, and 700 guests for receptions, making it ideal for large-scale international conferences and corporate gatherings. (Marriott)\r\nEquipped with modern audio-visual technology, on-site technical support, and adjacent pre-function areas for registration and networking, the Grand Ballroom ensures a seamless and professional event experience in one of the city’s leading luxury hotels.",
-    "image": "venues/hilton-tashkent-city.jpg",
-    "google_maps_url": "https://maps.google.com/?q=JW+Marriott+Hotel+Tashkent+City",
-    "google_maps_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.5!2d69.2401!3d41.2995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b0cc379e9c3%3A0xa5bobc4fc7b9e!2sJW%20Marriott%20Hotel%20Tashkent!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s\" width=\"100%\" height=\"340\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\"></iframe>",
-    "order": 2
-  }
-},
-{
   "model": "conference.venueday",
   "pk": 1,
   "fields": {
@@ -1139,47 +1348,6 @@
     "date_en": "6 SEP 2026",
     "date_fr": null,
     "order": 1
-  }
-},
-{
-  "model": "conference.venueday",
-  "pk": 2,
-  "fields": {
-    "venue": 2,
-    "day_label": "First day",
-    "day_label_en": "First day",
-    "day_label_fr": null,
-    "date": "7 SEP 2026",
-    "date_en": "7 SEP 2026",
-    "date_fr": null,
-    "order": 0
-  }
-},
-{
-  "model": "conference.hotelimage",
-  "pk": 1,
-  "fields": {
-    "hotel": 1,
-    "image": "hotels/gallery/2-0-0-0-0-1583391101.jpg",
-    "order": 0
-  }
-},
-{
-  "model": "conference.hotelimage",
-  "pk": 2,
-  "fields": {
-    "hotel": 1,
-    "image": "hotels/gallery/3J8cut17381698370167_l.jpg",
-    "order": 0
-  }
-},
-{
-  "model": "conference.hotelimage",
-  "pk": 3,
-  "fields": {
-    "hotel": 1,
-    "image": "hotels/gallery/9B9A1116-1500x1000.jpg",
-    "order": 0
   }
 },
 {
@@ -1216,6 +1384,38 @@
     "hotel": 2,
     "image": "hotels/gallery/holiday-inn-tashkent-10137935827-4x3.avif",
     "order": 0
+  }
+},
+{
+  "model": "conference.homepage",
+  "pk": 1,
+  "fields": {
+    "title": "2026 WCO Global Canine Forum",
+    "title_en": "2026 WCO Global Canine Forum",
+    "title_fr": "Forum mondial canin de l’Organisation mondiale des douanes (OMD)",
+    "subtitle": "Global Canine Forum",
+    "subtitle_en": "Global Canine Forum",
+    "subtitle_fr": "Forum Mondial Canin",
+    "location": "Tashkent, Uzbekistan",
+    "location_en": "Tashkent, Uzbekistan",
+    "location_fr": "Tachkent, Ouzbékistan",
+    "date": "7th – 9th September 2026",
+    "date_en": "7th – 9th September 2026",
+    "date_fr": "du 7 au 9 septembre 2026",
+    "body_1": "Join the international Canine (K-9) and Customs community in Tashkent, Uzbekistan, from 7–9 September 2026 for a global forum dedicated to the development of service dog training and modern border security practices.",
+    "body_1_en": "Join the international Canine (K-9) and Customs community in Tashkent, Uzbekistan, from 7–9 September 2026 for a global forum dedicated to the development of service dog training and modern border security practices.",
+    "body_1_fr": "Participez au forum mondial réunissant la communauté internationale canine (K-9) et douanière à Tachkent, Ouzbékistan, du 7 au 9 septembre 2026, dédié au développement de la formation des chiens de service et aux pratiques modernes de sécurité frontalière.",
+    "body_2": "The Global Canine Forum (K-9) will bring together Customs administrations, border and law enforcement agencies, experts and partners to exchange experience, demonstrate operational capabilities and discuss the future of canine services in border management. The forum is organized with the participation of the World Customs Organization (WCO) and the Customs Committee of the Republic of Uzbekistan and will serve as a platform for professional dialogue, practical demonstrations and international cooperation in the field of service dog training.",
+    "body_2_en": "The Global Canine Forum (K-9) will bring together Customs administrations, border and law enforcement agencies, experts and partners to exchange experience, demonstrate operational capabilities and discuss the future of canine services in border management. The forum is organized with the participation of the World Customs Organization (WCO) and the Customs Committee of the Republic of Uzbekistan and will serve as a platform for professional dialogue, practical demonstrations and international cooperation in the field of service dog training.",
+    "body_2_fr": "Le Forum mondial canin (K-9) réunira les administrations douanières, les services frontaliers et les forces de l’ordre, ainsi que des experts et partenaires, afin d’échanger des expériences, de démontrer des capacités opérationnelles et de discuter de l’avenir des services cynophiles dans la gestion des frontières.\r\n\r\nLe forum est organisé avec la participation de l’Organisation mondiale des douanes (OMD) et du Comité des douanes de la République d’Ouzbékistan, et servira de plateforme pour le dialogue professionnel, les démonstrations pratiques et la coopération internationale dans le domaine de la formation des chiens de service.",
+    "body_3": "The forum will explore how canine units contribute to detecting illicit goods, combating transnational crime and strengthening border control while facilitating legitimate trade and travel. Each day of the forum will highlight key aspects of modern canine operations.",
+    "body_3_en": "The forum will explore how canine units contribute to detecting illicit goods, combating transnational crime and strengthening border control while facilitating legitimate trade and travel. Each day of the forum will highlight key aspects of modern canine operations.",
+    "body_3_fr": "Le forum examinera la manière dont les unités cynophiles contribuent à la détection de marchandises illicites, à la lutte contre la criminalité transnationale et au renforcement du contrôle aux frontières, tout en facilitant le commerce et les déplacements légitimes. Chaque journée du forum mettra en lumière des aspects clés des opérations cynophiles modernes.",
+    "body_4": "Sessions will focus on operational practices, training methodologies and the integration of modern technologies in canine services. Through expert discussions, practical demonstrations and knowledge sharing, the forum will highlight how well-trained service dogs and professional handlers remain one of the most effective tools for detecting narcotics, weapons, explosives, wildlife trafficking and other illegal activities.",
+    "body_4_en": "Sessions will focus on operational practices, training methodologies and the integration of modern technologies in canine services. Through expert discussions, practical demonstrations and knowledge sharing, the forum will highlight how well-trained service dogs and professional handlers remain one of the most effective tools for detecting narcotics, weapons, explosives, wildlife trafficking and other illegal activities.",
+    "body_4_fr": "Les sessions seront consacrées aux pratiques opérationnelles, aux méthodologies de formation ainsi qu’à l’intégration des technologies modernes dans les services cynophiles. À travers des discussions d’experts, des démonstrations pratiques et le partage de connaissances, le forum soulignera dans quelle mesure les chiens de service bien dressés et leurs maîtres-chiens professionnels demeurent l’un des outils les plus efficaces pour la détection des stupéfiants, des armes, des explosifs, du trafic d’espèces sauvages et d’autres activités illicites.",
+    "illustration": "home/kinologiya.png",
+    "youtube_id": ""
   }
 },
 {
@@ -2206,6 +2406,528 @@
     "object_repr": "Honourable Guests of the Opening Ceremony",
     "action_flag": 2,
     "change_message": "[{\"changed\": {\"name\": \"speaker\", \"object\": \"Ian Saunders\", \"fields\": [\"Bio [en]\", \"Bio [fr]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 56,
+  "fields": {
+    "action_time": "2026-04-22T05:07:35.889Z",
+    "user": [
+      "shohruh"
+    ],
+    "content_type": [
+      "conference",
+      "speakergroup"
+    ],
+    "object_id": "1",
+    "object_repr": "Honourable Guests of the Opening Ceremony",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"speaker\", \"object\": \"Vazirlar Mahkamasi Mehmoni\", \"fields\": [\"Name [en]\"]}}, {\"changed\": {\"name\": \"speaker\", \"object\": \"Ian Saunders\", \"fields\": [\"Bio [en]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 57,
+  "fields": {
+    "action_time": "2026-04-22T05:08:16.037Z",
+    "user": [
+      "shohruh"
+    ],
+    "content_type": [
+      "conference",
+      "speakergroup"
+    ],
+    "object_id": "1",
+    "object_repr": "Honourable Guests of the Opening Ceremony",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"speaker\", \"object\": \"Akmalkhuja Mavlonov\", \"fields\": [\"Bio [en]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 58,
+  "fields": {
+    "action_time": "2026-04-22T05:08:46.357Z",
+    "user": [
+      "shohruh"
+    ],
+    "content_type": [
+      "conference",
+      "venue"
+    ],
+    "object_id": "2",
+    "object_repr": "JW Marriott Hotel Tashkent City",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 59,
+  "fields": {
+    "action_time": "2026-04-22T05:11:10.948Z",
+    "user": [
+      "shohruh"
+    ],
+    "content_type": [
+      "conference",
+      "hotel"
+    ],
+    "object_id": "1",
+    "object_repr": "Hilton",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 60,
+  "fields": {
+    "action_time": "2026-04-22T05:12:47.597Z",
+    "user": [
+      "shohruh"
+    ],
+    "content_type": [
+      "conference",
+      "hotel"
+    ],
+    "object_id": "2",
+    "object_repr": "Holiday Inn Tashkent City",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Phone\", \"Email\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 61,
+  "fields": {
+    "action_time": "2026-04-27T11:13:14.960Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "customsobject"
+    ],
+    "object_id": "1",
+    "object_repr": "Central Office",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"customs object image\", \"object\": \"Central Office - 0\"}}, {\"added\": {\"name\": \"customs object image\", \"object\": \"Central Office - 0\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 62,
+  "fields": {
+    "action_time": "2026-04-27T11:15:12.380Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "aboutpage"
+    ],
+    "object_id": "1",
+    "object_repr": "WCO Global Canine Forum",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"about section\", \"object\": \"gs\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 63,
+  "fields": {
+    "action_time": "2026-04-27T11:27:48.553Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "homepage"
+    ],
+    "object_id": "1",
+    "object_repr": "2026 WCO Global Canine Forum",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 64,
+  "fields": {
+    "action_time": "2026-04-27T11:38:04.054Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "aboutpage"
+    ],
+    "object_id": "1",
+    "object_repr": "WCO Global Canine Forum",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Theme [fr]\", \"Date location\", \"Date location [en]\", \"Date location [fr]\"]}}, {\"added\": {\"name\": \"about section\", \"object\": \"What to expect\"}}, {\"changed\": {\"name\": \"about section\", \"object\": \"Overview\", \"fields\": [\"Heading\", \"Heading [en]\", \"Heading [fr]\", \"Body\", \"Body [en]\", \"Body [fr]\", \"Order\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 65,
+  "fields": {
+    "action_time": "2026-04-27T11:39:41.310Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "aboutpage"
+    ],
+    "object_id": "1",
+    "object_repr": "WCO Global Canine Forum",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"about section\", \"object\": \"What to expect\", \"fields\": [\"Body\", \"Body [en]\", \"Body [fr]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 66,
+  "fields": {
+    "action_time": "2026-04-27T11:40:34.872Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "aboutsection"
+    ],
+    "object_id": "2",
+    "object_repr": "What to expect",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"about bullet\", \"object\": \"Professional discussions among international experts and pra\"}}, {\"added\": {\"name\": \"about bullet\", \"object\": \"Presentations on modern dog training techniques and operatio\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 67,
+  "fields": {
+    "action_time": "2026-04-27T11:41:01.701Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "aboutsection"
+    ],
+    "object_id": "2",
+    "object_repr": "What to expect",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"about bullet\", \"object\": \"Live demonstrations of service dogs detecting narcotics, exp\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 68,
+  "fields": {
+    "action_time": "2026-04-27T11:41:33.553Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "aboutsection"
+    ],
+    "object_id": "2",
+    "object_repr": "What to expect",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"about bullet\", \"object\": \"Opportunities for experience sharing between different count\"}}, {\"added\": {\"name\": \"about bullet\", \"object\": \"Networking sessions connecting participants with experts and\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 69,
+  "fields": {
+    "action_time": "2026-04-27T11:43:31.259Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "aboutpage"
+    ],
+    "object_id": "1",
+    "object_repr": "WCO Global Canine Forum",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"about section\", \"object\": \"Demonstrations and Exhibitions\"}}, {\"added\": {\"name\": \"about section\", \"object\": \"Who will attend?\"}}, {\"added\": {\"name\": \"about section\", \"object\": \"\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 70,
+  "fields": {
+    "action_time": "2026-04-27T11:44:28.790Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "aboutsection"
+    ],
+    "object_id": "4",
+    "object_repr": "Who will attend?",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"about bullet\", \"object\": \"Customs administrations\"}}, {\"added\": {\"name\": \"about bullet\", \"object\": \"Border and law enforcement agencies\"}}, {\"added\": {\"name\": \"about bullet\", \"object\": \"Canine training specialists and dog handlers\"}}, {\"added\": {\"name\": \"about bullet\", \"object\": \"International organizations\"}}, {\"added\": {\"name\": \"about bullet\", \"object\": \"Academic and research institutions\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 71,
+  "fields": {
+    "action_time": "2026-04-27T11:50:17.862Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "aboutpage"
+    ],
+    "object_id": "1",
+    "object_repr": "WCO Global Canine Forum",
+    "action_flag": 2,
+    "change_message": "[{\"deleted\": {\"name\": \"about section\", \"object\": \"\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 72,
+  "fields": {
+    "action_time": "2026-04-27T11:51:06.249Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "aboutpage"
+    ],
+    "object_id": "1",
+    "object_repr": "WCO Global Canine Forum",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"about section\", \"object\": \"Who will attend?\", \"fields\": [\"Body after\", \"Body after [en]\", \"Body after [fr]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 73,
+  "fields": {
+    "action_time": "2026-04-27T12:08:49.975Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "contactperson"
+    ],
+    "object_id": "4",
+    "object_repr": "Mr. Zafar Olimkulov",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name [en]\", \"Name [fr]\", \"Organization [en]\", \"Organization [fr]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 74,
+  "fields": {
+    "action_time": "2026-04-27T12:09:52.151Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "contactperson"
+    ],
+    "object_id": "3",
+    "object_repr": "Ms. Natasa Grcevska",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name [en]\", \"Name [fr]\", \"Organization [en]\", \"Organization [fr]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 75,
+  "fields": {
+    "action_time": "2026-04-27T12:10:20.671Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "contactperson"
+    ],
+    "object_id": "1",
+    "object_repr": "Ms. Alman Fan",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name [en]\", \"Name [fr]\", \"Organization [en]\", \"Organization [fr]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 76,
+  "fields": {
+    "action_time": "2026-04-27T12:10:50.036Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "contactperson"
+    ],
+    "object_id": "2",
+    "object_repr": "Mr. Keith Barker",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name [en]\", \"Name [fr]\", \"Organization [en]\", \"Organization [fr]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 77,
+  "fields": {
+    "action_time": "2026-04-27T12:23:43.270Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "hotel"
+    ],
+    "object_id": "2",
+    "object_repr": "Holiday Inn Tashkent City",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"hotel room\", \"object\": \"Holiday Inn Tashkent City - Tashkent\", \"fields\": [\"Room type\", \"Price\", \"Currency\", \"Per\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 78,
+  "fields": {
+    "action_time": "2026-04-27T12:25:12.342Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "1",
+    "object_repr": "Dimanche, 6 septembre 2026",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"agenda session\", \"object\": \"Sunday 6 September 2026 | 17:00 - Cocktail reception / Registration\", \"fields\": [\"Sub items\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 79,
+  "fields": {
+    "action_time": "2026-04-27T12:30:05.322Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "conferenceday"
+    ],
+    "object_id": "1",
+    "object_repr": "Dimanche, 6 septembre 2026",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Label\", \"Title\"]}}, {\"changed\": {\"name\": \"agenda session\", \"object\": \"Sunday 6 September 2026 | 17:00 - Cocktail reception / Registration\", \"fields\": [\"Session text\", \"Sub items\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 80,
+  "fields": {
+    "action_time": "2026-04-27T12:30:54.119Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "speakergroup"
+    ],
+    "object_id": "1",
+    "object_repr": "Honourable Guests of the Opening Ceremony",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Title [fr]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 81,
+  "fields": {
+    "action_time": "2026-04-27T12:32:34.524Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "speakergroup"
+    ],
+    "object_id": "1",
+    "object_repr": "Honourable Guests of the Opening Ceremony",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"speaker\", \"object\": \"Akmalkhuja Mavlonov\", \"fields\": [\"Title [fr]\", \"Organization [fr]\", \"Bio [fr]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 82,
+  "fields": {
+    "action_time": "2026-04-27T12:33:47.405Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "socialevent"
+    ],
+    "object_id": "1",
+    "object_repr": "Centre de la civilisation islamique",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description [fr]\", \"Location [fr]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 83,
+  "fields": {
+    "action_time": "2026-04-27T12:35:00.236Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "customsobject"
+    ],
+    "object_id": "1",
+    "object_repr": "Central Office",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description [fr]\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 84,
+  "fields": {
+    "action_time": "2026-04-27T12:35:28.383Z",
+    "user": [
+      "adminshohruh"
+    ],
+    "content_type": [
+      "conference",
+      "customsobject"
+    ],
+    "object_id": "1",
+    "object_repr": "Appareil central",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Name [fr]\"]}}]"
   }
 }
 ]
