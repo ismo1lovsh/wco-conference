@@ -110,17 +110,13 @@ class AboutBullet(models.Model):
 
 
 
+from ckeditor.fields import RichTextField
+
 class CustomsObject(models.Model):
     name = models.CharField(max_length=300)
-    description = models.TextField()
-    image = models.ImageField(upload_to='customs_objects/')
+    description = RichTextField(blank=True)
+    image = models.ImageField(upload_to='customs_objects/', blank=True, null=True)
     order = models.PositiveSmallIntegerField(default=0)
-
-    class Meta:
-        ordering = ['order']
-
-    def __str__(self):
-        return self.name
 
 class CustomsObjectImage(models.Model):
     obj = models.ForeignKey(CustomsObject, on_delete=models.CASCADE, related_name='images')

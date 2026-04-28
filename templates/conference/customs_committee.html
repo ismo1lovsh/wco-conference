@@ -1,6 +1,7 @@
 {% extends "conference/base.html" %}
 {% load static %}
 {% load i18n %}
+
 {% block content %}
 <main>
 
@@ -9,11 +10,12 @@
   </div>
 
   <div class="cc-intro">
-    <p><strong>Customs Committee</strong> – Transparency at its core, Economic Security.</p>
+    <p>{% trans "The Customs Committee of the Republic of Uzbekistan — a modern institution ensuring border security, trade facilitation and customs innovation." %}</p>
   </div>
 
   <div class="cc-section">
     {% for obj in objects %}
+
     <div class="cc-card {% if forloop.counter|divisibleby:2 %}cc-card--reverse{% endif %}">
 
       <div class="cc-card-img"
@@ -25,6 +27,10 @@
         <img src="{{ obj.image.url }}" alt="{{ obj.name }}" />
         {% elif obj.images.all %}
         <img src="{{ obj.images.all.0.image.url }}" alt="{{ obj.name }}" />
+        {% else %}
+        <div class="cc-card-img-placeholder">
+          <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+        </div>
         {% endif %}
         <div class="cc-card-img-overlay"></div>
         {% if obj.images.all %}
@@ -36,25 +42,34 @@
       </div>
 
       <div class="cc-card-body">
-        <div class="cc-card-tag">Customs Committee</div>
+        <div class="cc-card-number">{{ forloop.counter|stringformat:"02d" }}</div>
+        <div class="cc-card-tag">{% trans "Customs Committee" %}</div>
         <h3 class="cc-card-title">{{ obj.name }}</h3>
         <div class="cc-card-divider"></div>
-        <p class="cc-card-text">{{ obj.description|truncatewords:30 }}</p>
+        <div class="cc-card-text">{{ obj.description|truncatewords:30|safe }}</div>
         <button class="cc-read-more-btn"
-                onclick="openModal('{{ obj.name|escapejs }}', '{{ obj.description|escapejs }}', '{% if obj.image %}{{ obj.image.url }}{% endif %}')">
-          Read more
+                data-name="{{ obj.name|escapejs }}"
+                data-description="{{ obj.description|escapejs }}"
+                data-image="{% if obj.image %}{{ obj.image.url }}{% endif %}"
+                onclick="openCcModal(this)">
+          {% trans "Read more" %}
           <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         </button>
       </div>
 
     </div>
+
+    {% empty %}
+    <div class="cc-empty">
+      <p>{% trans "Information will be available soon." %}</p>
+    </div>
     {% endfor %}
   </div>
 
-  <!-- Modal -->
-  <div class="cc-modal-overlay" id="cc-modal-overlay" onclick="closeModal()">
+  <!-- Read more Modal -->
+  <div class="cc-modal-overlay" id="cc-modal-overlay" onclick="closeCcModal()">
     <div class="cc-modal" onclick="event.stopPropagation()">
-      <button class="cc-modal-close" onclick="closeModal()">
+      <button class="cc-modal-close" onclick="closeCcModal()">
         <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
       </button>
       <div class="cc-modal-inner">
@@ -62,14 +77,16 @@
           <img src="" alt="" id="cc-modal-img" />
         </div>
         <div class="cc-modal-content">
-          <div class="cc-card-tag">Customs Committee</div>
+          <div class="cc-card-tag">{% trans "Customs Committee" %}</div>
           <h3 class="cc-modal-title" id="cc-modal-title"></h3>
           <div class="cc-card-divider"></div>
-          <p class="cc-modal-text" id="cc-modal-text"></p>
+          <div class="cc-modal-text" id="cc-modal-text"></div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Gallery Modal -->
   <div class="hg-overlay" id="cc-gallery-overlay" onclick="closeCcGallery()">
     <div class="hg-modal" onclick="event.stopPropagation()">
       <button class="hg-close" onclick="closeCcGallery()">
@@ -91,16 +108,23 @@
       <div class="hg-thumbs" id="cc-gallery-thumbs"></div>
     </div>
   </div>
+
 </main>
 
 <script>
-function openModal(name, description, imageUrl) {
+// Read more modal
+function openCcModal(btn) {
+  var name = btn.getAttribute('data-name');
+  var description = btn.getAttribute('data-description');
+  var imgUrl = btn.getAttribute('data-image');
+
   document.getElementById('cc-modal-title').textContent = name;
-  document.getElementById('cc-modal-text').textContent = description;
+  document.getElementById('cc-modal-text').innerHTML = description;
+
   var img = document.getElementById('cc-modal-img');
   var imgWrap = img.parentElement;
-  if (imageUrl) {
-    img.src = imageUrl;
+  if (imgUrl) {
+    img.src = imgUrl;
     img.alt = name;
     imgWrap.style.display = 'block';
   } else {
@@ -110,15 +134,13 @@ function openModal(name, description, imageUrl) {
   document.body.style.overflow = 'hidden';
 }
 
-function closeModal() {
+function closeCcModal() {
   document.getElementById('cc-modal-overlay').classList.remove('open');
   document.body.style.overflow = '';
 }
 
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeModal();
-});
-  var ccGalleries = [
+// Gallery modal
+var ccGalleries = [
   {% for obj in objects %}
   {
     name: "{{ obj.name|escapejs }}",
@@ -172,10 +194,10 @@ function closeCcGallery() {
 }
 
 document.addEventListener('keydown', function(e) {
-  if (!document.getElementById('cc-gallery-overlay').classList.contains('open')) return;
-  if (e.key === 'Escape') closeCcGallery();
-  if (e.key === 'ArrowLeft') ccNavigate(-1);
-  if (e.key === 'ArrowRight') ccNavigate(1);
+  if (e.key === 'Escape') {
+    closeCcModal();
+    closeCcGallery();
+  }
 });
 </script>
 
