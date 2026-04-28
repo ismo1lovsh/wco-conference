@@ -47,9 +47,15 @@
         <h3 class="cc-card-title">{{ obj.name }}</h3>
         <div class="cc-card-divider"></div>
         <div class="cc-card-text">{{ obj.description|truncatewords:30|safe }}</div>
+
+        <!-- Hidden full description -->
+        <div id="desc-{{ forloop.counter }}" style="display:none">
+          {{ obj.description|safe }}
+        </div>
+
         <button class="cc-read-more-btn"
                 data-name="{{ obj.name|escapejs }}"
-                data-description="{{ obj.description|escapejs }}"
+                data-desc-id="desc-{{ forloop.counter }}"
                 data-image="{% if obj.image %}{{ obj.image.url }}{% endif %}"
                 onclick="openCcModal(this)">
           {% trans "Read more" %}
@@ -112,14 +118,14 @@
 </main>
 
 <script>
-// Read more modal
 function openCcModal(btn) {
   var name = btn.getAttribute('data-name');
-  var description = btn.getAttribute('data-description');
+  var descId = btn.getAttribute('data-desc-id');
   var imgUrl = btn.getAttribute('data-image');
 
   document.getElementById('cc-modal-title').textContent = name;
-  document.getElementById('cc-modal-text').innerHTML = description;
+  document.getElementById('cc-modal-text').innerHTML =
+    document.getElementById(descId).innerHTML;
 
   var img = document.getElementById('cc-modal-img');
   var imgWrap = img.parentElement;
@@ -139,7 +145,6 @@ function closeCcModal() {
   document.body.style.overflow = '';
 }
 
-// Gallery modal
 var ccGalleries = [
   {% for obj in objects %}
   {
