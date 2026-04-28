@@ -213,6 +213,8 @@ class Hotel(models.Model):
     stars = models.PositiveSmallIntegerField(default=5)
     distance = models.CharField(max_length=100, blank=True)  # "500m to venue"
     order = models.PositiveSmallIntegerField(default=0)
+    special_link = models.URLField(blank=True)
+    special_link_text = models.CharField(max_length=200, blank=True, default='SPECIAL DISCOUNT BY THIS LINK')
 
     class Meta:
         ordering = ['order']

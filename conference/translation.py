@@ -74,7 +74,7 @@ from .models import Hotel, HotelRoom
 
 @register(Hotel)
 class HotelTranslation(TranslationOptions):
-    fields = ('name', 'description', 'address', 'distance')
+    fields = ('name', 'description', 'address', 'distance', 'special_link_text')
 
 @register(HotelRoom)
 class HotelRoomTranslation(TranslationOptions):
