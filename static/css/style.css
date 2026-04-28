@@ -3264,16 +3264,16 @@ body {
 }
 
 .hotel-special-btn {
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  background: linear-gradient(135deg, #e74c3c, #c0392b) !important;
   color: #fff !important;
   border-color: #e74c3c !important;
-  font-weight: 700;
+  font-weight: 700 !important;
   animation: pulse 2s infinite;
 }
 
 .hotel-special-btn:hover {
   background: linear-gradient(135deg, #c0392b, #a93226) !important;
-  transform: translateY(-1px);
+  transform: translateY(-1px) !important;
 }
 
 .hotel-special-btn svg {
