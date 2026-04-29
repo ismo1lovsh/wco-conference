@@ -1,0 +1,63 @@
+{% extends "conference/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<main>
+
+  <div class="page-banner">
+    <h2>{% trans "Online Translation" %}</h2>
+  </div>
+
+  <div class="ot-section">
+
+    {% if translation and translation.is_live and translation.stream_url %}
+
+    <!-- LIVE -->
+    <div class="ot-live-badge">
+      <span class="ot-live-dot"></span>
+      {% trans "LIVE" %}
+    </div>
+
+    <div class="ot-player-wrap">
+      <iframe
+        src="{{ translation.stream_url }}"
+        frameborder="0"
+        allowfullscreen
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+      </iframe>
+    </div>
+
+    {% else %}
+
+    <!-- OFFLINE -->
+    <div class="ot-offline">
+      <div class="ot-offline-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2z"/></svg>
+      </div>
+      <h2 class="ot-offline-title">{% trans "Online Translation" %}</h2>
+      <p class="ot-offline-msg">
+        {% if translation and translation.message_offline %}
+          {{ translation.message_offline }}
+        {% else %}
+          {% trans "The online translation has not started yet. Please check back later." %}
+        {% endif %}
+      </p>
+      <div class="ot-offline-info">
+        <div class="ot-info-item">
+          <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+          {% trans "7-9 September 2026" %}
+        </div>
+        <div class="ot-info-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          {% trans "Tashkent, Uzbekistan" %}
+        </div>
+      </div>
+    </div>
+
+    {% endif %}
+
+  </div>
+
+</main>
+{% endblock %}

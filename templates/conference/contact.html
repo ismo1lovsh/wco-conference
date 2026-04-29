@@ -33,35 +33,21 @@
             {% if person.organization %}
             <div class="contact-person-org">{{ person.organization }}</div>
             {% endif %}
-            <div class="contact-person-emails">
-              {% for email in person.get_emails %}
-              <a href="mailto:{{ email }}" class="contact-email">
-                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                {{ email }}
-              </a>
-              {% endfor %}
-            </div>
-          </div>
-          {% if not forloop.last %}<div class="contact-person-divider"></div>{% endif %}
-          {% endfor %}
-        </div>
-      </div>
 
-      <!-- Registration -->
-      <div class="contact-card">
-        <div class="contact-card-header">
-          <div class="contact-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
-          </div>
-          <h3>{% trans "Registration" %}</h3>
-        </div>
-        <div class="contact-card-body">
-          {% for person in registration %}
-          <div class="contact-person">
-            <div class="contact-person-name">{{ person.name }}</div>
-            {% if person.organization %}
-            <div class="contact-person-org">{{ person.organization }}</div>
+            {% if person.phone %}
+            <a href="tel:{{ person.phone }}" class="contact-email">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              {{ person.phone }}
+            </a>
             {% endif %}
+
+            {% if person.mobile %}
+            <a href="tel:{{ person.mobile }}" class="contact-email">
+              <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+              {{ person.mobile }}
+            </a>
+            {% endif %}
+
             <div class="contact-person-emails">
               {% for email in person.get_emails %}
               <a href="mailto:{{ email }}" class="contact-email">
@@ -91,6 +77,21 @@
             {% if person.organization %}
             <div class="contact-person-org">{{ person.organization }}</div>
             {% endif %}
+
+            {% if person.phone %}
+            <a href="tel:{{ person.phone }}" class="contact-email">
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              {{ person.phone }}
+            </a>
+            {% endif %}
+
+            {% if person.mobile %}
+            <a href="tel:{{ person.mobile }}" class="contact-email">
+              <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+              {{ person.mobile }}
+            </a>
+            {% endif %}
+
             <div class="contact-person-emails">
               {% for email in person.get_emails %}
               <a href="mailto:{{ email }}" class="contact-email">

@@ -1,0 +1,247 @@
+{% extends "conference/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<main>
+
+  <!-- Hero Banner -->
+  <div class="discover-hero">
+    <div class="discover-hero-overlay">
+      <div class="discover-hero-content">
+        <div class="discover-hero-badge">🇺🇿</div>
+        <h1 class="discover-hero-title">Discover Uzbekistan</h1>
+        <p class="discover-hero-sub">The Heart of the Great Silk Road</p>
+        <a href="https://uzbekistan.travel/en" target="_blank" class="discover-hero-btn">
+          <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95a15.65 15.65 0 00-1.38-3.56A8.03 8.03 0 0118.92 8zm-6.93-3.96c.83 1.2 1.48 2.53 1.89 3.96h-3.78c.41-1.43 1.06-2.76 1.89-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.987 7.987 0 015.08 16zm2.95-8H5.08a7.987 7.987 0 014.33-3.56A15.65 15.65 0 008.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.89-3.96h3.78c-.41 1.43-1.06 2.76-1.89 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 01-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+          Visit uzbekistan.travel
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="discover-stats">
+    <div class="discover-stat">
+      <span class="discover-stat-num">7</span>
+      <span class="discover-stat-label">UNESCO Sites</span>
+    </div>
+    <div class="discover-stat-div"></div>
+    <div class="discover-stat">
+      <span class="discover-stat-num">2500+</span>
+      <span class="discover-stat-label">Years of History</span>
+    </div>
+    <div class="discover-stat-div"></div>
+    <div class="discover-stat">
+      <span class="discover-stat-num">14</span>
+      <span class="discover-stat-label">Regions</span>
+    </div>
+    <div class="discover-stat-div"></div>
+    <div class="discover-stat">
+      <span class="discover-stat-num">36M+</span>
+      <span class="discover-stat-label">Population</span>
+    </div>
+  </div>
+
+  <!-- Photo Gallery -->
+  {% if gallery %}
+  <div class="discover-gallery-section">
+    <div class="discover-section-header">
+      <h2 class="discover-section-title">Photo Gallery</h2>
+      <div class="discover-section-line"></div>
+    </div>
+    <div class="discover-gallery-grid">
+      {% for photo in gallery %}
+      <div class="discover-gallery-item" onclick="openDiscoverImg('{{ photo.image.url }}', '{{ photo.caption|escapejs }}')">
+        <img src="{{ photo.image.url }}" alt="{{ photo.caption }}" />
+        <div class="discover-gallery-overlay">
+          <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Cities -->
+  {% if cities %}
+  <div class="discover-cities-section">
+    <div class="discover-section-header">
+      <h2 class="discover-section-title">Cities to Explore</h2>
+      <div class="discover-section-line"></div>
+      <p class="discover-section-sub">Click on a city to discover its monuments and highlights</p>
+    </div>
+    <div class="discover-cities-grid">
+      {% for city in cities %}
+      <div class="discover-city-card" onclick="openCityModal({{ forloop.counter0 }})">
+        <div class="discover-city-img-wrap">
+          {% if city.cover_image %}
+          <img src="{{ city.cover_image.url }}" alt="{{ city.name }}" />
+          {% else %}
+          <div class="discover-city-placeholder">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+          </div>
+          {% endif %}
+          <div class="discover-city-hover">
+            <span class="discover-city-hover-name">{{ city.name }}</span>
+            <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+          </div>
+        </div>
+        <div class="discover-city-info">
+          <h3 class="discover-city-name">{{ city.name }}</h3>
+          <div class="discover-city-meta">
+            {% if city.images.count %}
+            <span>
+              <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+              {{ city.images.count }} photos
+            </span>
+            {% endif %}
+            {% if city.videos.count %}
+            <span>
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              {{ city.videos.count }} videos
+            </span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- City Modal -->
+  <div class="discover-city-modal-overlay" id="discover-city-modal-overlay" onclick="closeCityModal()">
+    <div class="discover-city-modal" onclick="event.stopPropagation()">
+      <button class="discover-city-modal-close" onclick="closeCityModal()">
+        <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+
+      <div class="discover-city-modal-header">
+        <h2 class="discover-city-modal-title" id="city-modal-title"></h2>
+      </div>
+
+      <div class="discover-city-modal-body">
+
+        <!-- Images -->
+        <div class="city-modal-gallery" id="city-modal-gallery"></div>
+
+        <!-- Videos -->
+        <div class="city-modal-videos" id="city-modal-videos"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Discover Image Modal -->
+  <div class="discover-img-overlay" id="discover-img-overlay" onclick="closeDiscoverImg()">
+    <div class="discover-img-modal" onclick="event.stopPropagation()">
+      <button class="discover-img-close" onclick="closeDiscoverImg()">
+        <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+      <img src="" alt="" id="discover-img-modal-img" />
+      <div class="discover-img-caption" id="discover-img-caption"></div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+var citiesData = [
+  {% for city in cities %}
+  {
+    name: "{{ city.name|escapejs }}",
+    images: [
+      {% for img in city.images.all %}
+      { url: "{{ img.image.url }}", caption: "{{ img.caption|escapejs }}" }{% if not forloop.last %},{% endif %}
+      {% endfor %}
+    ],
+    videos: [
+      {% for vid in city.videos.all %}
+      { id: "{{ vid.youtube_id }}", title: "{{ vid.title|escapejs }}" }{% if not forloop.last %},{% endif %}
+      {% endfor %}
+    ]
+  }{% if not forloop.last %},{% endif %}
+  {% endfor %}
+];
+
+function openCityModal(index) {
+  var city = citiesData[index];
+  document.getElementById('city-modal-title').textContent = city.name;
+
+  // Images
+  var galleryEl = document.getElementById('city-modal-gallery');
+  galleryEl.innerHTML = '';
+  if (city.images.length > 0) {
+    city.images.forEach(function(img) {
+      var div = document.createElement('div');
+      div.className = 'city-modal-img-item';
+      div.onclick = function() { openDiscoverImg(img.url, img.caption); };
+      var i = document.createElement('img');
+      i.src = img.url;
+      i.alt = img.caption;
+      var cap = document.createElement('div');
+      cap.className = 'city-modal-img-caption';
+      cap.textContent = img.caption;
+      div.appendChild(i);
+      if (img.caption) div.appendChild(cap);
+      galleryEl.appendChild(div);
+    });
+  }
+
+  // Videos
+  var videosEl = document.getElementById('city-modal-videos');
+  videosEl.innerHTML = '';
+  if (city.videos.length > 0) {
+    city.videos.forEach(function(vid) {
+      var div = document.createElement('div');
+      div.className = 'city-modal-video-item';
+      if (vid.title) {
+        var title = document.createElement('h4');
+        title.className = 'city-modal-video-title';
+        title.textContent = vid.title;
+        div.appendChild(title);
+      }
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + vid.id;
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+      div.appendChild(iframe);
+      videosEl.appendChild(div);
+    });
+  }
+
+  document.getElementById('discover-city-modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCityModal() {
+  // Stop videos
+  var iframes = document.querySelectorAll('#city-modal-videos iframe');
+  iframes.forEach(function(f) { f.src = f.src; });
+  document.getElementById('discover-city-modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function openDiscoverImg(url, caption) {
+  document.getElementById('discover-img-modal-img').src = url;
+  document.getElementById('discover-img-caption').textContent = caption || '';
+  document.getElementById('discover-img-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDiscoverImg() {
+  document.getElementById('discover-img-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeCityModal();
+    closeDiscoverImg();
+  }
+});
+</script>
+
+{% endblock %}

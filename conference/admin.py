@@ -127,3 +127,41 @@ class HomePageAdmin(TranslationAdmin):
 class ContactPersonAdmin(TranslationAdmin):
     list_display = ('name', 'category', 'order')
     list_filter = ('category',)
+
+from .models import DiscoverCity, DiscoverCityImage, DiscoverCityVideo, DiscoverGalleryPhoto
+
+class DiscoverCityImageInline(admin.TabularInline):
+    model = DiscoverCityImage
+    extra = 3
+    fields = ('order', 'image', 'caption')
+
+class DiscoverCityVideoInline(admin.TabularInline):
+    model = DiscoverCityVideo
+    extra = 1
+    fields = ('order', 'youtube_id', 'title')
+
+@admin.register(DiscoverCity)
+class DiscoverCityAdmin(TranslationAdmin):
+    list_display = ('name', 'order')
+    inlines = [DiscoverCityImageInline, DiscoverCityVideoInline]
+
+@admin.register(DiscoverGalleryPhoto)
+class DiscoverGalleryPhotoAdmin(admin.ModelAdmin):
+    list_display = ('caption', 'order')
+
+from .models import GalaDinner, GalaDinnerHighlight
+
+class GalaDinnerHighlightInline(admin.TabularInline):
+    model = GalaDinnerHighlight
+    extra = 3
+
+@admin.register(GalaDinner)
+class GalaDinnerAdmin(TranslationAdmin):
+    list_display = ('title',)
+    inlines = [GalaDinnerHighlightInline]
+
+from .models import OnlineTranslation
+
+@admin.register(OnlineTranslation)
+class OnlineTranslationAdmin(TranslationAdmin):
+    list_display = ('is_live', 'stream_url')

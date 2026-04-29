@@ -186,10 +186,12 @@ class ContactPerson(models.Model):
         ('registration', 'Registration'),
         ('host', 'Host Country Focal Point'),
     ]
-    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES)
-    name = models.CharField(max_length=200)
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
+    name = models.CharField(max_length=300)
     organization = models.CharField(max_length=300, blank=True)
-    emails = models.TextField(help_text="Har bir email yangi qatorda")
+    emails = models.TextField(blank=True, help_text="Har bir email yangi qatorda")
+    phone = models.CharField(max_length=50, blank=True)
+    mobile = models.CharField(max_length=50, blank=True)
     order = models.PositiveSmallIntegerField(default=0)
 
     class Meta:
@@ -200,7 +202,6 @@ class ContactPerson(models.Model):
 
     def __str__(self):
         return self.name
-
 
 class Hotel(models.Model):
     name = models.CharField(max_length=300)
@@ -296,3 +297,85 @@ class HomePage(models.Model):
 
     def __str__(self):
         return self.title
+
+class DiscoverCity(models.Model):
+    name = models.CharField(max_length=200)
+    cover_image = models.ImageField(upload_to='discover/cities/')
+    order = models.PositiveSmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ['order']
+        verbose_name = "City"
+        verbose_name_plural = "Cities"
+
+    def __str__(self):
+        return self.name
+
+
+class DiscoverCityImage(models.Model):
+    city = models.ForeignKey(DiscoverCity, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to='discover/cities/gallery/')
+    caption = models.CharField(max_length=300, blank=True)
+    order = models.PositiveSmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ['order']
+
+
+class DiscoverCityVideo(models.Model):
+    city = models.ForeignKey(DiscoverCity, on_delete=models.CASCADE, related_name='videos')
+    youtube_id = models.CharField(max_length=100)
+    title = models.CharField(max_length=300, blank=True)
+    order = models.PositiveSmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ['order']
+
+
+class DiscoverGalleryPhoto(models.Model):
+    image = models.ImageField(upload_to='discover/gallery/')
+    caption = models.CharField(max_length=300, blank=True)
+    order = models.PositiveSmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ['order']
+
+class GalaDinner(models.Model):
+    title = models.CharField(max_length=300)
+    date = models.CharField(max_length=200, blank=True)
+    time = models.CharField(max_length=100, blank=True)
+    location = models.CharField(max_length=300, blank=True)
+    description = RichTextField(blank=True)
+    dress_code = models.CharField(max_length=200, blank=True)
+    image = models.ImageField(upload_to='gala/', blank=True, null=True)
+
+    class Meta:
+        verbose_name = "Gala Dinner"
+
+    def __str__(self):
+        return self.title
+
+
+class GalaDinnerHighlight(models.Model):
+    gala = models.ForeignKey(GalaDinner, on_delete=models.CASCADE, related_name='highlights')
+    icon = models.CharField(max_length=10, blank=True)
+    title = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    order = models.PositiveSmallIntegerField(default=0)
+
+    class Meta:
+        ordering = ['order']
+
+class OnlineTranslation(models.Model):
+    is_live = models.BooleanField(default=False)
+    stream_url = models.URLField(blank=True)
+    message_offline = models.TextField(
+        blank=True,
+        default='The online translation has not started yet. Please check back later.'
+    )
+
+    class Meta:
+        verbose_name = "Online Translation"
+
+    def __str__(self):
+        return "Online Translation"

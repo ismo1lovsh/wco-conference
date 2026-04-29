@@ -18,37 +18,48 @@
 
     <div class="cc-card {% if forloop.counter|divisibleby:2 %}cc-card--reverse{% endif %}">
 
-      <div class="cc-card-img"
-           {% if obj.images.all %}
-           onclick="openCcGallery({{ forloop.counter0 }})"
-           style="cursor:pointer"
-           {% endif %}>
-        {% if obj.image %}
-        <img src="{{ obj.image.url }}" alt="{{ obj.name }}" />
-        {% elif obj.images.all %}
-        <img src="{{ obj.images.all.0.image.url }}" alt="{{ obj.name }}" />
-        {% else %}
-        <div class="cc-card-img-placeholder">
-          <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-        </div>
-        {% endif %}
-        <div class="cc-card-img-overlay"></div>
+      <!-- Rasm qismi — carousel -->
+      <div class="cc-card-img-wrap">
         {% if obj.images.all %}
-        <div class="hotel-img-count">
+        <div class="cc-carousel" id="carousel-{{ forloop.counter }}">
+          {% for img in obj.images.all %}
+          <div class="cc-carousel-slide {% if forloop.first %}active{% endif %}"
+               onclick="openCcImgModal('{{ img.image.url }}', '{{ obj.name|escapejs }}', 'carousel-{{ forloop.parentloop.counter }}')">
+            <img src="{{ img.image.url }}" alt="{{ obj.name }}" />
+          </div>
+          {% endfor %}
+          {% if obj.images.count > 1 %}
+          <div class="cc-carousel-dots">
+            {% for img in obj.images.all %}
+            <span class="cc-dot {% if forloop.first %}active{% endif %}"
+                  onclick="goToSlide('carousel-{{ forloop.parentloop.counter }}', {{ forloop.counter0 }})"></span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+
+        {% elif obj.image %}
+        <div class="cc-carousel" id="carousel-{{ forloop.counter }}">
+          <div class="cc-carousel-slide active"
+               onclick="openCcImgModal('{{ obj.image.url }}', '{{ obj.name|escapejs }}', 'carousel-{{ forloop.counter }}')">
+            <img src="{{ obj.image.url }}" alt="{{ obj.name }}" />
+          </div>
+        </div>
+
+        {% else %}
+        <div class="cc-img-placeholder">
           <svg viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
-          {{ obj.images.count }} photos
         </div>
         {% endif %}
       </div>
 
+      <!-- Ma'lumot qismi -->
       <div class="cc-card-body">
-        <div class="cc-card-number">{{ forloop.counter|stringformat:"02d" }}</div>
         <div class="cc-card-tag">{% trans "Customs Committee" %}</div>
         <h3 class="cc-card-title">{{ obj.name }}</h3>
         <div class="cc-card-divider"></div>
-        <div class="cc-card-text">{{ obj.description|truncatewords:30|safe }}</div>
+        <div class="cc-card-text">{{ obj.description|truncatewords:40|safe }}</div>
 
-        <!-- Hidden full description -->
         <div id="desc-{{ forloop.counter }}" style="display:none">
           {{ obj.description|safe }}
         </div>
@@ -72,6 +83,26 @@
     {% endfor %}
   </div>
 
+  <!-- Rasm Modal (75%) -->
+  <div class="cc-img-modal-overlay" id="cc-img-modal-overlay" onclick="closeCcImgModal()">
+    <div class="cc-img-modal" onclick="event.stopPropagation()">
+      <button class="cc-img-modal-close" onclick="closeCcImgModal()">
+        <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+      <button class="cc-img-modal-prev" onclick="ccImgNavigate(-1)">
+        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <img src="" alt="" id="cc-img-modal-img" />
+      <button class="cc-img-modal-next" onclick="ccImgNavigate(1)">
+        <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+      <div class="cc-img-modal-footer">
+        <div class="cc-img-modal-name" id="cc-img-modal-name"></div>
+        <div class="cc-img-modal-counter" id="cc-img-modal-counter"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Read more Modal -->
   <div class="cc-modal-overlay" id="cc-modal-overlay" onclick="closeCcModal()">
     <div class="cc-modal" onclick="event.stopPropagation()">
@@ -92,46 +123,105 @@
     </div>
   </div>
 
-  <!-- Gallery Modal -->
-  <div class="hg-overlay" id="cc-gallery-overlay" onclick="closeCcGallery()">
-    <div class="hg-modal" onclick="event.stopPropagation()">
-      <button class="hg-close" onclick="closeCcGallery()">
-        <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-      </button>
-      <div class="hg-hotel-name" id="cc-gallery-name"></div>
-      <div class="hg-main">
-        <button class="hg-arrow hg-arrow--left" onclick="ccNavigate(-1)">
-          <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-        </button>
-        <div class="hg-img-wrap">
-          <img src="" alt="" id="cc-gallery-img" />
-        </div>
-        <button class="hg-arrow hg-arrow--right" onclick="ccNavigate(1)">
-          <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-        </button>
-      </div>
-      <div class="hg-counter" id="cc-gallery-counter"></div>
-      <div class="hg-thumbs" id="cc-gallery-thumbs"></div>
-    </div>
-  </div>
-
 </main>
 
 <script>
+// ===== CAROUSEL =====
+var carouselTimers = {};
+
+function startCarousel(carouselId) {
+  var carousel = document.getElementById(carouselId);
+  if (!carousel) return;
+  var slides = carousel.querySelectorAll('.cc-carousel-slide');
+  var dots = carousel.querySelectorAll('.cc-dot');
+  if (slides.length <= 1) return;
+
+  var current = 0;
+  carouselTimers[carouselId] = setInterval(function() {
+    slides[current].classList.remove('active');
+    if (dots[current]) dots[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+    if (dots[current]) dots[current].classList.add('active');
+  }, 3000);
+}
+
+function goToSlide(carouselId, index) {
+  if (carouselTimers[carouselId]) clearInterval(carouselTimers[carouselId]);
+  var carousel = document.getElementById(carouselId);
+  if (!carousel) return;
+  var slides = carousel.querySelectorAll('.cc-carousel-slide');
+  var dots = carousel.querySelectorAll('.cc-dot');
+  slides.forEach(function(s, i) { s.classList.toggle('active', i === index); });
+  dots.forEach(function(d, i) { d.classList.toggle('active', i === index); });
+  carouselTimers[carouselId] = setInterval(function() {
+    var cur = Array.from(slides).findIndex(function(s) { return s.classList.contains('active'); });
+    slides[cur].classList.remove('active');
+    if (dots[cur]) dots[cur].classList.remove('active');
+    var next = (cur + 1) % slides.length;
+    slides[next].classList.add('active');
+    if (dots[next]) dots[next].classList.add('active');
+  }, 3000);
+}
+
+document.querySelectorAll('.cc-carousel').forEach(function(c) {
+  startCarousel(c.id);
+});
+
+// ===== RASM MODAL =====
+var ccImgModalImages = [];
+var ccImgModalCurrent = 0;
+var ccImgModalName = '';
+
+function openCcImgModal(imgUrl, name, carouselId) {
+  var carousel = document.getElementById(carouselId);
+  var slides = carousel ? carousel.querySelectorAll('.cc-carousel-slide img') : [];
+  ccImgModalImages = [];
+  slides.forEach(function(img) { ccImgModalImages.push(img.src); });
+  if (ccImgModalImages.length === 0) ccImgModalImages = [imgUrl];
+  ccImgModalCurrent = ccImgModalImages.findIndex(function(src) {
+    return src === imgUrl || src.endsWith(imgUrl);
+  });
+  if (ccImgModalCurrent === -1) ccImgModalCurrent = 0;
+  ccImgModalName = name;
+  updateCcImgModal();
+  document.getElementById('cc-img-modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function updateCcImgModal() {
+  document.getElementById('cc-img-modal-img').src = ccImgModalImages[ccImgModalCurrent];
+  document.getElementById('cc-img-modal-name').textContent = ccImgModalName;
+  document.getElementById('cc-img-modal-counter').textContent =
+    ccImgModalImages.length > 1 ? (ccImgModalCurrent + 1) + ' / ' + ccImgModalImages.length : '';
+  var prev = document.querySelector('.cc-img-modal-prev');
+  var next = document.querySelector('.cc-img-modal-next');
+  var show = ccImgModalImages.length > 1;
+  prev.style.display = show ? 'flex' : 'none';
+  next.style.display = show ? 'flex' : 'none';
+}
+
+function ccImgNavigate(dir) {
+  ccImgModalCurrent = (ccImgModalCurrent + dir + ccImgModalImages.length) % ccImgModalImages.length;
+  updateCcImgModal();
+}
+
+function closeCcImgModal() {
+  document.getElementById('cc-img-modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ===== READ MORE MODAL =====
 function openCcModal(btn) {
   var name = btn.getAttribute('data-name');
   var descId = btn.getAttribute('data-desc-id');
   var imgUrl = btn.getAttribute('data-image');
-
   document.getElementById('cc-modal-title').textContent = name;
-  document.getElementById('cc-modal-text').innerHTML =
-    document.getElementById(descId).innerHTML;
-
+  document.getElementById('cc-modal-text').innerHTML = document.getElementById(descId).innerHTML;
   var img = document.getElementById('cc-modal-img');
   var imgWrap = img.parentElement;
   if (imgUrl) {
     img.src = imgUrl;
-    img.alt = name;
     imgWrap.style.display = 'block';
   } else {
     imgWrap.style.display = 'none';
@@ -145,63 +235,14 @@ function closeCcModal() {
   document.body.style.overflow = '';
 }
 
-var ccGalleries = [
-  {% for obj in objects %}
-  {
-    name: "{{ obj.name|escapejs }}",
-    images: [
-      {% for img in obj.images.all %}
-      "{{ img.image.url }}"{% if not forloop.last %},{% endif %}
-      {% endfor %}
-    ]
-  }{% if not forloop.last %},{% endif %}
-  {% endfor %}
-];
-
-var ccCurrent = 0;
-var ccImages = [];
-
-function openCcGallery(index) {
-  var obj = ccGalleries[index];
-  ccImages = obj.images;
-  if (!ccImages.length) return;
-  ccCurrent = 0;
-  document.getElementById('cc-gallery-name').textContent = obj.name;
-  updateCcModal();
-  document.getElementById('cc-gallery-overlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function updateCcModal() {
-  document.getElementById('cc-gallery-img').src = ccImages[ccCurrent];
-  document.getElementById('cc-gallery-counter').textContent = (ccCurrent + 1) + ' / ' + ccImages.length;
-  var thumbs = document.getElementById('cc-gallery-thumbs');
-  thumbs.innerHTML = '';
-  ccImages.forEach(function(url, i) {
-    var thumb = document.createElement('div');
-    thumb.className = 'hg-thumb' + (i === ccCurrent ? ' active' : '');
-    thumb.onclick = function() { ccCurrent = i; updateCcModal(); };
-    var img = document.createElement('img');
-    img.src = url;
-    thumb.appendChild(img);
-    thumbs.appendChild(thumb);
-  });
-}
-
-function ccNavigate(dir) {
-  ccCurrent = (ccCurrent + dir + ccImages.length) % ccImages.length;
-  updateCcModal();
-}
-
-function closeCcGallery() {
-  document.getElementById('cc-gallery-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
+    closeCcImgModal();
     closeCcModal();
-    closeCcGallery();
+  }
+  if (document.getElementById('cc-img-modal-overlay').classList.contains('open')) {
+    if (e.key === 'ArrowLeft') ccImgNavigate(-1);
+    if (e.key === 'ArrowRight') ccImgNavigate(1);
   }
 });
 </script>

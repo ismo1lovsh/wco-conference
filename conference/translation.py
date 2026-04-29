@@ -102,3 +102,29 @@ from .models import ContactPerson
 @register(ContactPerson)
 class ContactPersonTranslation(TranslationOptions):
     fields = ('name', 'organization')
+
+from .models import DiscoverCity, DiscoverCityImage
+
+@register(DiscoverCity)
+class DiscoverCityTranslation(TranslationOptions):
+    fields = ('name',)
+
+@register(DiscoverCityImage)
+class DiscoverCityImageTranslation(TranslationOptions):
+    fields = ('caption',)
+
+from .models import GalaDinner, GalaDinnerHighlight
+
+@register(GalaDinner)
+class GalaDinnerTranslation(TranslationOptions):
+    fields = ('title', 'date', 'time', 'location', 'description', 'dress_code')
+
+@register(GalaDinnerHighlight)
+class GalaDinnerHighlightTranslation(TranslationOptions):
+    fields = ('title', 'description')
+
+from .models import OnlineTranslation
+
+@register(OnlineTranslation)
+class OnlineTranslationTranslation(TranslationOptions):
+    fields = ('message_offline',)

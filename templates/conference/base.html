@@ -58,6 +58,10 @@
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
             {% trans "Customs Committee" %}
           </a>
+          <a href="{% url 'conference:discover' %}">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            {% trans "Discover Uzbekistan" %}
+          </a>
         </div>
       </div>
 
@@ -94,11 +98,18 @@
             <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
             {% trans "Venue" %}
           </a>
+          <a href="{% url 'conference:gala_dinner' %}">
+            <svg viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+            {% trans "Gala Dinner" %}
+          </a>
         </div>
       </div>
       <a href="https://canineforum2026.wcoevents.org/" target="_blank">{% trans "Registration" %}</a>
       <a href="{% url 'conference:gallery' %}">{% trans "Photo Gallery" %}</a>
       <a href="{% url 'conference:contact' %}">{% trans "Contact Us" %}</a>
+      <div class="nav-right">
+        <a href="https://uzbekistan.travel/en" target="_blank" class="nav-discover">Discover Uzbekistan</a>
+      </div>
     </nav>
   </header>
 
@@ -106,34 +117,52 @@
 
   <!-- Footer -->
   <footer>
-    <div class="footer-logo">
-      <img src="{% static 'img/wco.png' %}" alt="WCO Logo" />
+
+  <!-- 1-qism: WCO Logo -->
+  <div class="footer-logo">
+    <img src="{% static 'img/footer.png' %}" alt="WCO Logo" />
+  </div>
+
+  <div class="footer-vdiv"></div>
+
+  <!-- 2-qism: Canine Logo -->
+  <div class="footer-logo footer-logo-center">
+    <img src="{% static 'img/canine.png' %}" alt="Canine Logo" />
+  </div>
+
+  <div class="footer-vdiv"></div>
+
+  <!-- 3-qism: Ijtimoiy tarmoqlar -->
+  <div class="footer-col">
+    <div class="footer-col-title">{% trans "Follow Us" %}</div>
+    <p class="footer-col-sub">{% trans "WCO's Social Media" %}</p>
+    <div class="social-links">
+      <a href="https://www.facebook.com/WCOOMD/" class="social-btn" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="https://x.com/WCO_OMD" class="social-btn" title="X">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/company/world-customs-organization/" class="social-btn" title="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
     </div>
 
-    <div class="footer-vdiv"></div>
-
-    <div class="footer-logo footer-logo-center">
-      <img src="{% static 'img/canine.png' %}" alt="Logo" />
+    <div class="footer-col-title" style="margin-top:16px">{% trans "Customs Committee" %}</div>
+    <div class="social-links">
+      <a href="https://bojxona.uz/" target="_blank" class="social-btn" title="Website">
+        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95a15.65 15.65 0 00-1.38-3.56A8.03 8.03 0 0118.92 8zm-6.93-3.96c.83 1.2 1.48 2.53 1.89 3.96h-3.78c.41-1.43 1.06-2.76 1.89-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A7.987 7.987 0 015.08 16zm2.95-8H5.08a7.987 7.987 0 014.33-3.56A15.65 15.65 0 008.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.89-3.96h3.78c-.41 1.43-1.06 2.76-1.89 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 01-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+      </a>
+      <a href="https://t.me/customschannel" target="_blank" class="social-btn" title="Telegram">
+        <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.43 14.107l-2.95-.924c-.64-.203-.654-.64.136-.948l11.527-4.443c.537-.194 1.006.131.832.948l.587-.492z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/bojxona.official/" target="_blank" class="social-btn" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
     </div>
+  </div>
 
-    <div class="footer-vdiv"></div>
-
-    <div class="footer-col">
-      <h4>Follow Us</h4>
-      <p>WCO's Social Media</p>
-      <div class="social-links">
-        <a href="https://www.facebook.com/WCOOMD/" class="social-btn" title="Facebook">
-          <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-        </a>
-        <a href="https://x.com/WCO_OMD" class="social-btn" title="X">
-          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/company/world-customs-organization/" class="social-btn" title="LinkedIn">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-      </div>
-    </div>
-  </footer>
+</footer>
 
   <button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
     <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>

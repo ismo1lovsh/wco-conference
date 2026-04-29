@@ -129,3 +129,27 @@ msgstr "par nuit"
 
 msgid "Hotel information will be available soon."
 msgstr "Les informations sur les hotels seront disponibles prochainement."
+
+msgid "Discover Uzbekistan"
+msgstr "Decouvrir l Ouzbekistan"
+
+msgid "Gala Dinner"
+msgstr "Diner de Gala"
+
+msgid "Evening Highlights"
+msgstr "Points forts de la soiree"
+
+msgid "Gala Dinner information will be available soon."
+msgstr "Les informations sur le diner de gala seront disponibles prochainement."
+
+msgid "Online Translation"
+msgstr "Traduction en ligne"
+
+msgid "LIVE"
+msgstr "EN DIRECT"
+
+msgid "The online translation has not started yet. Please check back later."
+msgstr "La traduction en ligne n a pas encore commence. Veuillez revenir plus tard."
+
+msgid "Online"
+msgstr "En ligne"

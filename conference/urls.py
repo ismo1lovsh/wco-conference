@@ -15,4 +15,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('hotels/', views.hotels, name='hotels'),
     path('venue/', views.venue, name='venue'),
+    path('discover/', views.discover, name='discover'),
+    path('gala-dinner/', views.gala_dinner, name='gala_dinner'),
+    path('online-translation/', views.online_translation, name='online_translation'),
 ]

@@ -108,3 +108,27 @@ def venue(request):
     venues = Venue.objects.prefetch_related('days').all()
     return render(request, 'conference/venue.html', {'venues': venues})
 
+from .models import DiscoverCity, DiscoverGalleryPhoto
+
+def discover(request):
+    cities = DiscoverCity.objects.prefetch_related('images', 'videos').all()
+    gallery = DiscoverGalleryPhoto.objects.all()
+    return render(request, 'conference/discover.html', {
+        'cities': cities,
+        'gallery': gallery,
+    })
+
+from .models import GalaDinner
+
+def gala_dinner(request):
+    gala = GalaDinner.objects.prefetch_related('highlights').first()
+    return render(request, 'conference/gala_dinner.html', {'gala': gala})
+
+from .models import OnlineTranslation
+
+def online_translation(request):
+    translation_obj = OnlineTranslation.objects.first()
+    return render(request, 'conference/online_translation.html', {
+        'translation': translation_obj
+    })
+
