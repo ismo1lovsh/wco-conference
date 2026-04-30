@@ -138,7 +138,7 @@ class DiscoverCityImageInline(admin.TabularInline):
 class DiscoverCityVideoInline(admin.TabularInline):
     model = DiscoverCityVideo
     extra = 1
-    fields = ('order', 'youtube_id', 'title')
+    fields = ('order', 'video_file', 'title')
 
 @admin.register(DiscoverCity)
 class DiscoverCityAdmin(TranslationAdmin):
