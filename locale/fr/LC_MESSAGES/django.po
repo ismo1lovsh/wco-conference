@@ -153,3 +153,6 @@ msgstr "La traduction en ligne n a pas encore commence. Veuillez revenir plus ta
 
 msgid "Online"
 msgstr "En ligne"
+
+msgid "Live Broadcast"
+msgstr "Diffusion en direct"

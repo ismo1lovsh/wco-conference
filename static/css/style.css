@@ -4672,3 +4672,34 @@ body {
   height: 15px;
   fill: #1558a0;
 }
+
+.nav-live {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+}
+
+.nav-live:hover {
+  background: linear-gradient(135deg, #c0392b, #a93226) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(231, 76, 60, 0.4);
+}
+
+.nav-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  animation: blink 1s infinite;
+  flex-shrink: 0;
+}
