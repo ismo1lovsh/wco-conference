@@ -4703,3 +4703,26 @@ body {
   animation: blink 1s infinite;
   flex-shrink: 0;
 }
+
+.footer-img-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-banner-link {
+  display: block;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.footer-banner-link:hover {
+  transform: translateY(-3px);
+  opacity: 0.85;
+}
+
+.footer-banner-img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
