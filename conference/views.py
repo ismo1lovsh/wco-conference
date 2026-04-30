@@ -111,11 +111,13 @@ def venue(request):
 from .models import DiscoverCity, DiscoverGalleryPhoto
 
 def discover(request):
+    current_lang = request.session.get('_language', 'en')
     cities = DiscoverCity.objects.prefetch_related('images', 'videos').all()
     gallery = DiscoverGalleryPhoto.objects.all()
     return render(request, 'conference/discover.html', {
         'cities': cities,
         'gallery': gallery,
+        'current_lang': current_lang,
     })
 
 from .models import GalaDinner

@@ -156,3 +156,33 @@ msgstr "En ligne"
 
 msgid "Live Broadcast"
 msgstr "Diffusion en direct"
+
+msgid "Visit uzbekistan.travel"
+msgstr "Visiter uzbekistan.travel"
+
+msgid "The Heart of the Great Silk Road"
+msgstr "Le coeur de la grande Route de la Soie"
+
+msgid "UNESCO Sites"
+msgstr "Sites UNESCO"
+
+msgid "Years of History"
+msgstr "Ans d histoire"
+
+msgid "Regions"
+msgstr "Regions"
+
+msgid "Population"
+msgstr "Population"
+
+msgid "Cities to Explore"
+msgstr "Villes a explorer"
+
+msgid "Click on a city to discover its monuments and highlights"
+msgstr "Cliquez sur une ville pour decouvrir ses monuments"
+
+msgid "photos"
+msgstr "photos"
+
+msgid "videos"
+msgstr "videos"
