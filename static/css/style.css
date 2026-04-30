@@ -4218,36 +4218,43 @@ body {
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
-  position: relative;
-  aspect-ratio: 4/3;
+  background: #fff;
+  border: 1px solid #e2eaf5;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .city-modal-img-item img {
   width: 100%;
-  flex: 1;
+  height: 160px;
   object-fit: cover;
   display: block;
+  flex-shrink: 0;
   transition: transform 0.3s;
 }
 
 .city-modal-img-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .city-modal-img-caption {
-  background: #f8fafd;
+  background: #fff;
   color: #444;
   font-size: 12px;
   padding: 8px 10px;
   text-align: center;
   border-top: 1px solid #e2eaf5;
-  min-height: 36px;
-  display: flex;
+  height: 52px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.5;
   align-items: center;
   justify-content: center;
 }
+
 .city-modal-video-item {
   margin-bottom: 24px;
 }
@@ -4727,4 +4734,11 @@ body {
   width: auto;
   object-fit: contain;
   border-radius: 8px;
+}
+
+.city-modal-video-player {
+  width: 100%;
+  border-radius: 10px;
+  background: #000;
+  max-height: 360px;
 }

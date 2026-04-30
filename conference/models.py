@@ -321,20 +321,22 @@ class DiscoverCityImage(models.Model):
     class Meta:
         ordering = ['order']
 
-
-class DiscoverCityVideo(models.Model):
-    city = models.ForeignKey(DiscoverCity, on_delete=models.CASCADE, related_name='videos')
-    youtube_id = models.CharField(max_length=100)
-    title = models.CharField(max_length=300, blank=True)
+class DiscoverGalleryPhoto(models.Model):
+    image = models.ImageField(upload_to='discover/gallery/')
+    caption = models.CharField(max_length=300, blank=True)
     order = models.PositiveSmallIntegerField(default=0)
 
     class Meta:
         ordering = ['order']
 
+    def __str__(self):
+        return self.caption or str(self.order)
 
-class DiscoverGalleryPhoto(models.Model):
-    image = models.ImageField(upload_to='discover/gallery/')
-    caption = models.CharField(max_length=300, blank=True)
+
+class DiscoverCityVideo(models.Model):
+    city = models.ForeignKey(DiscoverCity, on_delete=models.CASCADE, related_name='videos')
+    video_file = models.FileField(upload_to='discover/videos/', blank=True, null=True)
+    title = models.CharField(max_length=300, blank=True)
     order = models.PositiveSmallIntegerField(default=0)
 
     class Meta:

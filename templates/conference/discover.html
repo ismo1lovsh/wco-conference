@@ -151,7 +151,7 @@ var citiesData = [
     ],
     videos: [
       {% for vid in city.videos.all %}
-      { id: "{{ vid.youtube_id }}", title: "{{ vid.title|escapejs }}" }{% if not forloop.last %},{% endif %}
+      { url: "{% if vid.video_file %}{{ vid.video_file.url }}{% endif %}", title: "{{ vid.title|escapejs }}" }{% if not forloop.last %},{% endif %}
       {% endfor %}
     ]
   }{% if not forloop.last %},{% endif %}
@@ -195,12 +195,11 @@ function openCityModal(index) {
         title.textContent = vid.title;
         div.appendChild(title);
       }
-      var iframe = document.createElement('iframe');
-      iframe.src = 'https://www.youtube-nocookie.com/embed/' + vid.id + '?rel=0&modestbranding=1';
-      iframe.setAttribute('allowfullscreen', '');
-      iframe.setAttribute('frameborder', '0');
-      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-      div.appendChild(iframe);
+      var video = document.createElement('video');
+      video.src = vid.url;
+      video.controls = true;
+      video.className = 'city-modal-video-player';
+      div.appendChild(video);
       videosEl.appendChild(div);
     });
   }
