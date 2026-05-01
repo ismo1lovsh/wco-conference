@@ -291,12 +291,14 @@ class HomePage(models.Model):
     body_4 = models.TextField(blank=True)
     illustration = models.ImageField(upload_to='home/', blank=True, null=True)
     youtube_id = models.CharField(max_length=100, blank=True)
+    video_file = models.FileField(upload_to='home/videos/', blank=True, null=True)
 
     class Meta:
         verbose_name = "Home Page"
 
     def __str__(self):
         return self.title
+
 
 class DiscoverCity(models.Model):
     name = models.CharField(max_length=200)

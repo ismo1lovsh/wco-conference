@@ -70,10 +70,16 @@
       </a>
     </div>
 
-    {% if home.youtube_id %}
+    {% if home.video_file %}
+    <div class="about-video">
+      <video controls width="100%" style="border-radius:12px;">
+        <source src="{{ home.video_file.url }}" type="video/mp4">
+      </video>
+    </div>
+    {% elif home.youtube_id %}
     <div class="about-video">
       <iframe
-        src="https://www.youtube-nocookie.com/embed/{{ home.youtube_id }}?rel=0&modestbranding=1"
+        src="https://www.youtube-nocookie.com/embed/{{ home.youtube_id }}?rel=0"
         title="WCO Global Canine Forum 2026"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
