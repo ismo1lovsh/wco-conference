@@ -201,76 +201,73 @@
     <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
   </button>
 
-  <script>
-    var countdownDate = new Date(Date.UTC(2026, 8, 7, 6, 0, 0)).getTime();
+<script>
+  {% if home_data and home_data.event_date %}
+  var countdownDate = new Date("{{ home_data.event_date|date:'c' }}").getTime();
+  {% else %}
+  var countdownDate = new Date(Date.UTC(2026, 8, 7, 6, 0, 0)).getTime();
+  {% endif %}
 
-    function updateCountdown() {
-      var now = new Date().getTime();
-      var distance = countdownDate - now;
+  function updateCountdown() {
+    var now = new Date().getTime();
+    var distance = countdownDate - now;
 
-      if (distance < 0) {
-        document.getElementById('header-countdown').innerHTML =
-          '<div class="countdown-started">{% if LANGUAGE_CODE == "fr" %}Le forum a commencé!{% else %}Forum has started!{% endif %}</div>';
-        return;
-      }
-
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
-      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
-      document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
-      document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
+    if (distance < 0) {
+      var el = document.getElementById('header-countdown');
+      if (el) el.innerHTML = '<div class="countdown-started">{% if LANGUAGE_CODE == "fr" %}Le forum a commencé!{% else %}Forum has started!{% endif %}</div>';
+      return;
     }
 
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Nav dropdownlar
-    document.querySelectorAll('.dropdown').forEach(function(dd) {
-      dd.querySelector('a').addEventListener('click', function(e) {
-        e.preventDefault();
-        var isOpen = dd.classList.contains('open');
-        closeAll();
-        if (!isOpen) dd.classList.add('open');
-      });
-    });
+    var dEl = document.getElementById('cd-days');
+    var hEl = document.getElementById('cd-hours');
+    var mEl = document.getElementById('cd-minutes');
+    var sEl = document.getElementById('cd-seconds');
 
-    // Lang dropdown
-    var langDd = document.getElementById('dd-lang');
-    document.getElementById('lang-toggle').addEventListener('click', function(e) {
-      e.stopPropagation();
-      var isOpen = langDd.classList.contains('open');
-      closeAll();
-      if (!isOpen) langDd.classList.add('open');
-    });
+    if (dEl) dEl.textContent = String(days).padStart(2, '0');
+    if (hEl) hEl.textContent = String(hours).padStart(2, '0');
+    if (mEl) mEl.textContent = String(minutes).padStart(2, '0');
+    if (sEl) sEl.textContent = String(seconds).padStart(2, '0');
+  }
 
-    // Tashqariga bosganda hammasi yopiladi
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.dropdown') && !e.target.closest('.lang-dropdown')) {
-        closeAll();
-      }
-    });
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 
-    function closeAll() {
-      document.querySelectorAll('.dropdown').forEach(function(d) {
-        d.classList.remove('open');
-      });
-      langDd.classList.remove('open');
-    }
-
-    // Til tanlash
-    function setLang(e, label, el) {
+  // Nav dropdownlar
+  document.querySelectorAll('.dropdown').forEach(function(dd) {
+    dd.querySelector('a').addEventListener('click', function(e) {
       e.preventDefault();
-      document.getElementById('lang-label').textContent = label;
-      document.querySelectorAll('.lang-dropdown-menu a').forEach(function(a) {
-        a.classList.remove('active');
-      });
-      el.classList.add('active');
-      langDd.classList.remove('open');
+      var isOpen = dd.classList.contains('open');
+      closeAll();
+      if (!isOpen) dd.classList.add('open');
+    });
+  });
+
+  // Lang dropdown
+  var langDd = document.getElementById('dd-lang');
+  document.getElementById('lang-toggle').addEventListener('click', function(e) {
+    e.stopPropagation();
+    var isOpen = langDd.classList.contains('open');
+    closeAll();
+    if (!isOpen) langDd.classList.add('open');
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown') && !e.target.closest('.lang-dropdown')) {
+      closeAll();
     }
-  </script>
+  });
+
+  function closeAll() {
+    document.querySelectorAll('.dropdown').forEach(function(d) {
+      d.classList.remove('open');
+    });
+    langDd.classList.remove('open');
+  }
+</script>
 </body>
 </html>
