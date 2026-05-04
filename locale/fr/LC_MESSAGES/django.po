@@ -186,3 +186,21 @@ msgstr "photos"
 
 msgid "videos"
 msgstr "videos"
+
+msgid "Countdown"
+msgstr "Compte à rebours"
+
+msgid "Days"
+msgstr "Jours"
+
+msgid "Hours"
+msgstr "Heures"
+
+msgid "Minutes"
+msgstr "Minutes"
+
+msgid "Seconds"
+msgstr "Secondes"
+
+msgid "Forum has started!"
+msgstr "Le forum a commencé!"

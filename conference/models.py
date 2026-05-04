@@ -283,6 +283,7 @@ class HotelImage(models.Model):
 class HomePage(models.Model):
     title = models.CharField(max_length=300)
     subtitle = models.CharField(max_length=300, blank=True)
+    event_date = models.DateTimeField(blank=True, null=True)
     location = models.CharField(max_length=200, blank=True)
     date = models.CharField(max_length=200, blank=True)
     body_1 = models.TextField(blank=True)
