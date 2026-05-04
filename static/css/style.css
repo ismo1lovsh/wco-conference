@@ -4742,3 +4742,70 @@ body {
   background: #000;
   max-height: 360px;
 }
+
+/* ===== COUNTDOWN ===== */
+.header-info {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.header-countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.countdown-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #1558a0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.countdown-timer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.countdown-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #1558a0, #2196c4);
+  border-radius: 6px;
+  padding: 6px 10px;
+  min-width: 44px;
+}
+
+.countdown-num {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-unit {
+  font-size: 9px;
+  color: rgba(255,255,255,0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+.countdown-sep {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1558a0;
+  margin-bottom: 12px;
+}
+
+.countdown-started {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1558a0;
+}
