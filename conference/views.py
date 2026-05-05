@@ -105,9 +105,8 @@ def hotels(request):
 from .models import Venue
 
 def venue(request):
-    venue = Venue.objects.prefetch_related('images', 'days').first()
-    return render(request, 'conference/venue.html', {'venue': venue})
-
+    venues = Venue.objects.prefetch_related('images', 'days').all()
+    return render(request, 'conference/venue.html', {'venues': venues})
 from .models import DiscoverCity, DiscoverGalleryPhoto
 
 def discover(request):
