@@ -29,10 +29,40 @@
         {% endif %}
       </div>
 
-      <!-- Rasm -->
-      {% if venue.image %}
-      <div class="venue-img-wrap">
+      <!-- Carousel -->
+      {% if venue.images.all %}
+      <div class="venue-carousel" id="venue-carousel-{{ forloop.counter }}">
+        <div class="venue-carousel-track" id="venue-track-{{ forloop.counter }}">
+          {% for img in venue.images.all %}
+          <div class="venue-carousel-slide" onclick="openVenueImg('{{ img.image.url }}', {{ forloop.parentloop.counter }}, {{ forloop.counter0 }})">
+            <img src="{{ img.image.url }}" alt="{{ venue.name }}" />
+            <div class="venue-slide-overlay">
+              <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% if venue.images.count > 1 %}
+        <button class="venue-carousel-btn venue-carousel-btn--left" onclick="venueCarouselMove({{ forloop.counter }}, -1)">
+          <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <button class="venue-carousel-btn venue-carousel-btn--right" onclick="venueCarouselMove({{ forloop.counter }}, 1)">
+          <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+        </button>
+        <div class="venue-carousel-dots" id="venue-dots-{{ forloop.counter }}">
+          {% for img in venue.images.all %}
+          <span class="venue-dot {% if forloop.first %}active{% endif %}"
+                onclick="venueGoToSlide({{ forloop.parentloop.counter }}, {{ forloop.counter0 }})"></span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      {% elif venue.image %}
+      <div class="venue-img-wrap" onclick="openVenueSingleImg('{{ venue.image.url }}')">
         <img src="{{ venue.image.url }}" alt="{{ venue.name }}" />
+        <div class="venue-slide-overlay">
+          <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        </div>
       </div>
       {% endif %}
 
@@ -52,7 +82,7 @@
       <div class="venue-map-section">
         <h3 class="venue-map-title">
           <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          Location
+          {% trans "Location" %}
         </h3>
         {% if venue.google_maps_embed %}
         <div class="venue-map-embed">
@@ -62,7 +92,7 @@
         {% if venue.google_maps_url %}
         <a href="{{ venue.google_maps_url }}" target="_blank" class="venue-map-btn">
           <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-          Open in Google Maps
+          {% trans "Open in Google Maps" %}
         </a>
         {% endif %}
       </div>
@@ -77,15 +107,109 @@
     {% empty %}
     <div class="venue-empty">
       <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-      <p>Venue information will be available soon.</p>
+      <p>{% trans "Venue information will be available soon." %}</p>
     </div>
     {% endfor %}
 
   </div>
 
+  <!-- Lightbox Modal -->
+  <div class="venue-lightbox" id="venue-lightbox" onclick="closeVenueLightbox()">
+    <div class="venue-lightbox-inner" onclick="event.stopPropagation()">
+      <button class="venue-lightbox-close" onclick="closeVenueLightbox()">
+        <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+      <button class="venue-lightbox-prev" onclick="venueLightboxNav(-1)">
+        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </button>
+      <img src="" alt="" id="venue-lightbox-img" />
+      <button class="venue-lightbox-next" onclick="venueLightboxNav(1)">
+        <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+      <div class="venue-lightbox-counter" id="venue-lightbox-counter"></div>
+    </div>
+  </div>
+
 </main>
 
 <script>
+// Carousel data
+var venueCarousels = {
+  {% for venue in venues %}
+  {{ forloop.counter }}: {
+    current: 0,
+    images: [{% for img in venue.images.all %}"{{ img.image.url }}"{% if not forloop.last %},{% endif %}{% endfor %}]
+  }{% if not forloop.last %},{% endif %}
+  {% endfor %}
+};
+
+function venueCarouselMove(id, dir) {
+  var c = venueCarousels[id];
+  if (!c || c.images.length <= 1) return;
+  c.current = (c.current + dir + c.images.length) % c.images.length;
+  updateVenueCarousel(id);
+}
+
+function venueGoToSlide(id, index) {
+  var c = venueCarousels[id];
+  if (!c) return;
+  c.current = index;
+  updateVenueCarousel(id);
+}
+
+function updateVenueCarousel(id) {
+  var c = venueCarousels[id];
+  var track = document.getElementById('venue-track-' + id);
+  if (track) track.style.transform = 'translateX(-' + (c.current * 100) + '%)';
+  var dots = document.querySelectorAll('#venue-dots-' + id + ' .venue-dot');
+  dots.forEach(function(d, i) { d.classList.toggle('active', i === c.current); });
+}
+
+// Lightbox
+var lbImages = [];
+var lbCurrent = 0;
+
+function openVenueImg(url, carouselId, index) {
+  var c = venueCarousels[carouselId];
+  lbImages = c ? c.images : [url];
+  lbCurrent = index;
+  updateVenueLightbox();
+  document.getElementById('venue-lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function openVenueSingleImg(url) {
+  lbImages = [url];
+  lbCurrent = 0;
+  updateVenueLightbox();
+  document.getElementById('venue-lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function updateVenueLightbox() {
+  document.getElementById('venue-lightbox-img').src = lbImages[lbCurrent];
+  var counter = document.getElementById('venue-lightbox-counter');
+  if (lbImages.length > 1) {
+    counter.textContent = (lbCurrent + 1) + ' / ' + lbImages.length;
+    document.querySelector('.venue-lightbox-prev').style.display = 'flex';
+    document.querySelector('.venue-lightbox-next').style.display = 'flex';
+  } else {
+    counter.textContent = '';
+    document.querySelector('.venue-lightbox-prev').style.display = 'none';
+    document.querySelector('.venue-lightbox-next').style.display = 'none';
+  }
+}
+
+function venueLightboxNav(dir) {
+  lbCurrent = (lbCurrent + dir + lbImages.length) % lbImages.length;
+  updateVenueLightbox();
+}
+
+function closeVenueLightbox() {
+  document.getElementById('venue-lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 function switchVenueDay(e, dayId) {
   var card = e.target.closest('.venue-card');
   card.querySelectorAll('.venue-day-tab').forEach(function(b) {
@@ -93,6 +217,13 @@ function switchVenueDay(e, dayId) {
   });
   e.currentTarget.classList.add('active');
 }
+
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('venue-lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape') closeVenueLightbox();
+  if (e.key === 'ArrowLeft') venueLightboxNav(-1);
+  if (e.key === 'ArrowRight') venueLightboxNav(1);
+});
 </script>
 
 {% endblock %}

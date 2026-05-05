@@ -1,6 +1,6 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
-from .models import SocialEvent, HotelImage, CustomsObjectImage, HomePage
+from .models import SocialEvent, HotelImage, CustomsObjectImage, HomePage, VenueImage
 from .models import (
     ConferenceDay, AgendaSession,
     SpeakerGroup, Speaker,
@@ -100,10 +100,15 @@ class VenueDayInline(admin.TabularInline):
     extra = 1
     fields = ('order', 'day_label', 'date')
 
+class VenueImageInline(admin.TabularInline):
+    model = VenueImage
+    extra = 3
+    fields = ('order', 'image')
+
 @admin.register(Venue)
 class VenueAdmin(TranslationAdmin):
     list_display = ('name', 'order')
-    inlines = [VenueDayInline]
+    inlines = [VenueImageInline]
 
 
 
@@ -165,3 +170,6 @@ from .models import OnlineTranslation
 @admin.register(OnlineTranslation)
 class OnlineTranslationAdmin(TranslationAdmin):
     list_display = ('is_live', 'stream_url')
+
+
+
