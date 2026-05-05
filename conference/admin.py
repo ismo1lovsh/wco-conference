@@ -105,11 +105,14 @@ class VenueImageInline(admin.TabularInline):
     extra = 3
     fields = ('order', 'image')
 
+class VenueDayInline(admin.TabularInline):
+    model = VenueDay
+    extra = 1
+
 @admin.register(Venue)
 class VenueAdmin(TranslationAdmin):
     list_display = ('name', 'order')
-    inlines = [VenueImageInline]
-
+    inlines = [VenueDayInline, VenueImageInline]
 
 
 class CustomsObjectImageInline(admin.TabularInline):
