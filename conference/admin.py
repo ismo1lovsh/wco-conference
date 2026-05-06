@@ -1,6 +1,6 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
-from .models import SocialEvent, HotelImage, CustomsObjectImage, HomePage, VenueImage
+from .models import SocialEvent, HotelImage, CustomsObjectImage, HomePage, VenueImage, AgendaPage
 from .models import (
     ConferenceDay, AgendaSession,
     SpeakerGroup, Speaker,
@@ -14,6 +14,10 @@ class AgendaSessionInline(admin.TabularInline):
     extra = 1
     fields = ('order', 'time_start', 'time_end', 'session_text', 'sub_items', 'style', 'rowspan')
 
+
+@admin.register(AgendaPage)
+class AgendaPageAdmin(admin.ModelAdmin):
+    pass
 
 @admin.register(ConferenceDay)
 class ConferenceDayAdmin(admin.ModelAdmin):

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.utils import translation
 from django.conf import settings
-from .models import ConferenceDay, SpeakerGroup, AboutPage, GalleryDay, GalleryHero
+from .models import ConferenceDay, SpeakerGroup, AboutPage, GalleryDay, GalleryHero, AgendaPage
 from .models import CustomsObject
 from .models import SocialEvent
 
@@ -48,8 +48,11 @@ def about(request):
 
 def agenda(request):
     days = ConferenceDay.objects.prefetch_related('sessions').all()
-    return render(request, 'conference/agenda.html', {'days': days})
-
+    agenda_page = AgendaPage.objects.first()
+    return render(request, 'conference/agenda.html', {
+        'days': days,
+        'agenda_page': agenda_page
+    })
 
 def speakers(request):
     groups = SpeakerGroup.objects.prefetch_related('speakers').all()

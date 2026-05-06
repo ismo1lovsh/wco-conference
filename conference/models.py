@@ -44,6 +44,16 @@ class AgendaSession(models.Model):
         return f"{self.day} | {self.time_start} - {self.session_text[:50]}"
 
 
+class AgendaPage(models.Model):
+    pdf_file = models.FileField(upload_to='agenda/', blank=True, null=True)
+
+    class Meta:
+        verbose_name = "Agenda PDF"
+
+    def __str__(self):
+        return "Agenda PDF"
+
+
 class SpeakerGroup(models.Model):
     title = models.CharField(max_length=200)
     order = models.PositiveSmallIntegerField(default=0)
